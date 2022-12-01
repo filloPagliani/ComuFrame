@@ -11,6 +11,7 @@ class Central
 public:
 
 	Central(std::string url);
+	~Central();
 	void initCentral();
 
 	//Getter

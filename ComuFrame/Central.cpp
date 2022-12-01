@@ -7,6 +7,11 @@ using namespace zmq;
 		this->url = url;
 	}
 
+	Central::~Central()
+	{
+		Central::ctx.close();
+	}
+
 	void Central::initCentral() {
 		std::thread registerThread(&Central::initRegisterThread, this);
 		registerThread.join();
@@ -19,6 +24,7 @@ using namespace zmq;
 		registerSocket.bind(url);
 		std::cout << "Central, RegisterThread: bindato a " << url << " e pronto a ricevere mex \n";
 		Central::registerCliet(&registerSocket);
+		
 		//cleaning up
 		registerSocket.close();
 	 }

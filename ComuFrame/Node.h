@@ -9,6 +9,7 @@ class Node
 {
 public:
 	Node(std::string url, std::string identity);
+	~Node();
 	void initNode();
 	void initRegisterThread();
 

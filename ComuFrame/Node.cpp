@@ -8,6 +8,11 @@ Node::Node(std::string url, std::string identity)
 	this->identity = identity;
 }
 
+Node::~Node()
+{
+	Node::ctx.close();
+}
+
 void Node::initNode() {
 	std::thread registerThread(&Node::initRegisterThread, this);
 	registerThread.join();
@@ -38,3 +43,4 @@ std::string Node::getUrl() {
 std::string Node::getidentity() {
 	return Node::identity;
 }
+

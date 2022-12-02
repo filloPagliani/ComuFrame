@@ -1,3 +1,7 @@
+#-----------tinyXML2-------
+add_subdirectory("tinyxml2")
+find_package(tinyxml2)
+target_link_libraries(ComuFrame tinyxml2)
 
 #-----------libzmq---------
 set(ZMQ_BUILD_TESTS OFF CACHE BOOL "" FORCE)

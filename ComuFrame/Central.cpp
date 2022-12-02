@@ -13,16 +13,16 @@ using namespace zmq;
 	}
 
 	void Central::initCentral() {
-		std::thread registerThread(&Central::initRegisterThread, this);
-		registerThread.join();
+		std::thread serviceThread(&Central::initServiceThread, this);
+		serviceThread.join();
 		std::cout << "Central, Main: join eseguito\n";
 	}
 
-	 void Central::initRegisterThread() {
-		 std::cout << "Central, RegisterThread: appena partito\n";
+	 void Central::initServiceThread() {
+		 std::cout << "Central, ServiceThread: appena partito\n";
 		socket_t registerSocket(Central::ctx, ZMQ_ROUTER);
 		registerSocket.bind(url);
-		std::cout << "Central, RegisterThread: bindato a " << url << " e pronto a ricevere mex \n";
+		std::cout << "Central, ServiceThread: bindato a " << url << " e pronto a ricevere mex \n";
 		Central::registerCliet(&registerSocket);
 		
 		//cleaning up
@@ -36,7 +36,7 @@ using namespace zmq;
 
 			 auto res = recv_multipart( *sock, std::back_inserter(regMsg));
 			 clients.push_back(regMsg.popstr());
-			 std::cout << "Central, RegisterThread: Messaggio ricevuto: " << clients.back();
+			 std::cout << "Central, ServiceThread: Messaggio ricevuto: " << clients.back();
 			 regMsg.pop();
 			 std::cout << " : " << regMsg.popstr() << "\n";
 		 }

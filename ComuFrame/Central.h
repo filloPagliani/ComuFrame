@@ -21,6 +21,6 @@ private:
 	std::string url;
 	context_t ctx;
 
-	void initRegisterThread();
+	void initServiceThread();
 	std::vector<std::string> registerCliet(socket_t * sock);
 };

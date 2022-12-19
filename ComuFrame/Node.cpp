@@ -14,25 +14,36 @@ Node::~Node()
 }
 
 void Node::initNode() {
-	std::thread registerThread(&Node::initRegisterThread, this);
-	registerThread.join();
-	std::cout << identity << ", Main: join eseguito\n";
+	std::thread serviceThread(&Node::initServiceThread, this);
+	serviceThread.join();
+	std::cout << identity << ", Main: serviceThread joined\n";
 }
 
-void Node::initRegisterThread() {
-	std::cout <<identity << ", RegisterThread: appena partito \n";
-	socket_t registerSocket(Node::ctx, ZMQ_REQ);
+void Node::initServiceThread() {
+	socket_t serviceSocket(Node::ctx, ZMQ_DEALER);
 	if (Node::identity != "") {
-		registerSocket.setsockopt(ZMQ_IDENTITY, Node::identity.data(), 4);
+		serviceSocket.setsockopt(ZMQ_IDENTITY, Node::identity.data(), sizeof(Node::identity.data()));
+	}
+	serviceSocket.connect(url);
+	std::cout << identity << ", serviceThread: Initialized and connected to " << Node::url <<"\n";
+
+	multipart_t registrationMSG("RegistrationMSG", sizeof("RegistrationMSG"));
+	registrationMSG.pushstr("");
+	if (registrationMSG.size() == send_multipart(serviceSocket, registrationMSG)) {
+		std::cout << identity << ", ServiceThread: message sent \n";
+	}
+	else {//manage sending error
+		std::cout << "something went wrong with sending";
 	}
 
-	registerSocket.connect(url);
-	std::cout << identity << ", RegisterThread: connesso a " << Node::url <<" e sto per inviare\n";
-	message_t msg("ciaone", sizeof("ciaone"));
-	registerSocket.send(msg);
-	std::cout << identity << ", RegisterThread: messaggio inviato\n";
 	//cleaning up
-	registerSocket.close();
+	
+	//ricezione va spostata da qua
+	multipart_t msgRecv;
+	auto res1 = recv_multipart(serviceSocket, std::back_inserter(msgRecv));
+	msgRecv.popstr();
+	std::cout << identity << " serviceThread: connesso a " << msgRecv.popstr() << "\n";
+	serviceSocket.close();
 }
 
 //getter

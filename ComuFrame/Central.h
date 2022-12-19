@@ -20,7 +20,8 @@ public:
 private:
 	std::string url;
 	context_t ctx;
+	std::vector<std::string> connectedClients;
 
 	void initServiceThread();
-	std::vector<std::string> registerCliet(socket_t * sock);
+	std::vector<std::string> registerClient(socket_t * sock);
 };

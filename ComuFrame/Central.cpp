@@ -15,30 +15,40 @@ using namespace zmq;
 	void Central::initCentral() {
 		std::thread serviceThread(&Central::initServiceThread, this);
 		serviceThread.join();
-		std::cout << "Central, Main: join eseguito\n";
+		std::cout << "Central, Main: serviceThread joined\n";
 	}
 
 	 void Central::initServiceThread() {
-		 std::cout << "Central, ServiceThread: appena partito\n";
-		socket_t registerSocket(Central::ctx, ZMQ_ROUTER);
-		registerSocket.bind(url);
-		std::cout << "Central, ServiceThread: bindato a " << url << " e pronto a ricevere mex \n";
-		Central::registerCliet(&registerSocket);
-		
-		//cleaning up
-		registerSocket.close();
+
+		socket_t serviceSocket(Central::ctx, ZMQ_ROUTER);
+		serviceSocket.setsockopt(ZMQ_IDENTITY, "Central",sizeof("central"));
+		serviceSocket.bind(url);
+		std::cout << "Central, ServiceThread: initialized and binded to " << url << "\n";
+
+		Central::connectedClients = Central::registerClient(&serviceSocket);
+		std::cout << "Central, ServiceThread: Registration completed, registered " << connectedClients.size() << " nodes\n";
+
+		for (int i = 0; i < connectedClients.size(); i++) {
+			multipart_t msgToSend("rispostona", sizeof("rispostona"));
+			msgToSend.pushstr("");
+			msgToSend.pushstr(connectedClients[i]);
+			send_multipart(serviceSocket, msgToSend);
+			std::cout << "Central, ServiceThread: messaggio mandato a " << connectedClients[i] << "\n";
+		}
+		serviceSocket.close();
 	 }
 
-	 std::vector<std::string> Central::registerCliet(socket_t * sock) {
+	 std::vector<std::string> Central::registerClient(socket_t * sock) {
 		 std::vector<std::string> clients;
-		 multipart_t regMsg;
-		 while (true) {		 
+		 multipart_t registrationMSG;
+		 while (clients.size() < 2) {    //prima di inizare la fase dovra esere trovato un modo per definire quanti node ci si aspetta il due è provvisiorio e per testing
 
-			 auto res = recv_multipart( *sock, std::back_inserter(regMsg));
-			 clients.push_back(regMsg.popstr());
-			 std::cout << "Central, ServiceThread: Messaggio ricevuto: " << clients.back();
-			 regMsg.pop();
-			 std::cout << " : " << regMsg.popstr() << "\n";
+			 auto res = recv_multipart( *sock, std::back_inserter(registrationMSG));
+			 clients.push_back(registrationMSG.popstr());
+			 std::cout << "Central, ServiceThread: message received from " << clients.back();
+			 registrationMSG.pop();		//popping out the frame empty message
+			 std::cout << " : " << registrationMSG.popstr() << "\n";
+			 registrationMSG.clear();
 		 }
 		 return clients;
 	 }
@@ -49,4 +59,4 @@ using namespace zmq;
 	 }
 
 
-	 //TODO funzione per chiudere e pulire tutto quindi tenendo traccia di thread, socket e ctx poi chiudere tutto sia qua che in node
+	

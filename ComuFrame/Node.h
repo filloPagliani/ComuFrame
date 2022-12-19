@@ -1,4 +1,5 @@
 #include "zmq.hpp"
+#include "zmq_addon.hpp"
 #include <stdio.h>
 #include <iostream>
 #include <thread>
@@ -11,7 +12,7 @@ public:
 	Node(std::string url, std::string identity);
 	~Node();
 	void initNode();
-	void initRegisterThread();
+	void initServiceThread();
 
 	//getter
 	std::string getUrl();

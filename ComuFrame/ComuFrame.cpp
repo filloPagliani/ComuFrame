@@ -19,22 +19,22 @@ int main()
 	if (tinyxml2::XML_SUCCESS != configDoc.LoadFile("C:/Users/pagliani/source/repos/ComuFrame/Config.xml")) { std::cout << "can't load configration file, using default options"; }
 	else {
 		tinyxml2::XMLElement * urlElement = configDoc.RootElement()->FirstChildElement("url");
-		std::cout << urlElement->FirstAttribute()->Value();
+		//std::cout << urlElement->FirstAttribute()->Value();
 		servicePort = urlElement->FirstChildElement("servicePort")->FirstAttribute()->Value();
-		std::cout << servicePort;
+		//std::cout << servicePort;
 		pubPort = urlElement->FirstChildElement("pubPort")->FirstAttribute()->Value();
-		std::cout << pubPort;
+		//std::cout << pubPort;
 	}
 	
 	Central central(url+servicePort);
 	std::thread centralThread(&Central::initCentral, &central);
 	centralThread.detach();
 
-	Node luca(url+servicePort, "luca");
+	Node luca(url + servicePort, "luca");
 	std::thread lucaThread(&Node::initNode, &luca);
 	lucaThread.detach();
-
-	Node fillo(url+servicePort, "Fillo");
+	
+	Node fillo(url + servicePort, "fillo");
 	std::thread filloThread(&Node::initNode, &fillo);
 	filloThread.detach();
 

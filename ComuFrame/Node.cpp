@@ -14,15 +14,21 @@ Node::~Node()
 }
 
 void Node::initNode() {
+	//init serviceThread
 	std::thread serviceThread(&Node::initServiceThread, this);
+
+	//init all comunication sockets
+	socket_t inprocServiceSocket = initInprocSocket(&(Node::ctx), "main", "inproc://serviceChannel", false);
+
+	//wait for all the secondary thread
 	serviceThread.join();
-	std::cout << identity << ", Main: serviceThread joined\n";
+	std::cout << identity << " MainThread, all threads joined\n";
 }
 
 void Node::initServiceThread() {
 	socket_t serviceSocket(Node::ctx, ZMQ_DEALER);
 	if (Node::identity != "") {
-		serviceSocket.setsockopt(ZMQ_IDENTITY, Node::identity.data(), sizeof(Node::identity.data()));
+		serviceSocket.set(sockopt::routing_id, Node::identity);
 	}
 	serviceSocket.connect(url);
 	std::cout << identity << ", serviceThread: Initialized and connected to " << Node::url <<"\n";
@@ -36,6 +42,7 @@ void Node::initServiceThread() {
 		std::cout << "something went wrong with sending";
 	}
 
+	socket_t inprocServiceSocket = initInprocSocket(&(Node::ctx), "service", "inproc://serviceChannel", true);
 	//cleaning up
 	
 	//ricezione va spostata da qua

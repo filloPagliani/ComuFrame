@@ -13,20 +13,28 @@ using namespace zmq;
 	}
 
 	void Central::initCentral() {
+		//init service thread
 		std::thread serviceThread(&Central::initServiceThread, this);
+
+		//init all inproc comunication sockets
+		socket_t inprocServiceSocket = initInprocSocket(&(Central::ctx), "main", "inproc://serviceChannel", false);
+
+		//wait for all the secondary threads to join
 		serviceThread.join();
-		std::cout << "Central, Main: serviceThread joined\n";
+		std::cout << "Central, Main: all threads joined\n";
 	}
 
 	 void Central::initServiceThread() {
-
+		
 		socket_t serviceSocket(Central::ctx, ZMQ_ROUTER);
-		serviceSocket.setsockopt(ZMQ_IDENTITY, "Central",sizeof("central"));
+		serviceSocket.set(sockopt::routing_id, "Central");
 		serviceSocket.bind(url);
-		std::cout << "Central, ServiceThread: initialized and binded to " << url << "\n";
 
 		Central::connectedClients = Central::registerClient(&serviceSocket);
 		std::cout << "Central, ServiceThread: Registration completed, registered " << connectedClients.size() << " nodes\n";
+
+		socket_t inprocServiceSocket = initInprocSocket(&(Central::ctx), "Service", "inproc://serviceChannel", true);
+
 
 		for (int i = 0; i < connectedClients.size(); i++) {
 			multipart_t msgToSend("rispostona", sizeof("rispostona"));

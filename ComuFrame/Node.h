@@ -1,5 +1,6 @@
 #include "zmq.hpp"
 #include "zmq_addon.hpp"
+#include "utils.h"
 #include <stdio.h>
 #include <iostream>
 #include <thread>

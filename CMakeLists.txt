@@ -11,3 +11,6 @@ project ("ComuFrame")
 # Include sub-projects.
 add_subdirectory ("ComuFrame")
 add_subdirectory("ExternalLib")
+add_subdirectory("Testing")
+
+target_link_libraries(libzmq)

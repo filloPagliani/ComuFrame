@@ -17,9 +17,11 @@ public:
 
 	//Getter
 	std::string getUrl();
+	int getExpectedClient();
 
 private:
 	std::string url;
+	int expectedClient = 0;
 	context_t ctx;
 	std::vector<std::string> connectedClients;
 

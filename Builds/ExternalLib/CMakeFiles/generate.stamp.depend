@@ -1,0 +1,8 @@
+# CMake generation dependency list for this directory.
+C:/Program Files/Microsoft Visual Studio/2022/Professional/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.23/Modules/CMakeFindDependencyMacro.cmake
+C:/Users/pagliani/source/repos/ComuFrame/ExternalLib/CMakeLists.txt
+C:/Users/pagliani/src/vcpkg/packages/cppzmq_x64-windows/share/cppzmq/cppzmqConfig.cmake
+C:/Users/pagliani/src/vcpkg/packages/cppzmq_x64-windows/share/cppzmq/cppzmqConfigVersion.cmake
+C:/Users/pagliani/src/vcpkg/packages/cppzmq_x64-windows/share/cppzmq/cppzmqTargets.cmake
+C:/Users/pagliani/src/vcpkg/packages/zeromq_x64-windows/share/zeromq/ZeroMQConfig.cmake
+C:/Users/pagliani/src/vcpkg/packages/zeromq_x64-windows/share/zeromq/ZeroMQConfigVersion.cmake

@@ -13,7 +13,7 @@ public:
 	Node(std::string url, std::string identity);
 	~Node();
 	void initNode();
-	void initServiceThread();
+
 
 	//getter
 	std::string getUrl();
@@ -22,5 +22,6 @@ private:
 	std::string url;
 	std::string identity;
 	context_t ctx;
+	void initServiceThread();
 
 };

@@ -13,6 +13,7 @@ set(WITH_PERF_TOOL  OFF CACHE BOOL "" FORCE)
 set(WITH_LIBSODIUM  OFF CACHE BOOL "" FORCE)
 set(WITH_DOCS       OFF CACHE BOOL "" FORCE)
 set(ENABLE_WS       OFF CACHE BOOL "" FORCE)
+
 add_subdirectory("libzmq")
 
 

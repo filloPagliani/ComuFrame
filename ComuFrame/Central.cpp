@@ -14,14 +14,26 @@ using namespace zmq;
 
 	void Central::initCentral() {
 		//init service thread
+		std::cout << "How many node are you expecting? \n";
+		std::cin >> Central::expectedClient;
+		while(!std::cin.good())
+		{
+			std::cin.clear();
+			std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+			std::cout << "insert a number greater than 0 please \n";
+			std::cin >> Central::expectedClient;
+		}
 		std::thread serviceThread(&Central::initServiceThread, this);
 
 		//init all inproc comunication sockets
-		socket_t inprocServiceSocket = initInprocSocket(&(Central::ctx), "main", "inproc://serviceChannel", false);
+		socket_t InternalServiceSocket = initInprocSocket(&(Central::ctx), "inproc://serviceChannel", false);
+		socket_t InternalTimerSocket = initInprocSocket(&(Central::ctx), "inproc://timerCannel", false);
 
 		//wait for all the secondary threads to join
 		serviceThread.join();
 		std::cout << "Central, Main: all threads joined\n";
+		InternalServiceSocket.close();
+		InternalTimerSocket.close();
 	}
 
 	 void Central::initServiceThread() {
@@ -33,30 +45,23 @@ using namespace zmq;
 		Central::connectedClients = Central::registerClient(&serviceSocket);
 		std::cout << "Central, ServiceThread: Registration completed, registered " << connectedClients.size() << " nodes\n";
 
-		socket_t inprocServiceSocket = initInprocSocket(&(Central::ctx), "Service", "inproc://serviceChannel", true);
-
-
-		for (int i = 0; i < connectedClients.size(); i++) {
-			multipart_t msgToSend("rispostona", sizeof("rispostona"));
-			msgToSend.pushstr("");
-			msgToSend.pushstr(connectedClients[i]);
-			send_multipart(serviceSocket, msgToSend);
-			std::cout << "Central, ServiceThread: messaggio mandato a " << connectedClients[i] << "\n";
-		}
-		serviceSocket.close();
+		socket_t toMainSocket = initInprocSocket(&(Central::ctx), "inproc://serviceChannel", true);
 	 }
 
 	 std::vector<std::string> Central::registerClient(socket_t * sock) {
 		 std::vector<std::string> clients;
 		 multipart_t registrationMSG;
-		 while (clients.size() < 2) {    //prima di inizare la fase dovra esere trovato un modo per definire quanti node ci si aspetta il due è provvisiorio e per testing
+		 while (clients.size() < expectedClient) {    //prima di inizare la fase dovra esere trovato un modo per definire quanti node ci si aspetta il due è provvisiorio e per testing
 
 			 auto res = recv_multipart( *sock, std::back_inserter(registrationMSG));
 			 clients.push_back(registrationMSG.popstr());
-			 std::cout << "Central, ServiceThread: message received from " << clients.back();
-			 registrationMSG.pop();		//popping out the frame empty message
-			 std::cout << " : " << registrationMSG.popstr() << "\n";
 			 registrationMSG.clear();
+			 registrationMSG.pushstr("connected");
+			 registrationMSG.pushstr("");
+			 registrationMSG.pushstr(clients.back());
+			 send_multipart(*sock, registrationMSG);
+			 registrationMSG.clear();
+			 std::cout << "Central, serviceThread: Registration request from " << clients.back() << ", registration completed. \n";
 		 }
 		 return clients;
 	 }
@@ -64,6 +69,10 @@ using namespace zmq;
 	 //Getter
 	 std::string Central::getUrl() {
 		 return Central::url;
+	 }
+
+	 int Central::getExpectedClient() {
+		 return Central::expectedClient;
 	 }
 
 

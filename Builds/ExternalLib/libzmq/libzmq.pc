@@ -1,0 +1,12 @@
+prefix=C:/Program Files (x86)/ComuFrame
+exec_prefix=C:/Program Files (x86)/ComuFrame
+libdir=C:/Program Files (x86)/ComuFrame/lib
+includedir=C:/Program Files (x86)/ComuFrame/include
+
+Name: libzmq
+Description: 0MQ c++ library
+Version: 4.3.5
+Libs: -L${libdir} -lzmq
+Libs.private: -lstdc++ 
+Requires.private: 
+Cflags: -I${includedir} 

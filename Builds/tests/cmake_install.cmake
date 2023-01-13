@@ -1,4 +1,4 @@
-# Install script for directory: C:/Users/pagliani/source/repos/ComuFrame/ExternalLib
+# Install script for directory: C:/Users/pagliani/source/repos/ComuFrame/tests
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -30,20 +30,5 @@ endif()
 # Is this installation the result of a crosscompile?
 if(NOT DEFINED CMAKE_CROSSCOMPILING)
   set(CMAKE_CROSSCOMPILING "FALSE")
-endif()
-
-if(NOT CMAKE_INSTALL_LOCAL_ONLY)
-  # Include the install script for the subdirectory.
-  include("C:/Users/pagliani/source/repos/ComuFrame/Builds/ExternalLib/tinyxml2/cmake_install.cmake")
-endif()
-
-if(NOT CMAKE_INSTALL_LOCAL_ONLY)
-  # Include the install script for the subdirectory.
-  include("C:/Users/pagliani/source/repos/ComuFrame/Builds/ExternalLib/libzmq/cmake_install.cmake")
-endif()
-
-if(NOT CMAKE_INSTALL_LOCAL_ONLY)
-  # Include the install script for the subdirectory.
-  include("C:/Users/pagliani/source/repos/ComuFrame/Builds/ExternalLib/Catch2/cmake_install.cmake")
 endif()
 

@@ -1,13 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <ClCompile Include="C:\Users\pagliani\source\repos\ComuFrame\ComuFrame\ComuFrame.cpp">
+    <ClCompile Include="C:\Users\pagliani\source\repos\ComuFrame\tests\LaunchCentral.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="C:\Users\pagliani\source\repos\ComuFrame\ComuFrame\Central.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="C:\Users\pagliani\source\repos\ComuFrame\ComuFrame\Node.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="C:\Users\pagliani\source\repos\ComuFrame\ComuFrame\utils.cpp">
@@ -18,13 +15,7 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="C:\Users\pagliani\source\repos\ComuFrame\ComuFrame\ComuFrame.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="C:\Users\pagliani\source\repos\ComuFrame\ComuFrame\Central.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="C:\Users\pagliani\source\repos\ComuFrame\ComuFrame\Node.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="C:\Users\pagliani\source\repos\ComuFrame\ComuFrame\utils.h">
@@ -35,7 +26,7 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <CustomBuild Include="C:\Users\pagliani\source\repos\ComuFrame\ComuFrame\CMakeLists.txt" />
+    <CustomBuild Include="C:\Users\pagliani\source\repos\ComuFrame\tests\CMakeLists.txt" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Header Files">

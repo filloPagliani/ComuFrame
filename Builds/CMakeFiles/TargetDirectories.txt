@@ -15,6 +15,12 @@ C:/Users/pagliani/source/repos/ComuFrame/Builds/ExternalLib/tinyxml2/CMakeFiles/
 C:/Users/pagliani/source/repos/ComuFrame/Builds/ExternalLib/libzmq/CMakeFiles/libzmq.dir
 C:/Users/pagliani/source/repos/ComuFrame/Builds/ExternalLib/libzmq/CMakeFiles/INSTALL.dir
 C:/Users/pagliani/source/repos/ComuFrame/Builds/ExternalLib/libzmq/CMakeFiles/ALL_BUILD.dir
-C:/Users/pagliani/source/repos/ComuFrame/Builds/Testing/CMakeFiles/LaunchCentral.dir
-C:/Users/pagliani/source/repos/ComuFrame/Builds/Testing/CMakeFiles/LaunchNode.dir
-C:/Users/pagliani/source/repos/ComuFrame/Builds/Testing/CMakeFiles/INSTALL.dir
+C:/Users/pagliani/source/repos/ComuFrame/Builds/ExternalLib/Catch2/CMakeFiles/INSTALL.dir
+C:/Users/pagliani/source/repos/ComuFrame/Builds/ExternalLib/Catch2/CMakeFiles/ALL_BUILD.dir
+C:/Users/pagliani/source/repos/ComuFrame/Builds/ExternalLib/Catch2/src/CMakeFiles/Catch2.dir
+C:/Users/pagliani/source/repos/ComuFrame/Builds/ExternalLib/Catch2/src/CMakeFiles/Catch2WithMain.dir
+C:/Users/pagliani/source/repos/ComuFrame/Builds/ExternalLib/Catch2/src/CMakeFiles/INSTALL.dir
+C:/Users/pagliani/source/repos/ComuFrame/Builds/tests/CMakeFiles/LaunchCentral.dir
+C:/Users/pagliani/source/repos/ComuFrame/Builds/tests/CMakeFiles/LaunchNode.dir
+C:/Users/pagliani/source/repos/ComuFrame/Builds/tests/CMakeFiles/Tests.dir
+C:/Users/pagliani/source/repos/ComuFrame/Builds/tests/CMakeFiles/INSTALL.dir

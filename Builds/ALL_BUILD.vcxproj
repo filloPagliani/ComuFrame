@@ -173,17 +173,29 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </ProjectReference>
+    <ProjectReference Include="C:\Users\pagliani\source\repos\ComuFrame\Builds\ExternalLib\Catch2\src\Catch2.vcxproj">
+      <Project>{8d538cbe-01bf-4a2e-a98a-6c368fdf13d7}</Project>
+      <Name>Catch2</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\pagliani\source\repos\ComuFrame\Builds\ExternalLib\Catch2\src\Catch2WithMain.vcxproj">
+      <Project>{8bd3552a-2cfb-4a59-ab15-2031b97ada1e}</Project>
+      <Name>Catch2WithMain</Name>
+    </ProjectReference>
     <ProjectReference Include="C:\Users\pagliani\source\repos\ComuFrame\Builds\ComuFrame\ComuFrame.vcxproj">
       <Project>{0D3709DA-70AE-37F8-BC3A-C93DAF6BDBB2}</Project>
       <Name>ComuFrame</Name>
     </ProjectReference>
-    <ProjectReference Include="C:\Users\pagliani\source\repos\ComuFrame\Builds\Testing\LaunchCentral.vcxproj">
+    <ProjectReference Include="C:\Users\pagliani\source\repos\ComuFrame\Builds\tests\LaunchCentral.vcxproj">
       <Project>{52E0CE50-A9E3-367E-BE09-F844D71829C8}</Project>
       <Name>LaunchCentral</Name>
     </ProjectReference>
-    <ProjectReference Include="C:\Users\pagliani\source\repos\ComuFrame\Builds\Testing\LaunchNode.vcxproj">
+    <ProjectReference Include="C:\Users\pagliani\source\repos\ComuFrame\Builds\tests\LaunchNode.vcxproj">
       <Project>{2B690EA2-E113-3783-8EF2-641DD0242ECD}</Project>
       <Name>LaunchNode</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\pagliani\source\repos\ComuFrame\Builds\tests\Tests.vcxproj">
+      <Project>{05ECEBAC-C02C-340E-A939-E309D1D57D31}</Project>
+      <Name>Tests</Name>
     </ProjectReference>
     <ProjectReference Include="C:\Users\pagliani\source\repos\ComuFrame\Builds\ExternalLib\libzmq\libzmq.vcxproj">
       <Project>{630357FC-534B-39D4-8FB7-1DFB1C9442D8}</Project>

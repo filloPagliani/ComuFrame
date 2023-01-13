@@ -16,15 +16,17 @@ set(ENABLE_WS       OFF CACHE BOOL "" FORCE)
 
 add_subdirectory("libzmq")
 
-
 #-----------cppzmq---------
 set(ZeroMQ_DIR C:/Users/pagliani/src/vcpkg/packages/zeromq_x64-windows/share/zeromq)
 set(cppzmq_DIR C:/Users/pagliani/src/vcpkg/packages/cppzmq_x64-windows/share/cppzmq)
+add_library(cppzmq INTERFACE)
 find_package(cppzmq)
 target_link_libraries(ComuFrame cppzmq)
-#add_library(cppzmq INTERFACE)
-#
 target_include_directories(cppzmq
     INTERFACE
         "${CMAKE_CURRENT_LIST_DIR}/cppzmq/include"
 )
+
+#-----------Catch2---------
+
+add_subdirectory("Catch2")

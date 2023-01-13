@@ -36,6 +36,161 @@ BUILD_TESTING:BOOL=ON
 //Whether or not to build the tests
 BUILD_TESTS:BOOL=ON
 
+//Read docs/configuration.md for details
+CATCH_CONFIG_ANDROID_LOGWRITE:BOOL=OFF
+
+//Read docs/configuration.md for details
+CATCH_CONFIG_BAZEL_SUPPORT:BOOL=OFF
+
+//Read docs/configuration.md for details
+CATCH_CONFIG_COLOUR_WIN32:BOOL=OFF
+
+//Read docs/configuration.md for details. Must form a valid integer
+// literal.
+CATCH_CONFIG_CONSOLE_WIDTH:STRING=80
+
+//Read docs/configuration.md for details
+CATCH_CONFIG_COUNTER:BOOL=OFF
+
+//Read docs/configuration.md for details
+CATCH_CONFIG_CPP11_TO_STRING:BOOL=OFF
+
+//Read docs/configuration.md for details
+CATCH_CONFIG_CPP17_BYTE:BOOL=OFF
+
+//Read docs/configuration.md for details
+CATCH_CONFIG_CPP17_OPTIONAL:BOOL=OFF
+
+//Read docs/configuration.md for details
+CATCH_CONFIG_CPP17_STRING_VIEW:BOOL=OFF
+
+//Read docs/configuration.md for details
+CATCH_CONFIG_CPP17_UNCAUGHT_EXCEPTIONS:BOOL=OFF
+
+//Read docs/configuration.md for details
+CATCH_CONFIG_CPP17_VARIANT:BOOL=OFF
+
+//Read docs/configuration.md for details. The name of the reporter
+// should be without quotes.
+CATCH_CONFIG_DEFAULT_REPORTER:STRING=console
+
+//Read docs/configuration.md for details
+CATCH_CONFIG_DISABLE:BOOL=OFF
+
+//Read docs/configuration.md for details
+CATCH_CONFIG_DISABLE_EXCEPTIONS:BOOL=OFF
+
+//Read docs/configuration.md for details
+CATCH_CONFIG_DISABLE_EXCEPTIONS_CUSTOM_HANDLER:BOOL=OFF
+
+//Read docs/configuration.md for details
+CATCH_CONFIG_DISABLE_STRINGIFICATION:BOOL=OFF
+
+//Read docs/configuration.md for details
+CATCH_CONFIG_ENABLE_ALL_STRINGMAKERS:BOOL=OFF
+
+//Read docs/configuration.md for details
+CATCH_CONFIG_ENABLE_OPTIONAL_STRINGMAKER:BOOL=OFF
+
+//Read docs/configuration.md for details
+CATCH_CONFIG_ENABLE_PAIR_STRINGMAKER:BOOL=OFF
+
+//Read docs/configuration.md for details
+CATCH_CONFIG_ENABLE_TUPLE_STRINGMAKER:BOOL=OFF
+
+//Read docs/configuration.md for details
+CATCH_CONFIG_ENABLE_VARIANT_STRINGMAKER:BOOL=OFF
+
+//Read docs/configuration.md for details
+CATCH_CONFIG_EXPERIMENTAL_REDIRECT:BOOL=OFF
+
+//Read docs/configuration.md for details
+CATCH_CONFIG_FAST_COMPILE:BOOL=OFF
+
+//Read docs/configuration.md for details
+CATCH_CONFIG_GETENV:BOOL=OFF
+
+//Read docs/configuration.md for details
+CATCH_CONFIG_GLOBAL_NEXTAFTER:BOOL=OFF
+
+//Read docs/configuration.md for details
+CATCH_CONFIG_NOSTDOUT:BOOL=OFF
+
+//Read docs/configuration.md for details
+CATCH_CONFIG_NO_ANDROID_LOGWRITE:BOOL=OFF
+
+//Read docs/configuration.md for details
+CATCH_CONFIG_NO_BAZEL_SUPPORT:BOOL=OFF
+
+//Read docs/configuration.md for details
+CATCH_CONFIG_NO_COLOUR_WIN32:BOOL=OFF
+
+//Read docs/configuration.md for details
+CATCH_CONFIG_NO_COUNTER:BOOL=OFF
+
+//Read docs/configuration.md for details
+CATCH_CONFIG_NO_CPP11_TO_STRING:BOOL=OFF
+
+//Read docs/configuration.md for details
+CATCH_CONFIG_NO_CPP17_BYTE:BOOL=OFF
+
+//Read docs/configuration.md for details
+CATCH_CONFIG_NO_CPP17_OPTIONAL:BOOL=OFF
+
+//Read docs/configuration.md for details
+CATCH_CONFIG_NO_CPP17_STRING_VIEW:BOOL=OFF
+
+//Read docs/configuration.md for details
+CATCH_CONFIG_NO_CPP17_UNCAUGHT_EXCEPTIONS:BOOL=OFF
+
+//Read docs/configuration.md for details
+CATCH_CONFIG_NO_CPP17_VARIANT:BOOL=OFF
+
+//Read docs/configuration.md for details
+CATCH_CONFIG_NO_GETENV:BOOL=OFF
+
+//Read docs/configuration.md for details
+CATCH_CONFIG_NO_GLOBAL_NEXTAFTER:BOOL=OFF
+
+//Read docs/configuration.md for details
+CATCH_CONFIG_NO_POSIX_SIGNALS:BOOL=OFF
+
+//Read docs/configuration.md for details
+CATCH_CONFIG_NO_USE_ASYNC:BOOL=OFF
+
+//Read docs/configuration.md for details
+CATCH_CONFIG_NO_WCHAR:BOOL=OFF
+
+//Read docs/configuration.md for details
+CATCH_CONFIG_NO_WINDOWS_SEH:BOOL=OFF
+
+//Read docs/configuration.md for details
+CATCH_CONFIG_POSIX_SIGNALS:BOOL=OFF
+
+//Read docs/configuration.md for details
+CATCH_CONFIG_PREFIX_ALL:BOOL=OFF
+
+//Read docs/configuration.md for details
+CATCH_CONFIG_USE_ASYNC:BOOL=OFF
+
+//Read docs/configuration.md for details
+CATCH_CONFIG_WCHAR:BOOL=OFF
+
+//Read docs/configuration.md for details
+CATCH_CONFIG_WINDOWS_CRTDBG:BOOL=OFF
+
+//Read docs/configuration.md for details
+CATCH_CONFIG_WINDOWS_SEH:BOOL=OFF
+
+//Build tests, enable warnings, enable Werror, etc
+CATCH_DEVELOPMENT_BUILD:BOOL=OFF
+
+//Install documentation alongside library
+CATCH_INSTALL_DOCS:BOOL=ON
+
+//Install extras (CMake scripts, debugger helpers) alongside library
+CATCH_INSTALL_EXTRAS:BOOL=ON
+
 //Path to a program.
 CMAKE_AR:FILEPATH=C:/Program Files/Microsoft Visual Studio/2022/Professional/VC/Tools/MSVC/14.33.31629/bin/Hostx64/x64/lib.exe
 
@@ -279,6 +434,18 @@ CTEST_SUBMIT_RETRY_COUNT:STRING=3
 
 //How long to wait between timed-out CTest submissions.
 CTEST_SUBMIT_RETRY_DELAY:STRING=5
+
+//Dependencies for the target
+Catch2WithMain_LIB_DEPENDS:STATIC=general;Catch2;
+
+//Value Computed by CMake
+Catch2_BINARY_DIR:STATIC=C:/Users/pagliani/source/repos/ComuFrame/Builds/ExternalLib/Catch2
+
+//Value Computed by CMake
+Catch2_IS_TOP_LEVEL:STATIC=OFF
+
+//Value Computed by CMake
+Catch2_SOURCE_DIR:STATIC=C:/Users/pagliani/source/repos/ComuFrame/ExternalLib/Catch2
 
 //Value Computed by CMake
 ComuFrame_BINARY_DIR:STATIC=C:/Users/pagliani/source/repos/ComuFrame/Builds
@@ -572,7 +739,7 @@ CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_MT
 CMAKE_MT-ADVANCED:INTERNAL=1
 //number of local generators
-CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=6
+CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=8
 //Platform information initialized
 CMAKE_PLATFORM_INFO_INITIALIZED:INTERNAL=1
 //noop for ranlib
@@ -626,6 +793,10 @@ COVERAGE_EXTRA_FLAGS-ADVANCED:INTERNAL=1
 CTEST_SUBMIT_RETRY_COUNT-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CTEST_SUBMIT_RETRY_DELAY
 CTEST_SUBMIT_RETRY_DELAY-ADVANCED:INTERNAL=1
+//Project GUID
+Catch2WithMain_GUID_CMAKE:INTERNAL=8bd3552a-2cfb-4a59-ab15-2031b97ada1e
+//Project GUID
+Catch2_GUID_CMAKE:INTERNAL=8d538cbe-01bf-4a2e-a98a-6c368fdf13d7
 //ADVANCED property for variable: DART_TESTING_TIMEOUT
 DART_TESTING_TIMEOUT-ADVANCED:INTERNAL=1
 //Details about finding Threads

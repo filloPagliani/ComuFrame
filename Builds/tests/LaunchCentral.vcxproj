@@ -244,11 +244,11 @@
     </ProjectReference>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <CustomBuild Include="C:\Users\pagliani\source\repos\ComuFrame\Testing\CMakeLists.txt">
+    <CustomBuild Include="C:\Users\pagliani\source\repos\ComuFrame\tests\CMakeLists.txt">
       <UseUtf8Encoding>Always</UseUtf8Encoding>
-      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Building Custom Rule C:/Users/pagliani/source/repos/ComuFrame/Testing/CMakeLists.txt</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Building Custom Rule C:/Users/pagliani/source/repos/ComuFrame/tests/CMakeLists.txt</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
-"C:\Program Files\Microsoft Visual Studio\2022\Professional\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -SC:/Users/pagliani/source/repos/ComuFrame -BC:/Users/pagliani/source/repos/ComuFrame/Builds --check-stamp-file C:/Users/pagliani/source/repos/ComuFrame/Builds/Testing/CMakeFiles/generate.stamp
+"C:\Program Files\Microsoft Visual Studio\2022\Professional\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -SC:/Users/pagliani/source/repos/ComuFrame -BC:/Users/pagliani/source/repos/ComuFrame/Builds --check-stamp-file C:/Users/pagliani/source/repos/ComuFrame/Builds/tests/CMakeFiles/generate.stamp
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -257,11 +257,11 @@ exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
       <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">%(AdditionalInputs)</AdditionalInputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Users\pagliani\source\repos\ComuFrame\Builds\Testing\CMakeFiles\generate.stamp</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Users\pagliani\source\repos\ComuFrame\Builds\tests\CMakeFiles\generate.stamp</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
-      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Building Custom Rule C:/Users/pagliani/source/repos/ComuFrame/Testing/CMakeLists.txt</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Building Custom Rule C:/Users/pagliani/source/repos/ComuFrame/tests/CMakeLists.txt</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
-"C:\Program Files\Microsoft Visual Studio\2022\Professional\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -SC:/Users/pagliani/source/repos/ComuFrame -BC:/Users/pagliani/source/repos/ComuFrame/Builds --check-stamp-file C:/Users/pagliani/source/repos/ComuFrame/Builds/Testing/CMakeFiles/generate.stamp
+"C:\Program Files\Microsoft Visual Studio\2022\Professional\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -SC:/Users/pagliani/source/repos/ComuFrame -BC:/Users/pagliani/source/repos/ComuFrame/Builds --check-stamp-file C:/Users/pagliani/source/repos/ComuFrame/Builds/tests/CMakeFiles/generate.stamp
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -270,11 +270,11 @@ exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
       <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">%(AdditionalInputs)</AdditionalInputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Users\pagliani\source\repos\ComuFrame\Builds\Testing\CMakeFiles\generate.stamp</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Users\pagliani\source\repos\ComuFrame\Builds\tests\CMakeFiles\generate.stamp</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
-      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">Building Custom Rule C:/Users/pagliani/source/repos/ComuFrame/Testing/CMakeLists.txt</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">Building Custom Rule C:/Users/pagliani/source/repos/ComuFrame/tests/CMakeLists.txt</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">setlocal
-"C:\Program Files\Microsoft Visual Studio\2022\Professional\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -SC:/Users/pagliani/source/repos/ComuFrame -BC:/Users/pagliani/source/repos/ComuFrame/Builds --check-stamp-file C:/Users/pagliani/source/repos/ComuFrame/Builds/Testing/CMakeFiles/generate.stamp
+"C:\Program Files\Microsoft Visual Studio\2022\Professional\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -SC:/Users/pagliani/source/repos/ComuFrame -BC:/Users/pagliani/source/repos/ComuFrame/Builds --check-stamp-file C:/Users/pagliani/source/repos/ComuFrame/Builds/tests/CMakeFiles/generate.stamp
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -283,11 +283,11 @@ exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
       <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">%(AdditionalInputs)</AdditionalInputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\Users\pagliani\source\repos\ComuFrame\Builds\Testing\CMakeFiles\generate.stamp</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\Users\pagliani\source\repos\ComuFrame\Builds\tests\CMakeFiles\generate.stamp</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkObjects>
-      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">Building Custom Rule C:/Users/pagliani/source/repos/ComuFrame/Testing/CMakeLists.txt</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">Building Custom Rule C:/Users/pagliani/source/repos/ComuFrame/tests/CMakeLists.txt</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">setlocal
-"C:\Program Files\Microsoft Visual Studio\2022\Professional\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -SC:/Users/pagliani/source/repos/ComuFrame -BC:/Users/pagliani/source/repos/ComuFrame/Builds --check-stamp-file C:/Users/pagliani/source/repos/ComuFrame/Builds/Testing/CMakeFiles/generate.stamp
+"C:\Program Files\Microsoft Visual Studio\2022\Professional\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -SC:/Users/pagliani/source/repos/ComuFrame -BC:/Users/pagliani/source/repos/ComuFrame/Builds --check-stamp-file C:/Users/pagliani/source/repos/ComuFrame/Builds/tests/CMakeFiles/generate.stamp
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -296,12 +296,12 @@ exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
       <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">%(AdditionalInputs)</AdditionalInputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\Users\pagliani\source\repos\ComuFrame\Builds\Testing\CMakeFiles\generate.stamp</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\Users\pagliani\source\repos\ComuFrame\Builds\tests\CMakeFiles\generate.stamp</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</LinkObjects>
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="C:\Users\pagliani\source\repos\ComuFrame\Testing\LaunchCentral.cpp" />
+    <ClCompile Include="C:\Users\pagliani\source\repos\ComuFrame\tests\LaunchCentral.cpp" />
     <ClCompile Include="C:\Users\pagliani\source\repos\ComuFrame\ComuFrame\Central.cpp" />
     <ClInclude Include="C:\Users\pagliani\source\repos\ComuFrame\ComuFrame\Central.h" />
     <ClCompile Include="C:\Users\pagliani\source\repos\ComuFrame\ComuFrame\utils.cpp" />

@@ -1,5 +1,3 @@
-#include <stdio.h>
-#include <iostream>
 #include "../ComuFrame/Central.h"
 
 int main() {

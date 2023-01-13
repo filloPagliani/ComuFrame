@@ -4,6 +4,7 @@
 #include <stdio.h>
 #include <iostream>
 #include <thread>
+#include "DataNode.h"
 
 using namespace zmq;
 

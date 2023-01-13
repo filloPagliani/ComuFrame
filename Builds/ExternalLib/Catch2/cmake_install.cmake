@@ -1,4 +1,4 @@
-# Install script for directory: C:/Users/pagliani/source/repos/ComuFrame
+# Install script for directory: C:/Users/pagliani/source/repos/ComuFrame/ExternalLib/Catch2
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -33,27 +33,8 @@ if(NOT DEFINED CMAKE_CROSSCOMPILING)
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
-  # Include the install script for the subdirectory.
-  include("C:/Users/pagliani/source/repos/ComuFrame/Builds/ComuFrame/cmake_install.cmake")
+  # Include the install script for each subdirectory.
+  include("C:/Users/pagliani/source/repos/ComuFrame/Builds/ExternalLib/Catch2/src/cmake_install.cmake")
+
 endif()
 
-if(NOT CMAKE_INSTALL_LOCAL_ONLY)
-  # Include the install script for the subdirectory.
-  include("C:/Users/pagliani/source/repos/ComuFrame/Builds/ExternalLib/cmake_install.cmake")
-endif()
-
-if(NOT CMAKE_INSTALL_LOCAL_ONLY)
-  # Include the install script for the subdirectory.
-  include("C:/Users/pagliani/source/repos/ComuFrame/Builds/tests/cmake_install.cmake")
-endif()
-
-if(CMAKE_INSTALL_COMPONENT)
-  set(CMAKE_INSTALL_MANIFEST "install_manifest_${CMAKE_INSTALL_COMPONENT}.txt")
-else()
-  set(CMAKE_INSTALL_MANIFEST "install_manifest.txt")
-endif()
-
-string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
-       "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "C:/Users/pagliani/source/repos/ComuFrame/Builds/${CMAKE_INSTALL_MANIFEST}"
-     "${CMAKE_INSTALL_MANIFEST_CONTENT}")

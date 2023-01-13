@@ -1,11 +1,9 @@
 ﻿#include "ComuFrame.h"
 #include "zmq.hpp"
 #include "zmq_addon.hpp"
-#include "Node.h"
-#include "Central.h"
 #include "tinyxml2.h"
 #include <thread>
-using namespace std;
+#include "DataNode.h"
 using namespace zmq;
 
 //default settings
@@ -25,20 +23,16 @@ int main()
 		pubPort = urlElement->FirstChildElement("pubPort")->FirstAttribute()->Value();
 		//std::cout << pubPort;
 	}
-	
-	Central central(url+servicePort);
-	std::thread centralThread(&Central::initCentral, &central);
-	centralThread.detach();
-
-	Node luca(url + servicePort, "luca");
-	std::thread lucaThread(&Node::initNode, &luca);
-	lucaThread.detach();
-	
-	Node fillo(url + servicePort, "fillo");
-	std::thread filloThread(&Node::initNode, &fillo);
-	filloThread.detach();
-
-	string exit;
+	DataNode dataTest("fakeNode");
+	std::cout << dataTest.getSender() << "\n";
+	std::unordered_map<std::string, std::string> aPacket = {
+		{"fuel", "int"},
+		{"positionx","double"},
+		{"positionY","double"}
+	};
+	dataTest.addPacket(aPacket);
+	std::cout << dataTest.getData().front()["fuel"] << "\n";
+	std::string exit;
 	std::cin >> exit ;
 	
 	return 0;

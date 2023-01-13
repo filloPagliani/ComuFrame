@@ -22,11 +22,11 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{52E0CE50-A9E3-367E-BE09-F844D71829C8}</ProjectGuid>
+    <ProjectGuid>{2B690EA2-E113-3783-8EF2-641DD0242ECD}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
     <WindowsTargetPlatformVersion>10.0.19041.0</WindowsTargetPlatformVersion>
     <Platform>x64</Platform>
-    <ProjectName>LaunchCentral</ProjectName>
+    <ProjectName>LaunchNode</ProjectName>
     <VCProjectUpgraderObjectName>NoUpgrade</VCProjectUpgraderObjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -60,26 +60,26 @@
   <PropertyGroup>
     <_ProjectFileVersion>10.0.20506.1</_ProjectFileVersion>
     <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Users\pagliani\source\repos\ComuFrame\Builds\bin\Debug\</OutDir>
-    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">LaunchCentral.dir\Debug\</IntDir>
-    <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">LaunchCentral</TargetName>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">LaunchNode.dir\Debug\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">LaunchNode</TargetName>
     <TargetExt Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.exe</TargetExt>
     <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</LinkIncremental>
     <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</GenerateManifest>
     <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Users\pagliani\source\repos\ComuFrame\Builds\bin\Release\</OutDir>
-    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">LaunchCentral.dir\Release\</IntDir>
-    <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">LaunchCentral</TargetName>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">LaunchNode.dir\Release\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">LaunchNode</TargetName>
     <TargetExt Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.exe</TargetExt>
     <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkIncremental>
     <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</GenerateManifest>
     <OutDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\Users\pagliani\source\repos\ComuFrame\Builds\bin\MinSizeRel\</OutDir>
-    <IntDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">LaunchCentral.dir\MinSizeRel\</IntDir>
-    <TargetName Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">LaunchCentral</TargetName>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">LaunchNode.dir\MinSizeRel\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">LaunchNode</TargetName>
     <TargetExt Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">.exe</TargetExt>
     <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkIncremental>
     <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">true</GenerateManifest>
     <OutDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\Users\pagliani\source\repos\ComuFrame\Builds\bin\RelWithDebInfo\</OutDir>
-    <IntDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">LaunchCentral.dir\RelWithDebInfo\</IntDir>
-    <TargetName Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">LaunchCentral</TargetName>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">LaunchNode.dir\RelWithDebInfo\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">LaunchNode</TargetName>
     <TargetExt Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">.exe</TargetExt>
     <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">true</LinkIncremental>
     <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">true</GenerateManifest>
@@ -116,8 +116,8 @@
       <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
-      <ImportLibrary>C:/Users/pagliani/source/repos/ComuFrame/Builds/lib/Debug/LaunchCentral.lib</ImportLibrary>
-      <ProgramDataBaseFile>C:/Users/pagliani/source/repos/ComuFrame/Builds/bin/Debug/LaunchCentral.pdb</ProgramDataBaseFile>
+      <ImportLibrary>C:/Users/pagliani/source/repos/ComuFrame/Builds/lib/Debug/LaunchNode.lib</ImportLibrary>
+      <ProgramDataBaseFile>C:/Users/pagliani/source/repos/ComuFrame/Builds/bin/Debug/LaunchNode.pdb</ProgramDataBaseFile>
       <SubSystem>Console</SubSystem>
     </Link>
     <ProjectReference>
@@ -156,8 +156,8 @@
       <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
       <GenerateDebugInformation>false</GenerateDebugInformation>
       <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
-      <ImportLibrary>C:/Users/pagliani/source/repos/ComuFrame/Builds/lib/Release/LaunchCentral.lib</ImportLibrary>
-      <ProgramDataBaseFile>C:/Users/pagliani/source/repos/ComuFrame/Builds/bin/Release/LaunchCentral.pdb</ProgramDataBaseFile>
+      <ImportLibrary>C:/Users/pagliani/source/repos/ComuFrame/Builds/lib/Release/LaunchNode.lib</ImportLibrary>
+      <ProgramDataBaseFile>C:/Users/pagliani/source/repos/ComuFrame/Builds/bin/Release/LaunchNode.pdb</ProgramDataBaseFile>
       <SubSystem>Console</SubSystem>
     </Link>
     <ProjectReference>
@@ -196,8 +196,8 @@
       <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
       <GenerateDebugInformation>false</GenerateDebugInformation>
       <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
-      <ImportLibrary>C:/Users/pagliani/source/repos/ComuFrame/Builds/lib/MinSizeRel/LaunchCentral.lib</ImportLibrary>
-      <ProgramDataBaseFile>C:/Users/pagliani/source/repos/ComuFrame/Builds/bin/MinSizeRel/LaunchCentral.pdb</ProgramDataBaseFile>
+      <ImportLibrary>C:/Users/pagliani/source/repos/ComuFrame/Builds/lib/MinSizeRel/LaunchNode.lib</ImportLibrary>
+      <ProgramDataBaseFile>C:/Users/pagliani/source/repos/ComuFrame/Builds/bin/MinSizeRel/LaunchNode.pdb</ProgramDataBaseFile>
       <SubSystem>Console</SubSystem>
     </Link>
     <ProjectReference>
@@ -235,8 +235,8 @@
       <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
-      <ImportLibrary>C:/Users/pagliani/source/repos/ComuFrame/Builds/lib/RelWithDebInfo/LaunchCentral.lib</ImportLibrary>
-      <ProgramDataBaseFile>C:/Users/pagliani/source/repos/ComuFrame/Builds/bin/RelWithDebInfo/LaunchCentral.pdb</ProgramDataBaseFile>
+      <ImportLibrary>C:/Users/pagliani/source/repos/ComuFrame/Builds/lib/RelWithDebInfo/LaunchNode.lib</ImportLibrary>
+      <ProgramDataBaseFile>C:/Users/pagliani/source/repos/ComuFrame/Builds/bin/RelWithDebInfo/LaunchNode.pdb</ProgramDataBaseFile>
       <SubSystem>Console</SubSystem>
     </Link>
     <ProjectReference>
@@ -244,11 +244,11 @@
     </ProjectReference>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <CustomBuild Include="C:\Users\pagliani\source\repos\ComuFrame\Testing\CMakeLists.txt">
+    <CustomBuild Include="C:\Users\pagliani\source\repos\ComuFrame\tests\CMakeLists.txt">
       <UseUtf8Encoding>Always</UseUtf8Encoding>
-      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Building Custom Rule C:/Users/pagliani/source/repos/ComuFrame/Testing/CMakeLists.txt</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Building Custom Rule C:/Users/pagliani/source/repos/ComuFrame/tests/CMakeLists.txt</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
-"C:\Program Files\Microsoft Visual Studio\2022\Professional\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -SC:/Users/pagliani/source/repos/ComuFrame -BC:/Users/pagliani/source/repos/ComuFrame/Builds --check-stamp-file C:/Users/pagliani/source/repos/ComuFrame/Builds/Testing/CMakeFiles/generate.stamp
+"C:\Program Files\Microsoft Visual Studio\2022\Professional\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -SC:/Users/pagliani/source/repos/ComuFrame -BC:/Users/pagliani/source/repos/ComuFrame/Builds --check-stamp-file C:/Users/pagliani/source/repos/ComuFrame/Builds/tests/CMakeFiles/generate.stamp
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -257,11 +257,11 @@ exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
       <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">%(AdditionalInputs)</AdditionalInputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Users\pagliani\source\repos\ComuFrame\Builds\Testing\CMakeFiles\generate.stamp</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Users\pagliani\source\repos\ComuFrame\Builds\tests\CMakeFiles\generate.stamp</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
-      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Building Custom Rule C:/Users/pagliani/source/repos/ComuFrame/Testing/CMakeLists.txt</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Building Custom Rule C:/Users/pagliani/source/repos/ComuFrame/tests/CMakeLists.txt</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
-"C:\Program Files\Microsoft Visual Studio\2022\Professional\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -SC:/Users/pagliani/source/repos/ComuFrame -BC:/Users/pagliani/source/repos/ComuFrame/Builds --check-stamp-file C:/Users/pagliani/source/repos/ComuFrame/Builds/Testing/CMakeFiles/generate.stamp
+"C:\Program Files\Microsoft Visual Studio\2022\Professional\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -SC:/Users/pagliani/source/repos/ComuFrame -BC:/Users/pagliani/source/repos/ComuFrame/Builds --check-stamp-file C:/Users/pagliani/source/repos/ComuFrame/Builds/tests/CMakeFiles/generate.stamp
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -270,11 +270,11 @@ exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
       <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">%(AdditionalInputs)</AdditionalInputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Users\pagliani\source\repos\ComuFrame\Builds\Testing\CMakeFiles\generate.stamp</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Users\pagliani\source\repos\ComuFrame\Builds\tests\CMakeFiles\generate.stamp</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
-      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">Building Custom Rule C:/Users/pagliani/source/repos/ComuFrame/Testing/CMakeLists.txt</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">Building Custom Rule C:/Users/pagliani/source/repos/ComuFrame/tests/CMakeLists.txt</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">setlocal
-"C:\Program Files\Microsoft Visual Studio\2022\Professional\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -SC:/Users/pagliani/source/repos/ComuFrame -BC:/Users/pagliani/source/repos/ComuFrame/Builds --check-stamp-file C:/Users/pagliani/source/repos/ComuFrame/Builds/Testing/CMakeFiles/generate.stamp
+"C:\Program Files\Microsoft Visual Studio\2022\Professional\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -SC:/Users/pagliani/source/repos/ComuFrame -BC:/Users/pagliani/source/repos/ComuFrame/Builds --check-stamp-file C:/Users/pagliani/source/repos/ComuFrame/Builds/tests/CMakeFiles/generate.stamp
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -283,11 +283,11 @@ exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
       <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">%(AdditionalInputs)</AdditionalInputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\Users\pagliani\source\repos\ComuFrame\Builds\Testing\CMakeFiles\generate.stamp</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\Users\pagliani\source\repos\ComuFrame\Builds\tests\CMakeFiles\generate.stamp</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkObjects>
-      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">Building Custom Rule C:/Users/pagliani/source/repos/ComuFrame/Testing/CMakeLists.txt</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">Building Custom Rule C:/Users/pagliani/source/repos/ComuFrame/tests/CMakeLists.txt</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">setlocal
-"C:\Program Files\Microsoft Visual Studio\2022\Professional\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -SC:/Users/pagliani/source/repos/ComuFrame -BC:/Users/pagliani/source/repos/ComuFrame/Builds --check-stamp-file C:/Users/pagliani/source/repos/ComuFrame/Builds/Testing/CMakeFiles/generate.stamp
+"C:\Program Files\Microsoft Visual Studio\2022\Professional\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -SC:/Users/pagliani/source/repos/ComuFrame -BC:/Users/pagliani/source/repos/ComuFrame/Builds --check-stamp-file C:/Users/pagliani/source/repos/ComuFrame/Builds/tests/CMakeFiles/generate.stamp
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -296,18 +296,16 @@ exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
       <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">%(AdditionalInputs)</AdditionalInputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\Users\pagliani\source\repos\ComuFrame\Builds\Testing\CMakeFiles\generate.stamp</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\Users\pagliani\source\repos\ComuFrame\Builds\tests\CMakeFiles\generate.stamp</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</LinkObjects>
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="C:\Users\pagliani\source\repos\ComuFrame\Testing\LaunchCentral.cpp" />
-    <ClCompile Include="C:\Users\pagliani\source\repos\ComuFrame\ComuFrame\Central.cpp" />
-    <ClInclude Include="C:\Users\pagliani\source\repos\ComuFrame\ComuFrame\Central.h" />
+    <ClCompile Include="C:\Users\pagliani\source\repos\ComuFrame\tests\LaunchNode.cpp" />
+    <ClCompile Include="C:\Users\pagliani\source\repos\ComuFrame\ComuFrame\Node.cpp" />
+    <ClInclude Include="C:\Users\pagliani\source\repos\ComuFrame\ComuFrame\Node.h" />
     <ClCompile Include="C:\Users\pagliani\source\repos\ComuFrame\ComuFrame\utils.cpp" />
     <ClInclude Include="C:\Users\pagliani\source\repos\ComuFrame\ComuFrame\utils.h" />
-    <ClCompile Include="C:\Users\pagliani\source\repos\ComuFrame\ComuFrame\DataNode.cpp" />
-    <ClInclude Include="C:\Users\pagliani\source\repos\ComuFrame\ComuFrame\DataNode.h" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="C:\Users\pagliani\source\repos\ComuFrame\Builds\ZERO_CHECK.vcxproj">

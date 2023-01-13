@@ -1,5 +1,3 @@
-#include <stdio.h>
-#include <iostream>
 #include "../ComuFrame/Node.h"
 
 int main() {

@@ -63,3 +63,9 @@ std::vector<std::unordered_map<std::string, std::string>> DataNode::getData()
 {
 	return DataNode::packetTypes;
 }
+
+//setter
+void DataNode::setSender(std::string sender)
+{
+	this->sender = sender;
+}

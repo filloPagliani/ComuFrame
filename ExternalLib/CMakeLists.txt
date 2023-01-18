@@ -1,7 +1,27 @@
 #-----------tinyXML2-------
+option(tinyxml2_BUILD_TESTING "" OFF) 
+option(tinyxml2_SHARED_LIBS "" ON)
 add_subdirectory("tinyxml2")
-find_package(tinyxml2)
 target_link_libraries(ComuFrame tinyxml2)
+
+install(TARGETS tinyxml2
+    COMPONENT Public
+    ARCHIVE DESTINATION ${CMAKE_INSTALL_LIBDIR}
+    RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}
+)
+
+install(FILES tinyxml2/tinyxml2.h
+    DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/ThirdParties
+    COMPONENT Common
+)
+
+if (MSVC)
+    install(
+        FILES $<TARGET_PDB_FILE:tinyxml2>
+        COMPONENT PDB
+        DESTINATION ${CMAKE_INSTALL_BINDIR}
+    )
+endif()
 
 #-----------libzmq---------
 set(ZMQ_BUILD_TESTS OFF CACHE BOOL "" FORCE)
@@ -25,7 +45,7 @@ target_link_libraries(ComuFrame cppzmq)
 target_include_directories(cppzmq
     INTERFACE
         "${CMAKE_CURRENT_LIST_DIR}/cppzmq/include"
-)
+) 
 
 #-----------Catch2---------
 

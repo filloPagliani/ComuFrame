@@ -2,10 +2,29 @@
 
 using namespace zmq;
 
-Node::Node(std::string url, std::string identity)
+Node::Node(std::string identity)
 {
-	this->url = url;
 	this->identity = identity;
+	tinyxml2::XMLDocument configDoc;
+	if (tinyxml2::XML_SUCCESS != configDoc.LoadFile("C:/Users/pagliani/source/repos/ComuFrame/Config.xml")) { 
+		std::cout << "can't load configration file, using default options";
+		this->url = "tcp://127.0.0.1:5555";
+	}
+	else {
+		tinyxml2::XMLElement* urlElement = configDoc.RootElement()->FirstChildElement("url");
+		this->url = urlElement->FirstAttribute()->Value();
+		this->url += urlElement->FirstChildElement("servicePort")->FirstAttribute()->Value();
+		try {
+			tinyxml2::XMLElement* nodeElement = configDoc.RootElement()->FirstChildElement(this->identity.c_str());
+			nodeElement = nodeElement->FirstChildElement("data");
+			this->dataNodeRequest = nodeElement->Value();
+			std::cout << this->dataNodeRequest << "\n";
+		}
+		catch (std::exception e) {
+			std::cout << "cannot find the configuration of " << this->identity << " inside the configuration file. exception: " << e.what();
+		}
+		//pubPort = urlElement->FirstChildElement("pubPort")->FirstAttribute()->Value();
+	}
 }
 
 Node::~Node()
@@ -65,3 +84,6 @@ std::string Node::getidentity() {
 	return Node::identity;
 }
 
+std::string Node::getDataNodeRequest() {
+	return this->dataNodeRequest;
+}

@@ -17,6 +17,7 @@ public:
 	void initCentral();
 
 	//Getter
+	std::vector<DataNode> getDataNodes();
 	std::string getUrl();
 	int getExpectedClient();
 
@@ -25,6 +26,7 @@ private:
 	int expectedClient = 0;
 	context_t ctx;
 	std::vector<std::string> connectedClients;
+	std::vector<DataNode> dataNodes;
 
 	void initServiceThread();
 	std::vector<std::string> registerClient(socket_t * sock);

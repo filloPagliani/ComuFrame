@@ -55,6 +55,7 @@ using namespace zmq;
 
 			 auto res = recv_multipart( *sock, std::back_inserter(registrationMSG));
 			 clients.push_back(registrationMSG.popstr());
+			 this->dataNodes.push_back(DataNode(clients.back()));
 			 registrationMSG.clear();
 			 registrationMSG.pushstr("connected");
 			 registrationMSG.pushstr("");
@@ -66,6 +67,8 @@ using namespace zmq;
 		 return clients;
 	 }
 
+
+
 	 //Getter
 	 std::string Central::getUrl() {
 		 return Central::url;
@@ -75,5 +78,8 @@ using namespace zmq;
 		 return Central::expectedClient;
 	 }
 
-
+	 std::vector<DataNode> Central::getDataNodes()
+	 {
+		 return this->dataNodes;
+	 }
 	

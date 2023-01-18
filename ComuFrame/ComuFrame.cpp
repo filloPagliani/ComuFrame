@@ -17,11 +17,8 @@ int main()
 	if (tinyxml2::XML_SUCCESS != configDoc.LoadFile("C:/Users/pagliani/source/repos/ComuFrame/Config.xml")) { std::cout << "can't load configration file, using default options"; }
 	else {
 		tinyxml2::XMLElement * urlElement = configDoc.RootElement()->FirstChildElement("url");
-		//std::cout << urlElement->FirstAttribute()->Value();
 		servicePort = urlElement->FirstChildElement("servicePort")->FirstAttribute()->Value();
-		//std::cout << servicePort;
 		pubPort = urlElement->FirstChildElement("pubPort")->FirstAttribute()->Value();
-		//std::cout << pubPort;
 	}
 	DataNode dataTest("fakeNode");
 	std::cout << dataTest.getSender() << "\n";

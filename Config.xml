@@ -7,4 +7,10 @@
 		<pubPort port=":5556">
 		</pubPort>
 	</url>
+	<nodeTest1>
+		<data>
+			{anInt:int}
+			{aFloat:float}
+		</data>
+	</nodeTest1>
 </config>

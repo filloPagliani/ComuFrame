@@ -1,5 +1,4 @@
 cmake_minimum_required (VERSION 3.18)
-target_link_libraries(ComuFrame)
 
 add_executable(LaunchCentral 
 	"LaunchCentral.cpp"
@@ -8,17 +7,25 @@ add_executable(LaunchCentral
 	"../ComuFrame/utils.cpp" 
 	"../ComuFrame/utils.h" 
 	"../ComuFrame/DataNode.cpp" 
-	"../ComuFrame/DataNode.h")
+	"../ComuFrame/DataNode.h"
+)
 add_executable(LaunchNode 
 	"LaunchNode.cpp" 
 	"../ComuFrame/Node.cpp" 
 	"../ComuFrame/Node.h" 
 	"../ComuFrame/utils.cpp" 
-	"../ComuFrame/utils.h")
+	"../ComuFrame/utils.h"
+)
 add_executable(Tests
 	"DataNodeTest.cpp"
+	"NodeRegistrationTest.cpp"
 	"../ComuFrame/DataNode.cpp"
-	"../ComuFrame/DataNode.h")
+	"../ComuFrame/DataNode.h"
+	"../ComuFrame/Node.h" 
+	"../ComuFrame/Node.cpp"
+	"../ComuFrame/utils.cpp" 
+	"../ComuFrame/utils.h"
+)
 
-target_link_libraries(libzmq)
-target_link_libraries(Tests PRIVATE Catch2::Catch2WithMain)
+target_link_libraries(Tests PRIVATE Catch2::Catch2WithMain tinyxml2 libzmq)
+target_link_libraries(LaunchNode tinyxml2)

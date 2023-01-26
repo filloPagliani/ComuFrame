@@ -17,8 +17,8 @@ Node::Node(std::string identity)
 		try {
 			tinyxml2::XMLElement* nodeElement = configDoc.RootElement()->FirstChildElement(this->identity.c_str());
 			nodeElement = nodeElement->FirstChildElement("data");
-			this->dataNodeRequest = nodeElement->Value();
-			std::cout << this->dataNodeRequest << "\n";
+			//TODO sistema le eccezzioni es: se non c'è l'array, se non ci sono i nomi dei pack ecc
+			this->dataNodeRequest = jsoncons::json::parse(nodeElement->GetText());
 		}
 		catch (std::exception e) {
 			std::cout << "cannot find the configuration of " << this->identity << " inside the configuration file. exception: " << e.what();
@@ -54,15 +54,25 @@ void Node::initServiceThread() {
 	}
 	serviceSocket.connect(url);
 	std::cout << identity << ", serviceThread: Initialized and connected to " << Node::url <<"\n";
+	
+	multipart_t registrationMSG("RegistrationMSG");
+	registrationMSG.addstr(this->dataNodeRequest.as_string());
+	if (registrationMSG.send(serviceSocket)) {
+		std::cout << this->identity << ", ServiceThread: registration message sent";
+	}
+	else {
+		//TODO manage regmes sending error
+		std::cout << this->identity << ", ServiceThread: failed trying to send registration message";
+	}
 
-	message_t registrationMSG("RegistrationMSG", sizeof("RegistrationMSG"));
+	/*message_t registrationMSG("RegistrationMSG", sizeof("RegistrationMSG"));
 	if (true == serviceSocket.send(registrationMSG)) {
 		std::cout << identity << ", ServiceThread: message sent \n";
 	}
 	else {
 		//manage sending error
 		std::cout << "something went wrong with sending";
-	}
+	}*/
 
 	socket_t toMainSocket = initInprocSocket(&(Node::ctx), "inproc://serviceChannel", true);
 	//cleaning up
@@ -84,6 +94,6 @@ std::string Node::getidentity() {
 	return Node::identity;
 }
 
-std::string Node::getDataNodeRequest() {
+jsoncons::json Node::getDataNodeRequest() {
 	return this->dataNodeRequest;
 }

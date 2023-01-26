@@ -13,24 +13,6 @@ std::string pubPort = ":1001";
 
 int main()
 {
-	tinyxml2::XMLDocument configDoc;
-	if (tinyxml2::XML_SUCCESS != configDoc.LoadFile("C:/Users/pagliani/source/repos/ComuFrame/Config.xml")) { std::cout << "can't load configration file, using default options"; }
-	else {
-		tinyxml2::XMLElement * urlElement = configDoc.RootElement()->FirstChildElement("url");
-		servicePort = urlElement->FirstChildElement("servicePort")->FirstAttribute()->Value();
-		pubPort = urlElement->FirstChildElement("pubPort")->FirstAttribute()->Value();
-	}
-	DataNode dataTest("fakeNode");
-	std::cout << dataTest.getSender() << "\n";
-	std::unordered_map<std::string, std::string> aPacket = {
-		{"fuel", "int"},
-		{"positionx","double"},
-		{"positionY","double"}
-	};
-	dataTest.addPacket(aPacket);
-	std::cout << dataTest.getData().front()["fuel"] << "\n";
-	std::string exit;
-	std::cin >> exit ;
 	
 	return 0;
 }

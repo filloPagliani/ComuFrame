@@ -23,6 +23,15 @@ if (MSVC)
     )
 endif()
 
+#-----------jsoncons-------
+
+add_library(jsoncons INTERFACE)
+target_link_libraries(ComuFrame jsoncons)
+target_include_directories(jsoncons
+    INTERFACE
+        jsoncons/include
+)
+
 #-----------libzmq---------
 set(ZMQ_BUILD_TESTS OFF CACHE BOOL "" FORCE)
 set(ENABLE_CPACK    OFF CACHE BOOL "" FORCE)
@@ -50,3 +59,4 @@ target_include_directories(cppzmq
 #-----------Catch2---------
 
 add_subdirectory("Catch2")
+

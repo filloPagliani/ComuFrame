@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\pagliani\source\repos\ComuFrame\Builds\ExternalLib\jsoncons\CMakeFiles\e186568096e1bca5bb986ad5ecaaafc4\Experimental.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\jsoncons\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="C:\Users\pagliani\source\repos\ComuFrame\Builds\ExternalLib\jsoncons\CMakeFiles\Experimental" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{6816F404-CA9A-37E6-AF8D-1C02F3B2D760}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

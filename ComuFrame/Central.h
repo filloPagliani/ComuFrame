@@ -4,6 +4,8 @@
 #include <stdio.h>
 #include <iostream>
 #include <thread>
+#include "tinyxml2.h"
+#include "jsoncons/json.hpp"
 #include "DataNode.h"
 
 using namespace zmq;
@@ -12,7 +14,7 @@ class Central
 {
 public:
 
-	Central(std::string url);
+	Central();
 	~Central();
 	void initCentral();
 

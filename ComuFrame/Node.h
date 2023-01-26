@@ -2,6 +2,7 @@
 #include "zmq_addon.hpp"
 #include "utils.h"
 #include "tinyxml2.h"
+#include "jsoncons/json.hpp"
 #include <stdio.h>
 #include <iostream>
 #include <thread>
@@ -14,17 +15,14 @@ public:
 	Node(std::string identity);
 	~Node();
 	void initNode();
-	std::string getDataConfig();
-
-
 	//getter
 	std::string getUrl();
 	std::string getidentity();
-	std::string getDataNodeRequest();
+	jsoncons::json getDataNodeRequest();
 private:
 	std::string url;
 	std::string identity;
-	std::string dataNodeRequest;
+	jsoncons::json dataNodeRequest;
 	context_t ctx;
 	void initServiceThread();
 

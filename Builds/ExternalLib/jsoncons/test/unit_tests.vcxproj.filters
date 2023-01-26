@@ -1,0 +1,358 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\jsoncons\test\bson\src\bson_cursor_tests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\jsoncons\test\bson\src\bson_encoder_tests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\jsoncons\test\bson\src\bson_reader_tests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\jsoncons\test\bson\src\bson_decimal128_tests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\jsoncons\test\bson\src\bson_oid_tests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\jsoncons\test\bson\src\bson_test_suite.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\jsoncons\test\bson\src\encode_decode_bson_tests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\jsoncons\test\cbor\src\cbor_bitset_traits_tests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\jsoncons\test\cbor\src\cbor_cursor_tests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\jsoncons\test\cbor\src\cbor_cursor2_tests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\jsoncons\test\cbor\src\cbor_encoder_tests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\jsoncons\test\cbor\src\cbor_json_visitor2_tests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\jsoncons\test\cbor\src\cbor_reader_tests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\jsoncons\test\cbor\src\cbor_tests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\jsoncons\test\cbor\src\cbor_typed_array_tests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\jsoncons\test\cbor\src\decode_cbor_tests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\jsoncons\test\cbor\src\encode_cbor_tests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\jsoncons\test\csv\src\csv_cursor_tests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\jsoncons\test\csv\src\csv_subfield_tests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\jsoncons\test\csv\src\csv_tests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\jsoncons\test\csv\src\encode_decode_csv_tests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\jsoncons\test\fuzz_regression\src\fuzz_regression_tests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\jsoncons\test\jmespath\src\jmespath_expression_tests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\jsoncons\test\jmespath\src\jmespath_tests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\jsoncons\test\mergepatch\src\mergepatch_test_suite.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\jsoncons\test\jsonpatch\src\jsonpatch_test_suite.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\jsoncons\test\jsonpatch\src\jsonpatch_tests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\jsoncons\test\jsonpath\src\jsonpath_flatten_tests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\jsoncons\test\jsonpath\src\jsonpath_custom_function_tests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\jsoncons\test\jsonpath\src\jsonpath_json_query_tests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\jsoncons\test\jsonpath\src\jsonpath_json_replace_tests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\jsoncons\test\jsonpath\src\jsonpath_test_suite.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\jsoncons\test\jsonpointer\src\jsonpointer_flatten_tests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\jsoncons\test\jsonpointer\src\jsonpointer_tests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\jsoncons\test\jsonschema\src\format_validator_tests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\jsoncons\test\jsonschema\src\jsonschema_defaults_tests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\jsoncons\test\jsonschema\src\jsonschema_output_format_tests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\jsoncons\test\jsonschema\src\jsonschema_tests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\jsoncons\test\jsonschema\src\schema_version_tests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\jsoncons\test\msgpack\src\decode_msgpack_tests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\jsoncons\test\msgpack\src\encode_msgpack_tests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\jsoncons\test\msgpack\src\msgpack_bitset_traits_tests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\jsoncons\test\msgpack\src\msgpack_cursor_tests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\jsoncons\test\msgpack\src\msgpack_cursor2_tests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\jsoncons\test\msgpack\src\msgpack_encoder_tests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\jsoncons\test\msgpack\src\msgpack_tests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\jsoncons\test\msgpack\src\msgpack_timestamp_tests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\jsoncons\test\corelib\src\bigint_tests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\jsoncons\test\corelib\src\source_adaptor_tests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\jsoncons\test\corelib\src\byte_string_tests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\jsoncons\test\corelib\src\value_converter_tests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\jsoncons\test\corelib\src\decode_traits_tests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\jsoncons\test\corelib\src\detail\optional_tests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\jsoncons\test\corelib\src\detail\span_tests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\jsoncons\test\corelib\src\detail\string_view_tests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\jsoncons\test\corelib\src\detail\string_wrapper_tests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\jsoncons\test\corelib\src\detail\to_integer_tests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\jsoncons\test\corelib\src\double_round_trip_tests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\jsoncons\test\corelib\src\double_to_string_tests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\jsoncons\test\corelib\src\dtoa_tests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\jsoncons\test\corelib\src\encode_decode_json_tests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\jsoncons\test\corelib\src\encode_traits_tests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\jsoncons\test\corelib\src\error_recovery_tests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\jsoncons\test\corelib\src\json_array_tests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\jsoncons\test\corelib\src\json_as_tests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\jsoncons\test\corelib\src\json_bitset_traits_tests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\jsoncons\test\corelib\src\json_checker_tests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\jsoncons\test\corelib\src\json_comparator_tests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\jsoncons\test\corelib\src\json_const_pointer_tests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\jsoncons\test\corelib\src\json_constructor_tests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\jsoncons\test\corelib\src\json_cursor_tests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\jsoncons\test\corelib\src\json_encoder_tests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\jsoncons\test\corelib\src\json_exception_tests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\jsoncons\test\corelib\src\json_filter_tests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\jsoncons\test\corelib\src\json_in_place_update_tests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\jsoncons\test\corelib\src\json_integer_tests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\jsoncons\test\corelib\src\json_less_tests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\jsoncons\test\corelib\src\json_line_split_tests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\jsoncons\test\corelib\src\json_literal_operator_tests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\jsoncons\test\corelib\src\json_object_tests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\jsoncons\test\corelib\src\json_options_tests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\jsoncons\test\corelib\src\json_parse_error_tests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\jsoncons\test\corelib\src\json_parser_position_tests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\jsoncons\test\corelib\src\json_parser_tests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\jsoncons\test\corelib\src\json_proxy_tests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\jsoncons\test\corelib\src\json_push_back_tests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\jsoncons\test\corelib\src\json_reader_exception_tests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\jsoncons\test\corelib\src\json_reader_tests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\jsoncons\test\corelib\src\json_storage_tests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\jsoncons\test\corelib\src\json_swap_tests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\jsoncons\test\corelib\src\json_traits_macro_functional_tests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\jsoncons\test\corelib\src\json_traits_macro_tests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\jsoncons\test\corelib\src\json_traits_macro_limit_tests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\jsoncons\test\corelib\src\json_traits_name_macro_tests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\jsoncons\test\corelib\src\json_type_traits_chrono_tests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\jsoncons\test\corelib\src\json_type_traits_container_tests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\jsoncons\test\corelib\src\json_type_traits_tests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\jsoncons\test\corelib\src\json_validation_tests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\jsoncons\test\corelib\src\jsoncons_tests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\jsoncons\test\corelib\src\JSONTestSuite_tests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\jsoncons\test\corelib\src\ojson_tests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\jsoncons\test\corelib\src\order_preserving_json_object_tests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\jsoncons\test\corelib\src\parse_string_tests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\jsoncons\test\corelib\src\short_string_tests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\jsoncons\test\corelib\src\source_tests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\jsoncons\test\corelib\src\staj_iterator_tests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\jsoncons\test\corelib\src\stateful_allocator_tests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\jsoncons\test\corelib\src\string_to_double_tests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\jsoncons\test\corelib\src\unicode_conv_tests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\jsoncons\test\corelib\src\wjson_tests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\jsoncons\test\ubjson\src\decode_ubjson_tests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\jsoncons\test\ubjson\src\encode_ubjson_tests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\jsoncons\test\ubjson\src\ubjson_cursor_tests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\jsoncons\test\ubjson\src\ubjson_encoder_tests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\jsoncons\test\corelib\src\main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\jsoncons\test\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{F28D2A25-B745-3E75-A706-727BEB501C41}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

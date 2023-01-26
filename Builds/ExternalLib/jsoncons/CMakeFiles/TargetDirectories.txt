@@ -1,0 +1,11 @@
+C:/Users/pagliani/source/repos/ComuFrame/Builds/ExternalLib/jsoncons/CMakeFiles/Experimental.dir
+C:/Users/pagliani/source/repos/ComuFrame/Builds/ExternalLib/jsoncons/CMakeFiles/Nightly.dir
+C:/Users/pagliani/source/repos/ComuFrame/Builds/ExternalLib/jsoncons/CMakeFiles/Continuous.dir
+C:/Users/pagliani/source/repos/ComuFrame/Builds/ExternalLib/jsoncons/CMakeFiles/NightlyMemoryCheck.dir
+C:/Users/pagliani/source/repos/ComuFrame/Builds/ExternalLib/jsoncons/CMakeFiles/RUN_TESTS.dir
+C:/Users/pagliani/source/repos/ComuFrame/Builds/ExternalLib/jsoncons/CMakeFiles/INSTALL.dir
+C:/Users/pagliani/source/repos/ComuFrame/Builds/ExternalLib/jsoncons/CMakeFiles/ALL_BUILD.dir
+C:/Users/pagliani/source/repos/ComuFrame/Builds/ExternalLib/jsoncons/CMakeFiles/ZERO_CHECK.dir
+C:/Users/pagliani/source/repos/ComuFrame/Builds/ExternalLib/jsoncons/test/CMakeFiles/unit_tests.dir
+C:/Users/pagliani/source/repos/ComuFrame/Builds/ExternalLib/jsoncons/test/CMakeFiles/RUN_TESTS.dir
+C:/Users/pagliani/source/repos/ComuFrame/Builds/ExternalLib/jsoncons/test/CMakeFiles/INSTALL.dir

@@ -1,0 +1,447 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <PreferredToolArchitecture>x64</PreferredToolArchitecture>
+  </PropertyGroup>
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="MinSizeRel|x64">
+      <Configuration>MinSizeRel</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="RelWithDebInfo|x64">
+      <Configuration>RelWithDebInfo</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{040E4889-0D1E-304D-B49E-21984D25DB60}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <WindowsTargetPlatformVersion>10.0.19041.0</WindowsTargetPlatformVersion>
+    <Platform>x64</Platform>
+    <ProjectName>unit_tests</ProjectName>
+    <VCProjectUpgraderObjectName>NoUpgrade</VCProjectUpgraderObjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.20506.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Users\pagliani\source\repos\ComuFrame\Builds\ExternalLib\jsoncons\test\Debug\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">unit_tests.dir\Debug\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">unit_tests</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.exe</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</GenerateManifest>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Users\pagliani\source\repos\ComuFrame\Builds\ExternalLib\jsoncons\test\Release\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">unit_tests.dir\Release\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">unit_tests</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.exe</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</GenerateManifest>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\Users\pagliani\source\repos\ComuFrame\Builds\ExternalLib\jsoncons\test\MinSizeRel\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">unit_tests.dir\MinSizeRel\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">unit_tests</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">.exe</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</GenerateManifest>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\Users\pagliani\source\repos\ComuFrame\Builds\ExternalLib\jsoncons\test\RelWithDebInfo\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">unit_tests.dir\RelWithDebInfo\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">unit_tests</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">.exe</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">true</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</GenerateManifest>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\jsoncons\include;C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\jsoncons\test;C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\jsoncons\third_party;C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\jsoncons\third_party\catch;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /bigobj</AdditionalOptions>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>Disabled</InlineFunctionExpansion>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <Optimization>Disabled</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <UseFullPaths>false</UseFullPaths>
+      <WarningLevel>Level4</WarningLevel>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;CMAKE_INTDIR="Debug"</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_DEBUG;_WINDOWS;CMAKE_INTDIR=\"Debug\"</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\jsoncons\include;C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\jsoncons\test;C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\jsoncons\third_party;C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\jsoncons\third_party\catch;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\jsoncons\include;C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\jsoncons\test;C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\jsoncons\third_party;C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\jsoncons\third_party\catch;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Link>
+      <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>C:/Users/pagliani/source/repos/ComuFrame/Builds/ExternalLib/jsoncons/test/Debug/unit_tests.lib</ImportLibrary>
+      <ProgramDataBaseFile>C:/Users/pagliani/source/repos/ComuFrame/Builds/ExternalLib/jsoncons/test/Debug/unit_tests.pdb</ProgramDataBaseFile>
+      <SubSystem>Console</SubSystem>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\jsoncons\include;C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\jsoncons\test;C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\jsoncons\third_party;C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\jsoncons\third_party\catch;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /bigobj</AdditionalOptions>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <Optimization>MaxSpeed</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <UseFullPaths>false</UseFullPaths>
+      <WarningLevel>Level4</WarningLevel>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;CMAKE_INTDIR="Release"</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <DebugInformationFormat>
+      </DebugInformationFormat>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;CMAKE_INTDIR=\"Release\"</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\jsoncons\include;C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\jsoncons\test;C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\jsoncons\third_party;C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\jsoncons\third_party\catch;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\jsoncons\include;C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\jsoncons\test;C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\jsoncons\third_party;C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\jsoncons\third_party\catch;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Link>
+      <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>C:/Users/pagliani/source/repos/ComuFrame/Builds/ExternalLib/jsoncons/test/Release/unit_tests.lib</ImportLibrary>
+      <ProgramDataBaseFile>C:/Users/pagliani/source/repos/ComuFrame/Builds/ExternalLib/jsoncons/test/Release/unit_tests.pdb</ProgramDataBaseFile>
+      <SubSystem>Console</SubSystem>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\jsoncons\include;C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\jsoncons\test;C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\jsoncons\third_party;C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\jsoncons\third_party\catch;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /bigobj</AdditionalOptions>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <Optimization>MinSpace</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <UseFullPaths>false</UseFullPaths>
+      <WarningLevel>Level4</WarningLevel>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;CMAKE_INTDIR="MinSizeRel"</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <DebugInformationFormat>
+      </DebugInformationFormat>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;CMAKE_INTDIR=\"MinSizeRel\"</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\jsoncons\include;C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\jsoncons\test;C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\jsoncons\third_party;C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\jsoncons\third_party\catch;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\jsoncons\include;C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\jsoncons\test;C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\jsoncons\third_party;C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\jsoncons\third_party\catch;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Link>
+      <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>C:/Users/pagliani/source/repos/ComuFrame/Builds/ExternalLib/jsoncons/test/MinSizeRel/unit_tests.lib</ImportLibrary>
+      <ProgramDataBaseFile>C:/Users/pagliani/source/repos/ComuFrame/Builds/ExternalLib/jsoncons/test/MinSizeRel/unit_tests.pdb</ProgramDataBaseFile>
+      <SubSystem>Console</SubSystem>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\jsoncons\include;C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\jsoncons\test;C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\jsoncons\third_party;C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\jsoncons\third_party\catch;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /bigobj</AdditionalOptions>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <Optimization>MaxSpeed</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <UseFullPaths>false</UseFullPaths>
+      <WarningLevel>Level4</WarningLevel>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;CMAKE_INTDIR="RelWithDebInfo"</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;CMAKE_INTDIR=\"RelWithDebInfo\"</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\jsoncons\include;C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\jsoncons\test;C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\jsoncons\third_party;C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\jsoncons\third_party\catch;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\jsoncons\include;C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\jsoncons\test;C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\jsoncons\third_party;C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\jsoncons\third_party\catch;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Link>
+      <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>C:/Users/pagliani/source/repos/ComuFrame/Builds/ExternalLib/jsoncons/test/RelWithDebInfo/unit_tests.lib</ImportLibrary>
+      <ProgramDataBaseFile>C:/Users/pagliani/source/repos/ComuFrame/Builds/ExternalLib/jsoncons/test/RelWithDebInfo/unit_tests.pdb</ProgramDataBaseFile>
+      <SubSystem>Console</SubSystem>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\jsoncons\test\CMakeLists.txt">
+      <UseUtf8Encoding>Always</UseUtf8Encoding>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Building Custom Rule C:/Users/pagliani/source/repos/ComuFrame/ExternalLib/jsoncons/test/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
+"C:\Program Files\Microsoft Visual Studio\2022\Professional\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -SC:/Users/pagliani/source/repos/ComuFrame/ExternalLib/jsoncons -BC:/Users/pagliani/source/repos/ComuFrame/Builds/ExternalLib/jsoncons --check-stamp-file C:/Users/pagliani/source/repos/ComuFrame/Builds/ExternalLib/jsoncons/test/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Program Files\Microsoft Visual Studio\2022\Professional\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.23\Modules\CMakeCheckCompilerFlagCommonPatterns.cmake;C:\Program Files\Microsoft Visual Studio\2022\Professional\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.23\Modules\CTest.cmake;C:\Program Files\Microsoft Visual Studio\2022\Professional\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.23\Modules\CTestTargets.cmake;C:\Program Files\Microsoft Visual Studio\2022\Professional\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.23\Modules\CTestUseLaunchers.cmake;C:\Program Files\Microsoft Visual Studio\2022\Professional\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.23\Modules\CheckCXXCompilerFlag.cmake;C:\Program Files\Microsoft Visual Studio\2022\Professional\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.23\Modules\CheckCXXSourceCompiles.cmake;C:\Program Files\Microsoft Visual Studio\2022\Professional\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.23\Modules\DartConfiguration.tcl.in;C:\Program Files\Microsoft Visual Studio\2022\Professional\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.23\Modules\Internal\CheckCompilerFlag.cmake;C:\Program Files\Microsoft Visual Studio\2022\Professional\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.23\Modules\Internal\CheckFlagCommonConfig.cmake;C:\Program Files\Microsoft Visual Studio\2022\Professional\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.23\Modules\Internal\CheckSourceCompiles.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Users\pagliani\source\repos\ComuFrame\Builds\ExternalLib\jsoncons\test\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Building Custom Rule C:/Users/pagliani/source/repos/ComuFrame/ExternalLib/jsoncons/test/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
+"C:\Program Files\Microsoft Visual Studio\2022\Professional\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -SC:/Users/pagliani/source/repos/ComuFrame/ExternalLib/jsoncons -BC:/Users/pagliani/source/repos/ComuFrame/Builds/ExternalLib/jsoncons --check-stamp-file C:/Users/pagliani/source/repos/ComuFrame/Builds/ExternalLib/jsoncons/test/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Program Files\Microsoft Visual Studio\2022\Professional\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.23\Modules\CMakeCheckCompilerFlagCommonPatterns.cmake;C:\Program Files\Microsoft Visual Studio\2022\Professional\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.23\Modules\CTest.cmake;C:\Program Files\Microsoft Visual Studio\2022\Professional\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.23\Modules\CTestTargets.cmake;C:\Program Files\Microsoft Visual Studio\2022\Professional\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.23\Modules\CTestUseLaunchers.cmake;C:\Program Files\Microsoft Visual Studio\2022\Professional\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.23\Modules\CheckCXXCompilerFlag.cmake;C:\Program Files\Microsoft Visual Studio\2022\Professional\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.23\Modules\CheckCXXSourceCompiles.cmake;C:\Program Files\Microsoft Visual Studio\2022\Professional\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.23\Modules\DartConfiguration.tcl.in;C:\Program Files\Microsoft Visual Studio\2022\Professional\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.23\Modules\Internal\CheckCompilerFlag.cmake;C:\Program Files\Microsoft Visual Studio\2022\Professional\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.23\Modules\Internal\CheckFlagCommonConfig.cmake;C:\Program Files\Microsoft Visual Studio\2022\Professional\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.23\Modules\Internal\CheckSourceCompiles.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Users\pagliani\source\repos\ComuFrame\Builds\ExternalLib\jsoncons\test\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">Building Custom Rule C:/Users/pagliani/source/repos/ComuFrame/ExternalLib/jsoncons/test/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">setlocal
+"C:\Program Files\Microsoft Visual Studio\2022\Professional\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -SC:/Users/pagliani/source/repos/ComuFrame/ExternalLib/jsoncons -BC:/Users/pagliani/source/repos/ComuFrame/Builds/ExternalLib/jsoncons --check-stamp-file C:/Users/pagliani/source/repos/ComuFrame/Builds/ExternalLib/jsoncons/test/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\Program Files\Microsoft Visual Studio\2022\Professional\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.23\Modules\CMakeCheckCompilerFlagCommonPatterns.cmake;C:\Program Files\Microsoft Visual Studio\2022\Professional\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.23\Modules\CTest.cmake;C:\Program Files\Microsoft Visual Studio\2022\Professional\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.23\Modules\CTestTargets.cmake;C:\Program Files\Microsoft Visual Studio\2022\Professional\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.23\Modules\CTestUseLaunchers.cmake;C:\Program Files\Microsoft Visual Studio\2022\Professional\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.23\Modules\CheckCXXCompilerFlag.cmake;C:\Program Files\Microsoft Visual Studio\2022\Professional\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.23\Modules\CheckCXXSourceCompiles.cmake;C:\Program Files\Microsoft Visual Studio\2022\Professional\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.23\Modules\DartConfiguration.tcl.in;C:\Program Files\Microsoft Visual Studio\2022\Professional\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.23\Modules\Internal\CheckCompilerFlag.cmake;C:\Program Files\Microsoft Visual Studio\2022\Professional\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.23\Modules\Internal\CheckFlagCommonConfig.cmake;C:\Program Files\Microsoft Visual Studio\2022\Professional\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.23\Modules\Internal\CheckSourceCompiles.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\Users\pagliani\source\repos\ComuFrame\Builds\ExternalLib\jsoncons\test\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">Building Custom Rule C:/Users/pagliani/source/repos/ComuFrame/ExternalLib/jsoncons/test/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">setlocal
+"C:\Program Files\Microsoft Visual Studio\2022\Professional\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -SC:/Users/pagliani/source/repos/ComuFrame/ExternalLib/jsoncons -BC:/Users/pagliani/source/repos/ComuFrame/Builds/ExternalLib/jsoncons --check-stamp-file C:/Users/pagliani/source/repos/ComuFrame/Builds/ExternalLib/jsoncons/test/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\Program Files\Microsoft Visual Studio\2022\Professional\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.23\Modules\CMakeCheckCompilerFlagCommonPatterns.cmake;C:\Program Files\Microsoft Visual Studio\2022\Professional\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.23\Modules\CTest.cmake;C:\Program Files\Microsoft Visual Studio\2022\Professional\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.23\Modules\CTestTargets.cmake;C:\Program Files\Microsoft Visual Studio\2022\Professional\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.23\Modules\CTestUseLaunchers.cmake;C:\Program Files\Microsoft Visual Studio\2022\Professional\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.23\Modules\CheckCXXCompilerFlag.cmake;C:\Program Files\Microsoft Visual Studio\2022\Professional\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.23\Modules\CheckCXXSourceCompiles.cmake;C:\Program Files\Microsoft Visual Studio\2022\Professional\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.23\Modules\DartConfiguration.tcl.in;C:\Program Files\Microsoft Visual Studio\2022\Professional\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.23\Modules\Internal\CheckCompilerFlag.cmake;C:\Program Files\Microsoft Visual Studio\2022\Professional\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.23\Modules\Internal\CheckFlagCommonConfig.cmake;C:\Program Files\Microsoft Visual Studio\2022\Professional\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.23\Modules\Internal\CheckSourceCompiles.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\Users\pagliani\source\repos\ComuFrame\Builds\ExternalLib\jsoncons\test\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\jsoncons\test\bson\src\bson_cursor_tests.cpp" />
+    <ClCompile Include="C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\jsoncons\test\bson\src\bson_encoder_tests.cpp" />
+    <ClCompile Include="C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\jsoncons\test\bson\src\bson_reader_tests.cpp" />
+    <ClCompile Include="C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\jsoncons\test\bson\src\bson_decimal128_tests.cpp" />
+    <ClCompile Include="C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\jsoncons\test\bson\src\bson_oid_tests.cpp" />
+    <ClCompile Include="C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\jsoncons\test\bson\src\bson_test_suite.cpp" />
+    <ClCompile Include="C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\jsoncons\test\bson\src\encode_decode_bson_tests.cpp" />
+    <ClCompile Include="C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\jsoncons\test\cbor\src\cbor_bitset_traits_tests.cpp" />
+    <ClCompile Include="C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\jsoncons\test\cbor\src\cbor_cursor_tests.cpp" />
+    <ClCompile Include="C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\jsoncons\test\cbor\src\cbor_cursor2_tests.cpp" />
+    <ClCompile Include="C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\jsoncons\test\cbor\src\cbor_encoder_tests.cpp" />
+    <ClCompile Include="C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\jsoncons\test\cbor\src\cbor_json_visitor2_tests.cpp" />
+    <ClCompile Include="C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\jsoncons\test\cbor\src\cbor_reader_tests.cpp" />
+    <ClCompile Include="C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\jsoncons\test\cbor\src\cbor_tests.cpp" />
+    <ClCompile Include="C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\jsoncons\test\cbor\src\cbor_typed_array_tests.cpp" />
+    <ClCompile Include="C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\jsoncons\test\cbor\src\decode_cbor_tests.cpp" />
+    <ClCompile Include="C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\jsoncons\test\cbor\src\encode_cbor_tests.cpp" />
+    <ClCompile Include="C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\jsoncons\test\csv\src\csv_cursor_tests.cpp" />
+    <ClCompile Include="C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\jsoncons\test\csv\src\csv_subfield_tests.cpp" />
+    <ClCompile Include="C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\jsoncons\test\csv\src\csv_tests.cpp" />
+    <ClCompile Include="C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\jsoncons\test\csv\src\encode_decode_csv_tests.cpp" />
+    <ClCompile Include="C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\jsoncons\test\fuzz_regression\src\fuzz_regression_tests.cpp" />
+    <ClCompile Include="C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\jsoncons\test\jmespath\src\jmespath_expression_tests.cpp" />
+    <ClCompile Include="C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\jsoncons\test\jmespath\src\jmespath_tests.cpp" />
+    <ClCompile Include="C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\jsoncons\test\mergepatch\src\mergepatch_test_suite.cpp" />
+    <ClCompile Include="C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\jsoncons\test\jsonpatch\src\jsonpatch_test_suite.cpp" />
+    <ClCompile Include="C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\jsoncons\test\jsonpatch\src\jsonpatch_tests.cpp" />
+    <ClCompile Include="C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\jsoncons\test\jsonpath\src\jsonpath_flatten_tests.cpp" />
+    <ClCompile Include="C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\jsoncons\test\jsonpath\src\jsonpath_custom_function_tests.cpp" />
+    <ClCompile Include="C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\jsoncons\test\jsonpath\src\jsonpath_json_query_tests.cpp" />
+    <ClCompile Include="C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\jsoncons\test\jsonpath\src\jsonpath_json_replace_tests.cpp" />
+    <ClCompile Include="C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\jsoncons\test\jsonpath\src\jsonpath_test_suite.cpp" />
+    <ClCompile Include="C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\jsoncons\test\jsonpointer\src\jsonpointer_flatten_tests.cpp" />
+    <ClCompile Include="C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\jsoncons\test\jsonpointer\src\jsonpointer_tests.cpp" />
+    <ClCompile Include="C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\jsoncons\test\jsonschema\src\format_validator_tests.cpp" />
+    <ClCompile Include="C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\jsoncons\test\jsonschema\src\jsonschema_defaults_tests.cpp" />
+    <ClCompile Include="C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\jsoncons\test\jsonschema\src\jsonschema_output_format_tests.cpp" />
+    <ClCompile Include="C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\jsoncons\test\jsonschema\src\jsonschema_tests.cpp" />
+    <ClCompile Include="C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\jsoncons\test\jsonschema\src\schema_version_tests.cpp" />
+    <ClCompile Include="C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\jsoncons\test\msgpack\src\decode_msgpack_tests.cpp" />
+    <ClCompile Include="C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\jsoncons\test\msgpack\src\encode_msgpack_tests.cpp" />
+    <ClCompile Include="C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\jsoncons\test\msgpack\src\msgpack_bitset_traits_tests.cpp" />
+    <ClCompile Include="C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\jsoncons\test\msgpack\src\msgpack_cursor_tests.cpp" />
+    <ClCompile Include="C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\jsoncons\test\msgpack\src\msgpack_cursor2_tests.cpp" />
+    <ClCompile Include="C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\jsoncons\test\msgpack\src\msgpack_encoder_tests.cpp" />
+    <ClCompile Include="C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\jsoncons\test\msgpack\src\msgpack_tests.cpp" />
+    <ClCompile Include="C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\jsoncons\test\msgpack\src\msgpack_timestamp_tests.cpp" />
+    <ClCompile Include="C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\jsoncons\test\corelib\src\bigint_tests.cpp" />
+    <ClCompile Include="C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\jsoncons\test\corelib\src\source_adaptor_tests.cpp" />
+    <ClCompile Include="C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\jsoncons\test\corelib\src\byte_string_tests.cpp" />
+    <ClCompile Include="C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\jsoncons\test\corelib\src\value_converter_tests.cpp" />
+    <ClCompile Include="C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\jsoncons\test\corelib\src\decode_traits_tests.cpp" />
+    <ClCompile Include="C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\jsoncons\test\corelib\src\detail\optional_tests.cpp" />
+    <ClCompile Include="C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\jsoncons\test\corelib\src\detail\span_tests.cpp" />
+    <ClCompile Include="C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\jsoncons\test\corelib\src\detail\string_view_tests.cpp" />
+    <ClCompile Include="C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\jsoncons\test\corelib\src\detail\string_wrapper_tests.cpp" />
+    <ClCompile Include="C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\jsoncons\test\corelib\src\detail\to_integer_tests.cpp" />
+    <ClCompile Include="C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\jsoncons\test\corelib\src\double_round_trip_tests.cpp" />
+    <ClCompile Include="C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\jsoncons\test\corelib\src\double_to_string_tests.cpp" />
+    <ClCompile Include="C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\jsoncons\test\corelib\src\dtoa_tests.cpp" />
+    <ClCompile Include="C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\jsoncons\test\corelib\src\encode_decode_json_tests.cpp" />
+    <ClCompile Include="C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\jsoncons\test\corelib\src\encode_traits_tests.cpp" />
+    <ClCompile Include="C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\jsoncons\test\corelib\src\error_recovery_tests.cpp" />
+    <ClCompile Include="C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\jsoncons\test\corelib\src\json_array_tests.cpp" />
+    <ClCompile Include="C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\jsoncons\test\corelib\src\json_as_tests.cpp" />
+    <ClCompile Include="C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\jsoncons\test\corelib\src\json_bitset_traits_tests.cpp" />
+    <ClCompile Include="C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\jsoncons\test\corelib\src\json_checker_tests.cpp" />
+    <ClCompile Include="C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\jsoncons\test\corelib\src\json_comparator_tests.cpp" />
+    <ClCompile Include="C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\jsoncons\test\corelib\src\json_const_pointer_tests.cpp" />
+    <ClCompile Include="C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\jsoncons\test\corelib\src\json_constructor_tests.cpp" />
+    <ClCompile Include="C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\jsoncons\test\corelib\src\json_cursor_tests.cpp" />
+    <ClCompile Include="C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\jsoncons\test\corelib\src\json_encoder_tests.cpp" />
+    <ClCompile Include="C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\jsoncons\test\corelib\src\json_exception_tests.cpp" />
+    <ClCompile Include="C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\jsoncons\test\corelib\src\json_filter_tests.cpp" />
+    <ClCompile Include="C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\jsoncons\test\corelib\src\json_in_place_update_tests.cpp" />
+    <ClCompile Include="C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\jsoncons\test\corelib\src\json_integer_tests.cpp" />
+    <ClCompile Include="C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\jsoncons\test\corelib\src\json_less_tests.cpp" />
+    <ClCompile Include="C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\jsoncons\test\corelib\src\json_line_split_tests.cpp" />
+    <ClCompile Include="C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\jsoncons\test\corelib\src\json_literal_operator_tests.cpp" />
+    <ClCompile Include="C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\jsoncons\test\corelib\src\json_object_tests.cpp" />
+    <ClCompile Include="C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\jsoncons\test\corelib\src\json_options_tests.cpp" />
+    <ClCompile Include="C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\jsoncons\test\corelib\src\json_parse_error_tests.cpp" />
+    <ClCompile Include="C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\jsoncons\test\corelib\src\json_parser_position_tests.cpp" />
+    <ClCompile Include="C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\jsoncons\test\corelib\src\json_parser_tests.cpp" />
+    <ClCompile Include="C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\jsoncons\test\corelib\src\json_proxy_tests.cpp" />
+    <ClCompile Include="C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\jsoncons\test\corelib\src\json_push_back_tests.cpp" />
+    <ClCompile Include="C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\jsoncons\test\corelib\src\json_reader_exception_tests.cpp" />
+    <ClCompile Include="C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\jsoncons\test\corelib\src\json_reader_tests.cpp" />
+    <ClCompile Include="C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\jsoncons\test\corelib\src\json_storage_tests.cpp" />
+    <ClCompile Include="C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\jsoncons\test\corelib\src\json_swap_tests.cpp" />
+    <ClCompile Include="C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\jsoncons\test\corelib\src\json_traits_macro_functional_tests.cpp" />
+    <ClCompile Include="C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\jsoncons\test\corelib\src\json_traits_macro_tests.cpp" />
+    <ClCompile Include="C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\jsoncons\test\corelib\src\json_traits_macro_limit_tests.cpp" />
+    <ClCompile Include="C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\jsoncons\test\corelib\src\json_traits_name_macro_tests.cpp" />
+    <ClCompile Include="C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\jsoncons\test\corelib\src\json_type_traits_chrono_tests.cpp" />
+    <ClCompile Include="C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\jsoncons\test\corelib\src\json_type_traits_container_tests.cpp" />
+    <ClCompile Include="C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\jsoncons\test\corelib\src\json_type_traits_tests.cpp" />
+    <ClCompile Include="C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\jsoncons\test\corelib\src\json_validation_tests.cpp" />
+    <ClCompile Include="C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\jsoncons\test\corelib\src\jsoncons_tests.cpp" />
+    <ClCompile Include="C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\jsoncons\test\corelib\src\JSONTestSuite_tests.cpp" />
+    <ClCompile Include="C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\jsoncons\test\corelib\src\ojson_tests.cpp" />
+    <ClCompile Include="C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\jsoncons\test\corelib\src\order_preserving_json_object_tests.cpp" />
+    <ClCompile Include="C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\jsoncons\test\corelib\src\parse_string_tests.cpp" />
+    <ClCompile Include="C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\jsoncons\test\corelib\src\short_string_tests.cpp" />
+    <ClCompile Include="C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\jsoncons\test\corelib\src\source_tests.cpp" />
+    <ClCompile Include="C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\jsoncons\test\corelib\src\staj_iterator_tests.cpp" />
+    <ClCompile Include="C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\jsoncons\test\corelib\src\stateful_allocator_tests.cpp" />
+    <ClCompile Include="C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\jsoncons\test\corelib\src\string_to_double_tests.cpp" />
+    <ClCompile Include="C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\jsoncons\test\corelib\src\unicode_conv_tests.cpp" />
+    <ClCompile Include="C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\jsoncons\test\corelib\src\wjson_tests.cpp" />
+    <ClCompile Include="C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\jsoncons\test\ubjson\src\decode_ubjson_tests.cpp" />
+    <ClCompile Include="C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\jsoncons\test\ubjson\src\encode_ubjson_tests.cpp" />
+    <ClCompile Include="C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\jsoncons\test\ubjson\src\ubjson_cursor_tests.cpp" />
+    <ClCompile Include="C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\jsoncons\test\ubjson\src\ubjson_encoder_tests.cpp" />
+    <ClCompile Include="C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\jsoncons\test\corelib\src\main.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="C:\Users\pagliani\source\repos\ComuFrame\Builds\ExternalLib\jsoncons\ZERO_CHECK.vcxproj">
+      <Project>{15BE6D0D-A2B3-3B51-A694-90EA6358D18B}</Project>
+      <Name>ZERO_CHECK</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

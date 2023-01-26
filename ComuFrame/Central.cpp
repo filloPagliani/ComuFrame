@@ -2,9 +2,19 @@
 
 using namespace zmq;
 	
-	Central::Central(std::string url)
+	Central::Central()
 	{
-		this->url = url;
+		tinyxml2::XMLDocument configDoc;
+		if (tinyxml2::XML_SUCCESS != configDoc.LoadFile("C:/Users/pagliani/source/repos/ComuFrame/Config.xml")) {
+			std::cout << "can't load configration file, using default options";
+			this->url = "tcp://127.0.0.1:5555";
+		}
+		else {
+			tinyxml2::XMLElement* urlElement = configDoc.RootElement()->FirstChildElement("url");
+			this->url = urlElement->FirstAttribute()->Value();
+			this->url += urlElement->FirstChildElement("servicePort")->FirstAttribute()->Value();
+			//pubPort = urlElement->FirstChildElement("pubPort")->FirstAttribute()->Value();
+		}
 	}
 
 	Central::~Central()
@@ -53,16 +63,36 @@ using namespace zmq;
 		 multipart_t registrationMSG;
 		 while (clients.size() < expectedClient) {    //prima di inizare la fase dovra esere trovato un modo per definire quanti node ci si aspetta il due è provvisiorio e per testing
 
-			 auto res = recv_multipart( *sock, std::back_inserter(registrationMSG));
-			 clients.push_back(registrationMSG.popstr());
-			 this->dataNodes.push_back(DataNode(clients.back()));
-			 registrationMSG.clear();
-			 registrationMSG.pushstr("connected");
-			 registrationMSG.pushstr("");
-			 registrationMSG.pushstr(clients.back());
-			 send_multipart(*sock, registrationMSG);
-			 registrationMSG.clear();
-			 std::cout << "Central, serviceThread: Registration request from " << clients.back() << ", registration completed. \n";
+			 if(registrationMSG.recv(*sock))
+			 {
+				 clients.push_back(registrationMSG.popstr());
+				 if (registrationMSG.popstr() == "RegistrationMSG") {
+					 this->dataNodes.push_back(DataNode(clients.back()));
+					 jsoncons::json jData = jsoncons::json::parse(registrationMSG.popstr());
+					 for (auto i = jData["Packets"].begin_elements(); i < jData["Packets"].end_elements(); i++) {
+						 i->insert_or_assign("nameID", this->dataNodes.back().getSender() + "_" + i->at("nameID").as_string());
+						 this->dataNodes[dataNodes.size() - 1].addPacket(*i);
+					 }
+				 }
+				 else {
+					 //manage case in wich a different message from registrationmsg arrives
+					 std::cout << "wront message type recived";
+				 }
+				 registrationMSG.clear();
+				 registrationMSG.pushstr("connected");
+				 registrationMSG.pushstr("");
+				 registrationMSG.pushstr(clients.back());
+				 send_multipart(*sock, registrationMSG);
+				 registrationMSG.clear();
+				 std::cout << "Central, serviceThread: Registration request from " << clients.back() << ", registration completed. with sending info:\n";
+				 for (const auto packs : this->dataNodes[dataNodes.size() - 1].getAllPacket()) {
+					 std::cout << packs.at("nameID") << "\n";
+				 }
+			 }
+			 else {
+				 //handle error message not received
+				 std::cout << "Central, serviceThread: Registration received wasn't received correctly";
+			 }
 		 }
 		 return clients;
 	 }

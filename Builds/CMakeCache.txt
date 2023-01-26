@@ -599,6 +599,9 @@ ZeroMQ_IS_TOP_LEVEL:STATIC=OFF
 //Value Computed by CMake
 ZeroMQ_SOURCE_DIR:STATIC=C:/Users/pagliani/source/repos/ComuFrame/ExternalLib/libzmq
 
+//The directory containing a CMake configuration file for jsoncons.
+jsoncons_DIR:PATH=jsoncons_DIR-NOTFOUND
+
 //Dependencies for the target
 libzmq_LIB_DEPENDS:STATIC=general;ws2_32;general;rpcrt4;general;iphlpapi;
 

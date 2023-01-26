@@ -8,9 +8,37 @@
 		</pubPort>
 	</url>
 	<nodeTest1>
-		<data>
-			{anInt:int}
-			{aFloat:float}
-		</data>
+		<data>{
+				"Packets" : [
+				{
+					"nameID": "PacketA",
+					"anInt": "int",
+					"aFloat": "float"
+					},
+				{
+					"nameID": "PacketB",
+					"aDouble": "double",
+					"anArray": "array"
+					}
+				]
+		}
+	</data>
 	</nodeTest1>
+	<nodeTest2>
+		<data>{
+				"Packets" : [
+				{
+					"nameID": "PacketC",
+					"anInt": "int",
+					"aFloat": "float"
+				},
+			{
+					"nameID": "PacketD",
+					"aDouble": "double",
+					"anArray": "array"
+					}
+				]
+			}
+		</data>
+	</nodeTest2>
 </config>

@@ -25,7 +25,10 @@ add_executable(Tests
 	"../ComuFrame/Node.cpp"
 	"../ComuFrame/utils.cpp" 
 	"../ComuFrame/utils.h"
+	"../ComuFrame/Central.cpp"
+	"../ComuFrame/Central.h" 
 )
 
-target_link_libraries(Tests PRIVATE Catch2::Catch2WithMain tinyxml2 libzmq)
-target_link_libraries(LaunchNode tinyxml2)
+target_link_libraries(Tests PRIVATE Catch2::Catch2WithMain tinyxml2 libzmq jsoncons)
+target_link_libraries(LaunchNode tinyxml2 jsoncons)
+target_link_libraries(LaunchCentral tinyxml2 jsoncons)

@@ -49,15 +49,16 @@ TEST_CASE("Registration of a node tests") {
 	jsoncons::json receivedData1;
 	jsoncons::json receivedData2;
 	if (central.getDataNodes()[0].getSender() == nameNode1) {
-		receivedData1 = jsoncons::json(central.getDataNodes()[0].getAllPacket());
-		receivedData2 = jsoncons::json(central.getDataNodes()[1].getAllPacket());
+		receivedData1 = jsoncons::json(central.getDataNodes()[0].getAllPacket()[0]);
+		receivedData2 = jsoncons::json(central.getDataNodes()[1].getAllPacket()[0]);
 	}
-	else {
+	else if (central.getDataNodes()[0].getSender() == nameNode2) {
 		receivedData1 = jsoncons::json(central.getDataNodes()[1].getAllPacket()[0]);
 		receivedData2 = jsoncons::json(central.getDataNodes()[0].getAllPacket()[0]);
 	}
 	REQUIRE(receivedData1.as_string() == dataNodeTest1["Packets"][0].as_string());
 	REQUIRE(receivedData2.as_string() == dataNodeTest2["Packets"][0].as_string());
+
 
 	node1Thread.join();
 	node2Thread.join();

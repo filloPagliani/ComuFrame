@@ -41,7 +41,6 @@ bool DataNode::addPacket(std::unordered_map<std::string, std::string> packToAdd)
 	}
 }
 
-//find the packet with the data that you need and return that packet, if it doesnt exixts return the empty map
 std::unordered_map<std::string, std::string> DataNode::findPacket(std::unordered_map<std::string, std::string> dataToFind) { 
 	for (auto i = DataNode::packetTypes.begin(); i != DataNode::packetTypes.end(); i++) {
 		bool found = true;
@@ -57,7 +56,6 @@ std::unordered_map<std::string, std::string> DataNode::findPacket(std::unordered
 	return emptyMap;
 }
 
-//find the name of the packet with the data that you need and return that name, if it doesnt exixts return the empty string ""
 std::string DataNode::findPacketName(std::unordered_map<std::string, std::string> dataToFind) { 
 	for (auto i = DataNode::packetTypes.begin(); i != DataNode::packetTypes.end(); i++) {
 		bool found = true;
@@ -71,6 +69,7 @@ std::string DataNode::findPacketName(std::unordered_map<std::string, std::string
 	}
 	return "";
 }
+
 //getter
 
 std::string DataNode::getSender()
@@ -94,7 +93,9 @@ std::unordered_map<std::string, std::string> DataNode::getPacket(std::string pac
 	std::unordered_map<std::string, std::string> emptyMap;
 	return emptyMap;
 }
+
 //setter
+
 void DataNode::setSender(std::string sender)
 {
 	this->sender = sender;

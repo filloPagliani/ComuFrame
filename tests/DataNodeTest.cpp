@@ -9,19 +9,19 @@ TEST_CASE("DataNode unit test") {
 
 	std::unordered_map<std::string, std::string> aPacket({ {"aString", "string"}, {"anInt", "int"}});
 	dataTest.addPacket(aPacket);
-	REQUIRE(dataTest.getData().size() == 0); //aPacket doesn't have the mandatory field "nameID"
+	REQUIRE(dataTest.getAllPacket().size() == 0); //aPacket doesn't have the mandatory field "nameID"
 	aPacket["nameID"] = "aPacket";
 	dataTest.addPacket(aPacket);
-	REQUIRE(dataTest.getData().size() == 1);
+	REQUIRE(dataTest.getAllPacket().size() == 1);
 
 	std::unordered_map<std::string, std::string> anotherPacket({ {"nameID", "anotherPacket"}, {"aFloat", "float"}, {"aVector", "vector"}, {"aList", "list"}});
 	dataTest.addPacket(anotherPacket);
-	REQUIRE(dataTest.getData().size() == 2);
-	REQUIRE(dataTest.getData()[1] == anotherPacket);
-	REQUIRE(dataTest.getData()[1]["aFloat"] == "float");
+	REQUIRE(dataTest.getAllPacket().size() == 2);
+	REQUIRE(dataTest.getAllPacket()[1] == anotherPacket);
+	REQUIRE(dataTest.getAllPacket()[1]["aFloat"] == "float");
 
 	dataTest.addPacket(anotherPacket);
-	REQUIRE(dataTest.getData().size() == 2);
+	REQUIRE(dataTest.getAllPacket().size() == 2);
 
 	//testing findPacket and findPacketName
 	std::unordered_map<std::string,std::string> foundData = dataTest.findPacket(std::unordered_map<std::string, std::string>{ {"aFloat", "float"}, { "aVector","vector" }});

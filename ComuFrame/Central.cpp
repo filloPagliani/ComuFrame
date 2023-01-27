@@ -98,7 +98,6 @@ using namespace zmq;
 	 }
 
 
-
 	 //Getter
 	 std::string Central::getUrl() {
 		 return Central::url;

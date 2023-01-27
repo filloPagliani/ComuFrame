@@ -13,7 +13,7 @@ using namespace zmq;
 class Central
 {
 public:
-
+	//constructor
 	Central();
 	~Central();
 	void initCentral();

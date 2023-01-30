@@ -1,3 +1,4 @@
+#define ZMQ_BUILD_DRAFT_API
 #include "zmq.hpp"
 #include "zmq_addon.hpp"
 #include "utils.h"
@@ -6,6 +7,9 @@
 #include <stdio.h>
 #include <iostream>
 #include <thread>
+#include "Fsm.h"
+#include <chrono>
+
 
 using namespace zmq;
 
@@ -20,9 +24,11 @@ public:
 	std::string getidentity();
 	jsoncons::json getDataNodeRequest();
 private:
+	Fsm state;
 	std::string url;
 	std::string identity;
 	jsoncons::json dataNodeRequest;
+	bool sendRegistration(socket_t* sock);
 	context_t ctx;
 	void initServiceThread();
 

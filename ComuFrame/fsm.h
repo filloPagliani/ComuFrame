@@ -1,3 +1,7 @@
+#pragma once
+#include <stdio.h>
+#include <string>
+
 class Fsm
 {
 public:
@@ -6,6 +10,8 @@ public:
 	State getCurrState();
 	bool nextState();
 	bool crash();
+	std::string toString();
+
 
 private:
 	State currState;

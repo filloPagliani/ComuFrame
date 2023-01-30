@@ -1,4 +1,4 @@
-#include "fsm.h"
+#include "Fsm.h"
 
 Fsm::Fsm() {
 	this->currState = State::Registration;
@@ -6,6 +6,30 @@ Fsm::Fsm() {
 
 Fsm::State Fsm::getCurrState() {
 	return this->currState;
+}
+
+std::string Fsm::toString() {
+	switch (this->currState)
+	{
+	case Registration:
+		return "registration";
+	case Syncronization:
+		return "syncronization";
+	case SyncroComplete:
+		return "syncroComplete";
+	case Trimming:
+		return "trimming";
+	case TrimmingComplete:
+		return "trimmingComplete";
+	case Running:
+		return "running";
+	case Freeze:
+		return "freeze";
+	case Crash:
+		return "crash";
+	default:
+		return "";
+	}
 }
 
 bool Fsm::crash() {
@@ -43,3 +67,4 @@ bool Fsm::nextState() {
 		return false;
 	}
 }
+

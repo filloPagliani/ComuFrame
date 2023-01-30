@@ -53,6 +53,7 @@ using namespace zmq;
 		serviceSocket.bind(url);
 
 		Central::connectedClients = Central::registerClient(&serviceSocket);
+		Central::state.nextState();
 		std::cout << "Central, ServiceThread: Registration completed, registered " << connectedClients.size() << " nodes\n";
 
 		socket_t toMainSocket = initInprocSocket(&(Central::ctx), "inproc://serviceChannel", true);
@@ -66,25 +67,29 @@ using namespace zmq;
 			 if(registrationMSG.recv(*sock))
 			 {
 				 clients.push_back(registrationMSG.popstr());
-				 if (registrationMSG.popstr() == "RegistrationMSG") {
+				 if (registrationMSG.popstr() == state.toString()) {
 					 this->dataNodes.push_back(DataNode(clients.back()));
 					 jsoncons::json jData = jsoncons::json::parse(registrationMSG.popstr());
 					 for (auto i = jData["Packets"].begin_elements(); i < jData["Packets"].end_elements(); i++) {
 						 i->insert_or_assign("nameID", this->dataNodes.back().getSender() + "_" + i->at("nameID").as_string());
 						 this->dataNodes[dataNodes.size() - 1].addPacket(*i);
 					 }
+					 registrationMSG.clear();
+					 registrationMSG.pushstr("connected");
+					 registrationMSG.pushstr("");
+					 registrationMSG.pushstr(clients.back());
+					 std::cout << "Central, serviceThread: Registration request from " << clients.back() << ", registration completed. with sending info:\n";
+
 				 }
-				 else {
-					 //manage case in wich a different message from registrationmsg arrives
-					 std::cout << "wront message type recived";
+				 else { //send back to the sender the message with the currstate TODO handle the reception of that error msg
+					 registrationMSG.clear();
+					 registrationMSG.pushstr(state.toString());
+					 registrationMSG.pushstr("");
+					 registrationMSG.pushstr(clients.back());
+					 clients.pop_back();
 				 }
-				 registrationMSG.clear();
-				 registrationMSG.pushstr("connected");
-				 registrationMSG.pushstr("");
-				 registrationMSG.pushstr(clients.back());
 				 send_multipart(*sock, registrationMSG);
 				 registrationMSG.clear();
-				 std::cout << "Central, serviceThread: Registration request from " << clients.back() << ", registration completed. with sending info:\n";
 				 for (const auto packs : this->dataNodes[dataNodes.size() - 1].getAllPacket()) {
 					 std::cout << packs.at("nameID") << "\n";
 				 }

@@ -314,7 +314,7 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     <ClInclude Include="C:\Users\pagliani\source\repos\ComuFrame\ComuFrame\Node.h" />
     <ClCompile Include="C:\Users\pagliani\source\repos\ComuFrame\ComuFrame\utils.cpp" />
     <ClInclude Include="C:\Users\pagliani\source\repos\ComuFrame\ComuFrame\utils.h" />
-    <ClInclude Include="C:\Users\pagliani\source\repos\ComuFrame\ComuFrame\fsm.h" />
+    <ClInclude Include="C:\Users\pagliani\source\repos\ComuFrame\ComuFrame\Fsm.h" />
     <ClCompile Include="C:\Users\pagliani\source\repos\ComuFrame\ComuFrame\Fsm.cpp" />
   </ItemGroup>
   <ItemGroup>

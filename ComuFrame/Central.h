@@ -1,3 +1,4 @@
+
 #include "zmq.hpp"
 #include "zmq_addon.hpp"
 #include "utils.h"
@@ -7,6 +8,8 @@
 #include "tinyxml2.h"
 #include "jsoncons/json.hpp"
 #include "DataNode.h"
+#include "Fsm.h"
+
 
 using namespace zmq;
 
@@ -24,6 +27,7 @@ public:
 	int getExpectedClient();
 
 private:
+	Fsm state;
 	std::string url;
 	int expectedClient = 0;
 	context_t ctx;

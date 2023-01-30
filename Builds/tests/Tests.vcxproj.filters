@@ -39,7 +39,7 @@
     <ClInclude Include="C:\Users\pagliani\source\repos\ComuFrame\ComuFrame\Central.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\ComuFrame\Fsm.h">
+    <ClInclude Include="C:\Users\pagliani\source\repos\ComuFrame\ComuFrame\Fsm.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

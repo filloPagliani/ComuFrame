@@ -316,6 +316,8 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     <ClInclude Include="C:\Users\pagliani\source\repos\ComuFrame\ComuFrame\utils.h" />
     <ClCompile Include="C:\Users\pagliani\source\repos\ComuFrame\ComuFrame\DataNode.cpp" />
     <ClInclude Include="C:\Users\pagliani\source\repos\ComuFrame\ComuFrame\DataNode.h" />
+    <ClInclude Include="C:\Users\pagliani\source\repos\ComuFrame\ComuFrame\fsm.h" />
+    <ClCompile Include="C:\Users\pagliani\source\repos\ComuFrame\ComuFrame\Fsm.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="C:\Users\pagliani\source\repos\ComuFrame\Builds\ZERO_CHECK.vcxproj">

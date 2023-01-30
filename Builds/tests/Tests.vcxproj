@@ -311,6 +311,7 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
   <ItemGroup>
     <ClCompile Include="C:\Users\pagliani\source\repos\ComuFrame\tests\DataNodeTest.cpp" />
     <ClCompile Include="C:\Users\pagliani\source\repos\ComuFrame\tests\NodeRegistrationTest.cpp" />
+    <ClCompile Include="C:\Users\pagliani\source\repos\ComuFrame\tests\FsmTest.cpp" />
     <ClCompile Include="C:\Users\pagliani\source\repos\ComuFrame\ComuFrame\DataNode.cpp" />
     <ClInclude Include="C:\Users\pagliani\source\repos\ComuFrame\ComuFrame\DataNode.h" />
     <ClInclude Include="C:\Users\pagliani\source\repos\ComuFrame\ComuFrame\Node.h" />
@@ -319,6 +320,8 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     <ClInclude Include="C:\Users\pagliani\source\repos\ComuFrame\ComuFrame\utils.h" />
     <ClCompile Include="C:\Users\pagliani\source\repos\ComuFrame\ComuFrame\Central.cpp" />
     <ClInclude Include="C:\Users\pagliani\source\repos\ComuFrame\ComuFrame\Central.h" />
+    <ClInclude Include="..\..\ComuFrame\Fsm.h" />
+    <ClCompile Include="C:\Users\pagliani\source\repos\ComuFrame\ComuFrame\Fsm.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="C:\Users\pagliani\source\repos\ComuFrame\Builds\ZERO_CHECK.vcxproj">

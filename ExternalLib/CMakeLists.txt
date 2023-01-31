@@ -50,6 +50,8 @@ set(ZeroMQ_DIR C:/Users/pagliani/src/vcpkg/packages/zeromq_x64-windows/share/zer
 set(cppzmq_DIR C:/Users/pagliani/src/vcpkg/packages/cppzmq_x64-windows/share/cppzmq)
 add_library(cppzmq INTERFACE)
 find_package(cppzmq)
+option(-DENABLE_DRAFTS ON)
+option(-DZMQ_BUILD_DRAFT_API 1)
 target_link_libraries(ComuFrame cppzmq)
 target_include_directories(cppzmq
     INTERFACE

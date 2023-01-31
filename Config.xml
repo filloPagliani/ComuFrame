@@ -7,38 +7,61 @@
 		<pubPort port=":5556">
 		</pubPort>
 	</url>
-	<nodeTest1>
-		<data>{
-				"Packets" : [
-				{
+	<nodes>
+		<nodeTest1>
+			<data>
+				<sendingData>{
+					"Packets" : [
+					{
+						"nameID": "PacketA",
+						"anInt": "int",
+						"aFloat": "float"
+						},
+					{
+						"nameID": "PacketB",
+						"aDouble": "double",
+						"anArray": "array"
+						}
+					]
+				}
+				</sendingData>
+				<requestedData>
+					{
+						"nameID": "PacketC",
+						"anInt": "int",
+						"aFloat": "float",
+						"aDouble": "double"
+					}
+				</requestedData>
+		</data>
+		</nodeTest1>
+		<nodeTest2>
+			<data>
+				<sendingData>
+					{
+						"Packets" :="" [
+						{
+							"nameID": "PacketC",
+							"anInt": "int",
+							"aFloat": "float"
+						},
+					{
+							"nameID": "PacketD",
+							"aDouble": "double",
+							"anArray": "array"
+							}
+						]
+					}
+				</sendingData>
+				<requestedData>
+					{
 					"nameID": "PacketA",
 					"anInt": "int",
-					"aFloat": "float"
-					},
-				{
-					"nameID": "PacketB",
-					"aDouble": "double",
-					"anArray": "array"
+					"aFloat": "float",
+					"aDouble": "double"
 					}
-				]
-		}
-	</data>
-	</nodeTest1>
-	<nodeTest2>
-		<data>{
-				"Packets" : [
-				{
-					"nameID": "PacketC",
-					"anInt": "int",
-					"aFloat": "float"
-				},
-			{
-					"nameID": "PacketD",
-					"aDouble": "double",
-					"anArray": "array"
-					}
-				]
-			}
-		</data>
-	</nodeTest2>
+				</requestedData>
+			</data>
+		</nodeTest2>
+	</nodes>
 </config>

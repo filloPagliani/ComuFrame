@@ -51,11 +51,14 @@ using namespace zmq;
 		socket_t serviceSocket(Central::ctx, ZMQ_ROUTER);
 		serviceSocket.set(sockopt::routing_id, "Central");
 		serviceSocket.bind(url);
-
 		Central::connectedClients = Central::registerClient(&serviceSocket);
 		Central::state.nextState();
 		std::cout << "Central, ServiceThread: Registration completed, registered " << connectedClients.size() << " nodes\n";
-
+		for (std::string node : this->connectedClients) {
+			multipart_t syncroMSG;
+			syncroMSG.pushstr(state.toString());
+			syncroMSG.pushstr(node);
+		}
 		socket_t toMainSocket = initInprocSocket(&(Central::ctx), "inproc://serviceChannel", true);
 	 }
 
@@ -67,6 +70,13 @@ using namespace zmq;
 			 if(registrationMSG.recv(*sock))
 			 {
 				 clients.push_back(registrationMSG.popstr());
+				 if (std::count(clients.begin(), clients.end(), clients.back()) > 1) {
+					 registrationMSG.clear();
+					 registrationMSG.pushstr("connected");
+					 registrationMSG.pushstr(clients.back());
+					 std::cout << "node " << clients.back() << "is already registered, trying to send confirmations again";
+					 clients.pop_back();
+				 }
 				 if (registrationMSG.popstr() == state.toString()) {
 					 this->dataNodes.push_back(DataNode(clients.back()));
 					 jsoncons::json jData = jsoncons::json::parse(registrationMSG.popstr());
@@ -76,7 +86,6 @@ using namespace zmq;
 					 }
 					 registrationMSG.clear();
 					 registrationMSG.pushstr("connected");
-					 registrationMSG.pushstr("");
 					 registrationMSG.pushstr(clients.back());
 					 std::cout << "Central, serviceThread: Registration request from " << clients.back() << ", registration completed. with sending info:\n";
 
@@ -84,7 +93,6 @@ using namespace zmq;
 				 else { //send back to the sender the message with the currstate TODO handle the reception of that error msg
 					 registrationMSG.clear();
 					 registrationMSG.pushstr(state.toString());
-					 registrationMSG.pushstr("");
 					 registrationMSG.pushstr(clients.back());
 					 clients.pop_back();
 				 }

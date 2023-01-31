@@ -22,14 +22,18 @@ public:
 	//getter
 	std::string getUrl();
 	std::string getidentity();
-	jsoncons::json getDataNodeRequest();
+	jsoncons::json getSendingData();
+	jsoncons::json getrequestedDataa();
 private:
 	Fsm state;
 	std::string url;
 	std::string identity;
-	jsoncons::json dataNodeRequest;
-	bool sendRegistration(socket_t* sock);
+	jsoncons::json sendingData;
+	jsoncons::json requestedData;
+	bool sendStrMSG(socket_t* sock, std::string msg);
 	context_t ctx;
 	void initServiceThread();
+	bool waitForAck(std::string ackName,socket_t* sock);
+
 
 };

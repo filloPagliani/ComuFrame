@@ -15,10 +15,11 @@ Node::Node(std::string identity)
 		this->url = urlElement->FirstAttribute()->Value();
 		this->url += urlElement->FirstChildElement("servicePort")->FirstAttribute()->Value();
 		try {
-			tinyxml2::XMLElement* nodeElement = configDoc.RootElement()->FirstChildElement(this->identity.c_str());
+			tinyxml2::XMLElement* nodeElement = configDoc.RootElement()->FirstChildElement("nodes")->FirstChildElement(this->identity.c_str());
 			nodeElement = nodeElement->FirstChildElement("data");
 			//TODO sistema le eccezzioni es: se non c'è l'array, se non ci sono i nomi dei pack ecc
-			this->dataNodeRequest = jsoncons::json::parse(nodeElement->GetText());
+			this->sendingData = jsoncons::json::parse(nodeElement->FirstChildElement("sendingData")->GetText());
+			this->requestedData = jsoncons::json::parse(nodeElement->FirstChildElement("requestedData")->GetText());
 		}
 		catch (std::exception e) {
 			std::cout << "cannot find the configuration of " << this->identity << " inside the configuration file. exception: " << e.what();
@@ -55,26 +56,53 @@ void Node::initServiceThread() {
 	serviceSocket.connect(url);
 	std::cout << identity << ", serviceThread: Initialized and connected to " << Node::url <<"\n";
 	int tries = 0;
-	while (!sendRegistration(&serviceSocket)) //TODO : scegli numero di tries che non sia a caso come ora
+	while (!sendStrMSG(&serviceSocket,this->sendingData.as_string())) //TODO : scegli numero di tries che non sia a caso come ora e estrai da config
 	{
 		tries++;
-		sendRegistration(&serviceSocket);
+		sendStrMSG(&serviceSocket, this->sendingData.as_string());
 		if (tries > 4) { std::cout << "cant send registration message"; }
 	}
 
 	socket_t toMainSocket = initInprocSocket(&(Node::ctx), "inproc://serviceChannel", true);
-	//ricezione va spostata da qua
-	multipart_t msgRecv;
-	auto res1 = recv_multipart(serviceSocket, std::back_inserter(msgRecv));
-	msgRecv.popstr();
-	std::cout << identity << " serviceThread: messaggio ricevuto: " << msgRecv.popstr() << "\n";
-	state.nextState();
 
+
+	pollitem_t ackreceive[]{
+		{serviceSocket, 0, ZMQ_POLLIN, }
+	};
+	while (true) {
+		message_t ack;
+		poll(ackreceive, 1, 5000);//TODO : scegli numero di tries che non sia a caso come ora e estrai da config
+		if (ackreceive[0].revents & ZMQ_POLLIN) {
+			multipart_t msgRecv;
+			recv_multipart(serviceSocket, std::back_inserter(msgRecv));
+			std::cout << identity << " serviceThread: messaggio ricevuto: " << msgRecv.popstr() << "\n";
+			state.nextState();
+			break;
+		}
+		else {
+			std::cout << "timeout elapsed without the ack, sending registration again";
+			while (!sendStrMSG(&serviceSocket, this->sendingData.as_string())) //TODO : scegli numero di tries che non sia a caso come ora e estrai da config
+			{
+				tries++;
+				sendStrMSG(&serviceSocket, this->sendingData.as_string());
+				if (tries > 4) { std::cout << "cant send registration message"; }
+			}
+		}
+	}
+	//TODO wrappa il while dentro al sendstrmsg
+	multipart_t msgRecv;
+	recv_multipart(serviceSocket, std::back_inserter(msgRecv));
+	while (!sendStrMSG(&serviceSocket, this->requestedData.as_string())) //TODO : scegli numero di tries che non sia a caso come ora e estrai da config
+	{
+		tries++;
+		sendStrMSG(&serviceSocket, this->requestedData.as_string());
+		if (tries > 4) { std::cout << "cant send syncronization message"; }
+	}
 }
 
-bool Node::sendRegistration(socket_t* sock) {
+bool Node::sendStrMSG(socket_t* sock, std::string msg) {
 	multipart_t registrationMSG(state.toString());
-	registrationMSG.addstr(this->dataNodeRequest.as_string());
+	registrationMSG.addstr(msg);
 	if (registrationMSG.send(*sock)) {
 		std::cout << this->identity << ", ServiceThread: registration message sent";
 		return true;
@@ -94,6 +122,10 @@ std::string Node::getidentity() {
 	return Node::identity;
 }
 
-jsoncons::json Node::getDataNodeRequest() {
-	return this->dataNodeRequest;
+jsoncons::json Node::getrequestedDataa() {
+	return this->requestedData;
+}
+
+jsoncons::json Node::getSendingData() {
+	return this->sendingData;
 }

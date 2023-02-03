@@ -10,6 +10,10 @@ add_executable(LaunchCentral
 	"../ComuFrame/DataNode.h"
 	"../Comuframe/Fsm.h"
 	"../ComuFrame/Fsm.cpp"
+	"../ComuFrame/Database.h"
+	"../ComuFrame/Database.cpp"
+
+
 )
 add_executable(LaunchNode 
 	"LaunchNode.cpp" 
@@ -19,6 +23,7 @@ add_executable(LaunchNode
 	"../ComuFrame/utils.h"
 	"../Comuframe/Fsm.h"
 	"../ComuFrame/Fsm.cpp"
+
 )
 add_executable(Tests
 	"DataNodeTest.cpp"
@@ -34,6 +39,9 @@ add_executable(Tests
 	"../ComuFrame/Central.h" 
 	"../Comuframe/Fsm.h"
 	"../ComuFrame/Fsm.cpp"
+	"../ComuFrame/Database.h"
+	"../ComuFrame/Database.cpp"
+
 )
 
 target_link_libraries(Tests PRIVATE Catch2::Catch2WithMain tinyxml2 libzmq jsoncons)

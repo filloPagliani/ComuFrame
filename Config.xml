@@ -19,6 +19,7 @@
 						},
 					{
 						"nameID": "PacketB",
+						"anInt": "int",
 						"aDouble": "double",
 						"anArray": "array"
 						}
@@ -27,7 +28,6 @@
 				</sendingData>
 				<requestedData>
 					{
-						"nameID": "PacketC",
 						"anInt": "int",
 						"aFloat": "float",
 						"aDouble": "double"
@@ -39,7 +39,7 @@
 			<data>
 				<sendingData>
 					{
-						"Packets" :="" [
+						"Packets" : [
 						{
 							"nameID": "PacketC",
 							"anInt": "int",

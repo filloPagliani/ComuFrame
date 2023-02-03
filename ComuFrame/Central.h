@@ -1,4 +1,4 @@
-
+#include "DataBase.h"
 #include "zmq.hpp"
 #include "zmq_addon.hpp"
 #include "utils.h"
@@ -7,7 +7,6 @@
 #include <thread>
 #include "tinyxml2.h"
 #include "jsoncons/json.hpp"
-#include "DataNode.h"
 #include "Fsm.h"
 
 
@@ -22,7 +21,6 @@ public:
 	void initCentral();
 
 	//Getter
-	std::vector<DataNode> getDataNodes();
 	std::string getUrl();
 	int getExpectedClient();
 
@@ -32,8 +30,9 @@ private:
 	int expectedClient = 0;
 	context_t ctx;
 	std::vector<std::string> connectedClients;
-	std::vector<DataNode> dataNodes;
-
+	DataBase db;
 	void initServiceThread();
 	std::vector<std::string> registerClient(socket_t * sock);
+	bool sendStrMSG(socket_t* sock, std::string msg, std::string adressee);
+
 };

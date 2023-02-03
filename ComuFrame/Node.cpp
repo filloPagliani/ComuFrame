@@ -6,7 +6,7 @@ Node::Node(std::string identity)
 {
 	this->identity = identity;
 	tinyxml2::XMLDocument configDoc;
-	if (tinyxml2::XML_SUCCESS != configDoc.LoadFile("C:/Users/pagliani/source/repos/ComuFrame/Config.xml")) { 
+	if (tinyxml2::XML_SUCCESS != configDoc.LoadFile("C:/Users/pagliani/source/repos/ComuFrame/Config.xml")) {
 		std::cout << "can't load configration file, using default options";
 		this->url = "tcp://127.0.0.1:5555";
 	}
@@ -22,7 +22,7 @@ Node::Node(std::string identity)
 			this->requestedData = jsoncons::json::parse(nodeElement->FirstChildElement("requestedData")->GetText());
 		}
 		catch (std::exception e) {
-			std::cout << "cannot find the configuration of " << this->identity << " inside the configuration file. exception: " << e.what();
+			std::cout << "cannot find the configuration of " << this->identity << " inside the configuration file. exception: " << e.what()<<"\n";
 		}
 		//pubPort = urlElement->FirstChildElement("pubPort")->FirstAttribute()->Value();
 	}
@@ -55,62 +55,56 @@ void Node::initServiceThread() {
 	}
 	serviceSocket.connect(url);
 	std::cout << identity << ", serviceThread: Initialized and connected to " << Node::url <<"\n";
-	int tries = 0;
-	while (!sendStrMSG(&serviceSocket,this->sendingData.as_string())) //TODO : scegli numero di tries che non sia a caso come ora e estrai da config
-	{
-		tries++;
-		sendStrMSG(&serviceSocket, this->sendingData.as_string());
-		if (tries > 4) { std::cout << "cant send registration message"; }
-	}
+	sendStrMSG(&serviceSocket, this->sendingData.as_string()); //TODO : scegli numero di tries che non sia a caso come ora e estrai da config
+
 
 	socket_t toMainSocket = initInprocSocket(&(Node::ctx), "inproc://serviceChannel", true);
 
-
-	pollitem_t ackreceive[]{
-		{serviceSocket, 0, ZMQ_POLLIN, }
-	};
-	while (true) {
-		message_t ack;
-		poll(ackreceive, 1, 5000);//TODO : scegli numero di tries che non sia a caso come ora e estrai da config
-		if (ackreceive[0].revents & ZMQ_POLLIN) {
-			multipart_t msgRecv;
-			recv_multipart(serviceSocket, std::back_inserter(msgRecv));
-			std::cout << identity << " serviceThread: messaggio ricevuto: " << msgRecv.popstr() << "\n";
-			state.nextState();
-			break;
-		}
-		else {
-			std::cout << "timeout elapsed without the ack, sending registration again";
-			while (!sendStrMSG(&serviceSocket, this->sendingData.as_string())) //TODO : scegli numero di tries che non sia a caso come ora e estrai da config
-			{
-				tries++;
-				sendStrMSG(&serviceSocket, this->sendingData.as_string());
-				if (tries > 4) { std::cout << "cant send registration message"; }
-			}
-		}
+	if (receiveStrMsgTimeout(&serviceSocket, 5000)) {
+		state.nextState();
 	}
+	
 	//TODO wrappa il while dentro al sendstrmsg
 	multipart_t msgRecv;
 	recv_multipart(serviceSocket, std::back_inserter(msgRecv));
-	while (!sendStrMSG(&serviceSocket, this->requestedData.as_string())) //TODO : scegli numero di tries che non sia a caso come ora e estrai da config
-	{
-		tries++;
-		sendStrMSG(&serviceSocket, this->requestedData.as_string());
-		if (tries > 4) { std::cout << "cant send syncronization message"; }
+	sendStrMSG(&serviceSocket, this->requestedData.as_string());//TODO : scegli numero di tries che non sia a caso come ora e estrai da config
+}
+
+//fucntion used to receive a string with a timeout, if the msg is received within the timeout indicated will return true, and go ahead,it will keep trying TODO: inserisci limite di tries.
+bool Node::receiveStrMsgTimeout(socket_t* sock, int timeout) {
+	pollitem_t ackreceive[]{
+		{*sock, 0, ZMQ_POLLIN, }
+	};
+	while (true) {
+		poll(ackreceive, 1, timeout);//TODO : scegli timeout che non sia a caso come ora e estrai da config
+		if (ackreceive[0].revents & ZMQ_POLLIN) {
+			multipart_t msgRecv;
+			recv_multipart(*sock, std::back_inserter(msgRecv));
+			std::cout << identity << " serviceThread: message received: " << msgRecv.popstr() << "\n";
+			return true;
+		}
+		else {
+			std::cout << "timeout elapsed without the ack, sending registration again\n";
+			sendStrMSG(sock, this->sendingData.as_string()); //TODO : scegli numero di tries che non sia a caso come ora e estrai da config
+		}
 	}
 }
 
+
+//function used to send a string msg through the socket, it will try to send it n times if it fails and if after n times keeps failing it will return false
 bool Node::sendStrMSG(socket_t* sock, std::string msg) {
 	multipart_t registrationMSG(state.toString());
 	registrationMSG.addstr(msg);
-	if (registrationMSG.send(*sock)) {
-		std::cout << this->identity << ", ServiceThread: registration message sent";
-		return true;
+	int tries = 0;
+	while (!registrationMSG.send(*sock)) {
+		tries++;
+		if (tries > 4) { 
+			std::cout << "cant send the message:" << msg; 
+			return false;
+		}
 	}
-	else {
-		std::cout << this->identity << ", ServiceThread: failed trying to send registration message";
-		return false;
-	}
+	std::cout << this->identity << "serviceThread: message sent :\n" << msg<< "\n";
+	return true;
 }
 
 //getter

@@ -16,6 +16,9 @@
     <ClCompile Include="C:\Users\pagliani\source\repos\ComuFrame\ComuFrame\DataNode.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="C:\Users\pagliani\source\repos\ComuFrame\ComuFrame\DataBase.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="C:\Users\pagliani\source\repos\ComuFrame\ComuFrame\ComuFrame.h">
@@ -34,6 +37,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="C:\Users\pagliani\source\repos\ComuFrame\ComuFrame\Fsm.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\pagliani\source\repos\ComuFrame\ComuFrame\DataBase.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

@@ -35,7 +35,45 @@ void DataBase::resetPackets() {
 }
 
 //given a set of data requested from a node provide the packet in wichhe can find them.
-std::vector<std::string> providePackets(std::vector<std::string> requestedData);
+std::vector<std::string> DataBase::providePackets(std::vector<std::string> requestedData) {
+	std::vector<std::string> packList;
+	std::vector<std::vector<std::pair<std::string, bool*>>> andClause;
+	for (auto& data : requestedData) {
+		std::vector<std::pair<std::string, bool*>> orClause;
+		std::vector<std::pair<std::string, bool*>> packetsWitData = index[data];
+		for (auto& pack : packetsWitData) {
+			orClause.push_back(pack);
+		}
+		if (orClause.size() == 1) {
+			packList.push_back(orClause[0].first);
+			*(orClause[0].second) = true;
+		}
+		else {
+			andClause.push_back(orClause);
+		}
+	}//hai fatto la matrice devi iterare i test hint: funz che ti crei e scorre e ne mette uno true alla volta poi testa lo setta false e va a quello dopo; questa funzione poi la fai ricorsiva che si chiama da sola una volta prima poi due per le coppie e cosi via a ogni chiamata escludendo le prime x colonne ricorda di non settare a 1 le cose gia a uno perche singole clause che non sono presenti nella tabella
+
+}
+
+bool evaluateOR(std::vector<std::pair<std::string, bool*>> OR) {
+	for (auto& clause : OR ) {
+		if (clause.second) {
+			return true;
+		}
+	}
+	return false;
+}
+
+bool evaluateAND(std::vector<std::vector<std::pair<std::string, bool*>>> AND) {
+	for (auto& clause : AND) {
+		if (!evaluateOR(clause)) {
+			return false;
+		}
+	}
+	return true;
+}
+
+
 
 
 //getter

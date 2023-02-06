@@ -13,24 +13,24 @@
 				<sendingData>{
 					"Packets" : [
 					{
-						"nameID": "PacketA",
-						"anInt": "int",
-						"aFloat": "float"
+						"nameID": "PackA",
+						"fuel": "int",
+						"fuelDouble": "double"
 						},
 					{
-						"nameID": "PacketB",
-						"anInt": "int",
-						"aDouble": "double",
-						"anArray": "array"
+						"nameID": "PackB",
+						"posx": "int",
+						"posy": "int",
+						"aLotOfPos": "array[int]"
 						}
 					]
 				}
 				</sendingData>
 				<requestedData>
 					{
-						"anInt": "int",
-						"aFloat": "float",
-						"aDouble": "double"
+						"doubleX": "double",
+						"doubleY": "double",
+						"lights": "bool"
 					}
 				</requestedData>
 		</data>
@@ -41,24 +41,24 @@
 					{
 						"Packets" : [
 						{
-							"nameID": "PacketC",
-							"anInt": "int",
+							"nameID": "PackC",
+							"doubleX": "double",
+							"doubleY": "double",
 							"aFloat": "float"
 						},
 					{
-							"nameID": "PacketD",
-							"aDouble": "double",
-							"anArray": "array"
+							"nameID": "PackD",
+							"lights": "bool",
+							"aData": "long",
+							"displayA": "array"
 							}
 						]
 					}
 				</sendingData>
 				<requestedData>
 					{
-					"nameID": "PacketA",
-					"anInt": "int",
-					"aFloat": "float",
-					"aDouble": "double"
+					"fuel": "int",
+					"fuelDouble": "double"
 					}
 				</requestedData>
 			</data>

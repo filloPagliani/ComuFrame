@@ -89,7 +89,14 @@ using namespace zmq;
 			}
 		}
 		
-
+		for (auto& request : requestMap) {
+			std::cout << request.first << " : ";
+			std::vector<std::string> strings = db.providePackets(request.second);
+			for (auto& str : strings) {
+				std::cout << str << " ";
+			}
+			std::cout << "\n";
+		}
 
 		socket_t toMainSocket = initInprocSocket(&(Central::ctx), "inproc://serviceChannel", true);
 	 }

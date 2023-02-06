@@ -36,35 +36,72 @@ void DataBase::resetPackets() {
 
 //given a set of data requested from a node provide the packet in wichhe can find them.
 std::vector<std::string> DataBase::providePackets(std::vector<std::string> requestedData) {
-	std::vector<std::string> packList;
-	std::vector<std::vector<std::pair<std::string, bool*>>> andClause;
+	std::vector<std::vector<bool*>> andClause;
+	int maxSize = 0;
 	for (auto& data : requestedData) {
-		std::vector<std::pair<std::string, bool*>> orClause;
+		std::vector<bool*> orClause;
 		std::vector<std::pair<std::string, bool*>> packetsWitData = index[data];
 		for (auto& pack : packetsWitData) {
-			orClause.push_back(pack);
+			orClause.push_back(pack.second);
 		}
 		if (orClause.size() == 1) {
-			packList.push_back(orClause[0].first);
-			*(orClause[0].second) = true;
+			*(orClause[0]) = true;
 		}
 		else {
 			andClause.push_back(orClause);
+			if (orClause.size() > maxSize) { maxSize = orClause.size(); }
 		}
 	}//hai fatto la matrice devi iterare i test hint: funz che ti crei e scorre e ne mette uno true alla volta poi testa lo setta false e va a quello dopo; questa funzione poi la fai ricorsiva che si chiama da sola una volta prima poi due per le coppie e cosi via a ogni chiamata escludendo le prime x colonne ricorda di non settare a 1 le cose gia a uno perche singole clause che non sono presenti nella tabella
+	std::vector<std::string> result;
+	for (int i = 0; i < andClause.size();i++) {
+		if (tuneFunctions(&andClause, maxSize, i, 0)) {
+			break;
+		}
+		else if (i == andClause.size() - 1) { result.push_back("can't find your data in the DB"); return result; }
+	}
 
+	for (auto& i : this->avaiablePacks) {
+		if (i.second) {
+			result.push_back(i.first);
+		}
+	}
+	resetPackets();
+	return result;
 }
 
-bool evaluateOR(std::vector<std::pair<std::string, bool*>> OR) {
+bool DataBase::tuneFunctions(std::vector<std::vector<bool*>>* formula, int maxSize, int recCallNum, int callNumber) {
+	for (int row = 0; row < maxSize; row++) {
+		for (int column = callNumber; column < formula->size();column++) {
+			if (row < (*formula)[column].size()) {
+				(*(*formula)[column][row]) = true;
+				bool res = false;
+				if (recCallNum == callNumber) {
+					res = evaluateAND(*formula);
+				}
+				else {
+					res = tuneFunctions(formula, maxSize, recCallNum, callNumber + 1);
+				}
+				if (res) {
+					return res;
+				}
+				else {
+					(*(*formula)[column][row]) = false;
+				}
+			}
+		}
+	}
+}
+
+bool DataBase::evaluateOR(std::vector<bool*> OR) {
 	for (auto& clause : OR ) {
-		if (clause.second) {
+		if (clause) {
 			return true;
 		}
 	}
 	return false;
 }
 
-bool evaluateAND(std::vector<std::vector<std::pair<std::string, bool*>>> AND) {
+bool DataBase::evaluateAND(std::vector<std::vector<bool*>> AND) {
 	for (auto& clause : AND) {
 		if (!evaluateOR(clause)) {
 			return false;

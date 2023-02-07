@@ -59,19 +59,21 @@ using namespace zmq;
 			sendStrMSG(&serviceSocket, state.toString(),node);
 		}
 		std::unordered_map<std::string, std::vector<std::string>> requestMap;
-		pollitem_t receivingDataRequest[]{
-		{serviceSocket, 0, ZMQ_POLLIN, }
-		};
+
 		while (true) {
+			pollitem_t receivingDataRequest[]{
+				{serviceSocket, 0, ZMQ_POLLIN, 0}
+			};
 			poll(receivingDataRequest, 1, 10000);//TODO : scegli numero di tries che non sia a caso come ora e estrai da config
 			if (receivingDataRequest[0].revents & ZMQ_POLLIN) {
 				multipart_t request;
 				recv_multipart(serviceSocket, std::back_inserter(request));
 				std::string nodeName = request.popstr();
-				if ((request.popstr() == state.toString())||(requestMap.find(nodeName) == requestMap.end()))   //da qua esco se il request map non ha il nome o se il messaggio ricevuto non è in stato syncro, probabilmente vanno divisi i due casi per reagire in modo diverso
+				if ((request.popstr() == state.toString())&&(requestMap.find(nodeName) == requestMap.end()))   //da qua esco se il request map non ha il nome o se il messaggio ricevuto non è in stato syncro, probabilmente vanno divisi i due casi per reagire in modo diverso
 				{
 					std::vector<std::string> dataRequested;
 					jsoncons::json jDataRequested = jsoncons::json::parse(request.popstr());
+					std::cout << jDataRequested.as_string() << "\n";
 					for (auto& it : jDataRequested.object_range()) {
 						dataRequested.push_back(it.key() + "_" + it.value().as_string());
 					}
@@ -81,6 +83,7 @@ using namespace zmq;
 					}
 				}
 				else {
+					std::cout <<"discarded "<< request.popstr()<< "\n";
 					continue;//si potrebbe rimandare e fare in modo che di la si esce solo con ack attento qua da valutare entrambi i casi che ti portano qua
 				}
 			}

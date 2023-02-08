@@ -1,0 +1,16 @@
+---
+    url: "tcp://127.0.0.1"
+    servicePort: ":5555"
+    pubPort: "5556"
+    sendingPackets: 
+        PackA:
+            fuel: int
+            fuelDouble: double
+        PackB:
+            posx: int
+            posy: int
+            aLotOfPos: array[int]
+    requestedData:
+        doubleX: double
+        doubleY: double
+        lights: bool

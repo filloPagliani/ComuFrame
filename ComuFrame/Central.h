@@ -5,10 +5,8 @@
 #include <stdio.h>
 #include <iostream>
 #include <thread>
-#include "tinyxml2.h"
-#include "jsoncons/json.hpp"
 #include "Fsm.h"
-
+#include "yaml-cpp/yaml.h"
 
 using namespace zmq;
 

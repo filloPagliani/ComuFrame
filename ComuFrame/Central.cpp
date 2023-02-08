@@ -4,16 +4,13 @@ using namespace zmq;
 	
 	Central::Central()
 	{
-		tinyxml2::XMLDocument configDoc;
-		if (tinyxml2::XML_SUCCESS != configDoc.LoadFile("C:/Users/pagliani/source/repos/ComuFrame/Config.xml")) {
-			std::cout << "can't load configration file, using default options";
-			this->url = "tcp://127.0.0.1:5555";
+		try {
+			YAML::Node config = YAML::LoadFile("C:/Users/pagliani/source/repos/ComuFrame/Config/Central.yaml");
+			this->url = config["url"].as<std::string>() + config["servicePort"].as<std::string>();
 		}
-		else {
-			tinyxml2::XMLElement* urlElement = configDoc.RootElement()->FirstChildElement("url");
-			this->url = urlElement->FirstAttribute()->Value();
-			this->url += urlElement->FirstChildElement("servicePort")->FirstAttribute()->Value();
-			//pubPort = urlElement->FirstChildElement("pubPort")->FirstAttribute()->Value();
+		catch (std::exception e) {
+			std::cout << "can't load configration file, using default options. Error : " << e.what();
+			this->url = "tcp://127.0.0.1:5555";
 		}
 	}
 
@@ -72,10 +69,10 @@ using namespace zmq;
 				if ((request.popstr() == state.toString())&&(requestMap.find(nodeName) == requestMap.end()))   //da qua esco se il request map non ha il nome o se il messaggio ricevuto non è in stato syncro, probabilmente vanno divisi i due casi per reagire in modo diverso
 				{
 					std::vector<std::string> dataRequested;
-					jsoncons::json jDataRequested = jsoncons::json::parse(request.popstr());
-					std::cout << jDataRequested.as_string() << "\n";
-					for (auto& it : jDataRequested.object_range()) {
-						dataRequested.push_back(it.key() + "_" + it.value().as_string());
+					YAML::Node YDataRequested = YAML::Load(request.popstr());
+					std::cout << "messaggo arrivato cosi " << YDataRequested << "\n";
+					for(auto it = YDataRequested.begin(); it != YDataRequested.end();it++){
+						dataRequested.push_back(it->first.as<std::string>() + "_" + it->second.as<std::string>());
 					}
 					requestMap[nodeName] = dataRequested;
 					if (requestMap.size() == connectedClients.size()) {
@@ -120,9 +117,9 @@ using namespace zmq;
 					 clients.pop_back();
 				 }
 				 else if (registrationMSG.popstr() == state.toString()) {
-					 jsoncons::json jData = jsoncons::json::parse(registrationMSG.popstr());
-					 for (auto i = jData["Packets"].begin_elements(); i < jData["Packets"].end_elements(); i++) {
-						 db.addPacket(*i,clients.back());
+					 YAML::Node YData = YAML::Load(registrationMSG.popstr());
+					 for (YAML::const_iterator i = YData.begin(); i != YData.end(); i++) {
+						 db.addPacket(i->second,clients.back(),i->first.as<std::string>());
 					 }
 					 registrationMSG.clear();
 					 registrationMSG.pushstr("connected");

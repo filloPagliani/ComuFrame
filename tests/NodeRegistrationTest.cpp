@@ -5,6 +5,8 @@
 #include "../ComuFrame/Central.h"
 #include "jsoncons/json.hpp"
 
+//TODO : praticamente tutto da rifare qua
+
 TEST_CASE("Registration of a node tests") {
 	std::string nameNode1 = "nodeTest1";
 	std::string nameNode2 = "nodeTest2";
@@ -18,6 +20,16 @@ TEST_CASE("Registration of a node tests") {
 	std::thread node2Thread(&Node::initNode, &nodeTest2);
 	central.initCentral();
 
+	try {
+		YAML::Node config = YAML::LoadFile("C:/Users/pagliani/source/repos/ComuFrame/Config/" + identity + ".yaml");
+		this->url = config["url"].as<std::string>() + config["servicePort"].as<std::string>();
+		this->sendingPackets = config["sendingPackets"];
+		this->requestedData = config["requestedData"];
+	}
+	catch (std::exception e) {
+		std::cout << "can't load configration file, using default options. Error : " << e.what() << "\n";
+		this->url = "tcp://127.0.0.1:5555";
+	}
 	tinyxml2::XMLDocument configDoc;
 	if (tinyxml2::XML_SUCCESS != configDoc.LoadFile("C:/Users/pagliani/source/repos/ComuFrame/Config.xml")) {
 		std::cout << "can't load configration file, using default options";
@@ -49,14 +61,7 @@ TEST_CASE("Registration of a node tests") {
 	}
 	jsoncons::json receivedData1;
 	jsoncons::json receivedData2;
-	if (central.getDataNodes()[0].getSender() == nameNode1) {
-		receivedData1 = jsoncons::json(central.getDataNodes()[0].getAllPacket()[0]);
-		receivedData2 = jsoncons::json(central.getDataNodes()[1].getAllPacket()[0]);
-	}
-	else if (central.getDataNodes()[0].getSender() == nameNode2) {
-		receivedData1 = jsoncons::json(central.getDataNodes()[1].getAllPacket()[0]);
-		receivedData2 = jsoncons::json(central.getDataNodes()[0].getAllPacket()[0]);
-	}
+
 	REQUIRE(receivedData1.as_string() == dataNodeTest1["Packets"][0].as_string());
 	REQUIRE(receivedData2.as_string() == dataNodeTest2["Packets"][0].as_string());
 

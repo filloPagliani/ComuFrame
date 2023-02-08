@@ -1,6 +1,5 @@
 # CMake generation dependency list for this directory.
 C:/Program Files/Microsoft Visual Studio/2022/Professional/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.23/Modules/BasicConfigVersion-AnyNewerVersion.cmake.in
-C:/Program Files/Microsoft Visual Studio/2022/Professional/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.23/Modules/CMakeCheckCompilerFlagCommonPatterns.cmake
 C:/Program Files/Microsoft Visual Studio/2022/Professional/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.23/Modules/CMakeDependentOption.cmake
 C:/Program Files/Microsoft Visual Studio/2022/Professional/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.23/Modules/CMakePackageConfigHelpers.cmake
 C:/Program Files/Microsoft Visual Studio/2022/Professional/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.23/Modules/CheckCCompilerFlag.cmake
@@ -22,10 +21,10 @@ C:/Program Files/Microsoft Visual Studio/2022/Professional/Common7/IDE/CommonExt
 C:/Program Files/Microsoft Visual Studio/2022/Professional/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.23/Modules/FindThreads.cmake
 C:/Program Files/Microsoft Visual Studio/2022/Professional/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.23/Modules/GNUInstallDirs.cmake
 C:/Program Files/Microsoft Visual Studio/2022/Professional/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.23/Modules/Internal/CheckCompilerFlag.cmake
-C:/Program Files/Microsoft Visual Studio/2022/Professional/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.23/Modules/Internal/CheckFlagCommonConfig.cmake
 C:/Program Files/Microsoft Visual Studio/2022/Professional/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.23/Modules/Internal/CheckSourceCompiles.cmake
 C:/Program Files/Microsoft Visual Studio/2022/Professional/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.23/Modules/Internal/CheckSourceRuns.cmake
 C:/Program Files/Microsoft Visual Studio/2022/Professional/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.23/Modules/WriteBasicConfigVersionFile.cmake
+C:/Users/pagliani/source/repos/ComuFrame/Builds/CMakeFiles/cmake.verify_globs
 C:/Users/pagliani/source/repos/ComuFrame/ExternalLib/libzmq/AUTHORS
 C:/Users/pagliani/source/repos/ComuFrame/ExternalLib/libzmq/CMakeLists.txt
 C:/Users/pagliani/source/repos/ComuFrame/ExternalLib/libzmq/COPYING

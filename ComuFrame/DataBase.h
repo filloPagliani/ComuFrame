@@ -1,13 +1,14 @@
 #pragma once
+#include "yaml-cpp/yaml.h"
 #include <vector>
 #include <unordered_map>
 #include <stdio.h>
-#include "jsoncons/json.hpp"
+#include <iostream>
 class DataBase {
 public:
 	typedef std::pair<std::string, bool> packet;
 	typedef std::unordered_map < std::string, std::vector<std::pair<std::string, bool*>>> dbMap;
-	bool addPacket(jsoncons::json jPack, std::string sender);
+	void addPacket(YAML::Node YPack, std::string sender, std::string name);
 	std::vector<std::string> providePackets(std::vector<std::string> requestedData);
 
 	//getter

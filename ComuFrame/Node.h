@@ -1,8 +1,7 @@
 #include "zmq.hpp"
 #include "zmq_addon.hpp"
 #include "utils.h"
-#include "tinyxml2.h"
-#include "jsoncons/json.hpp"
+#include "yaml-cpp/yaml.h"
 #include <stdio.h>
 #include <iostream>
 #include <thread>
@@ -22,15 +21,15 @@ public:
 	//getter
 	std::string getUrl();
 	std::string getidentity();
-	jsoncons::json getSendingData();
-	jsoncons::json getrequestedDataa();
+	YAML::Node getSendingPackets();
+	YAML::Node getrequestedDataa();
 private:
 	//properties
 	Fsm state;
 	std::string url;
 	std::string identity;
-	jsoncons::json sendingData;
-	jsoncons::json requestedData;
+	YAML::Node sendingPackets;
+	YAML::Node requestedData;
 	//methods
 	bool receiveStrMsgTimeout(socket_t* sock, int timeout);
 	bool sendStrMSG(socket_t* sock, std::string msg);

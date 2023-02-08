@@ -4,6 +4,14 @@ C:/Users/pagliani/source/repos/ComuFrame/Builds/CMakeFiles/ZERO_CHECK.dir
 C:/Users/pagliani/source/repos/ComuFrame/Builds/ComuFrame/CMakeFiles/ComuFrame.dir
 C:/Users/pagliani/source/repos/ComuFrame/Builds/ComuFrame/CMakeFiles/INSTALL.dir
 C:/Users/pagliani/source/repos/ComuFrame/Builds/ExternalLib/CMakeFiles/INSTALL.dir
+C:/Users/pagliani/source/repos/ComuFrame/Builds/ExternalLib/yaml-cpp/CMakeFiles/yaml-cpp.dir
+C:/Users/pagliani/source/repos/ComuFrame/Builds/ExternalLib/yaml-cpp/CMakeFiles/uninstall.dir
+C:/Users/pagliani/source/repos/ComuFrame/Builds/ExternalLib/yaml-cpp/CMakeFiles/INSTALL.dir
+C:/Users/pagliani/source/repos/ComuFrame/Builds/ExternalLib/yaml-cpp/CMakeFiles/ALL_BUILD.dir
+C:/Users/pagliani/source/repos/ComuFrame/Builds/ExternalLib/yaml-cpp/util/CMakeFiles/yaml-cpp-sandbox.dir
+C:/Users/pagliani/source/repos/ComuFrame/Builds/ExternalLib/yaml-cpp/util/CMakeFiles/yaml-cpp-parse.dir
+C:/Users/pagliani/source/repos/ComuFrame/Builds/ExternalLib/yaml-cpp/util/CMakeFiles/yaml-cpp-read.dir
+C:/Users/pagliani/source/repos/ComuFrame/Builds/ExternalLib/yaml-cpp/util/CMakeFiles/INSTALL.dir
 C:/Users/pagliani/source/repos/ComuFrame/Builds/ExternalLib/tinyxml2/CMakeFiles/Experimental.dir
 C:/Users/pagliani/source/repos/ComuFrame/Builds/ExternalLib/tinyxml2/CMakeFiles/Nightly.dir
 C:/Users/pagliani/source/repos/ComuFrame/Builds/ExternalLib/tinyxml2/CMakeFiles/Continuous.dir

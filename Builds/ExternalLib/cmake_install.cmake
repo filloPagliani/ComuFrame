@@ -34,6 +34,11 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
+  include("C:/Users/pagliani/source/repos/ComuFrame/Builds/ExternalLib/yaml-cpp/cmake_install.cmake")
+endif()
+
+if(NOT CMAKE_INSTALL_LOCAL_ONLY)
+  # Include the install script for the subdirectory.
   include("C:/Users/pagliani/source/repos/ComuFrame/Builds/ExternalLib/tinyxml2/cmake_install.cmake")
 endif()
 

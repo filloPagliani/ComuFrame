@@ -1,28 +1,20 @@
 #include "DataBase.h"
 //take in imput a json version extracted from DataNode and insert the packet in the db
-bool DataBase::addPacket(jsoncons::json jPack,std::string sender) {
-	std::unordered_map<std::string, std::string> packToAdd = jPack.as< std::unordered_map<std::string, std::string>>();
-	std::string packName = packToAdd["nameID"] + "_" + sender;
-	if (packToAdd.find("nameID") == packToAdd.end()) {
-		return false;
-	}
-	else {
-		this->avaiablePacks.insert({packName,false});
-		for (auto it = packToAdd.begin(); it!=packToAdd.end(); it++) {
-			std::string dataName = it->first + "_" + it->second;
-			auto dataToUpdate = this->index.find(it->first + "_" + it->second);
-			if ( it->first == "nameID") {
-				continue;
-			}
-			else if (dataToUpdate != this->index.end()) {
-				std::pair<std::string, bool*> pairToAdd = { packName,&(avaiablePacks[packName])};
-				dataToUpdate->second.push_back(pairToAdd);
-			}
-			else {
-				std::vector<std::pair<std::string, bool *>> pairToAdd;
-				pairToAdd.push_back({ packName,&avaiablePacks[packName] });
-				index[dataName]=pairToAdd;
-			}
+void DataBase::addPacket(YAML::Node YPack,std::string sender,std::string name) {
+	std::unordered_map<std::string, std::string> packToAdd = YPack.as< std::unordered_map<std::string, std::string>>();
+	std::string packName = name + "_" + sender;
+	this->avaiablePacks.insert({packName,false});
+	for (auto it = packToAdd.begin(); it!=packToAdd.end(); it++) {
+		std::string dataName = it->first + "_" + it->second;
+		auto dataToUpdate = this->index.find(it->first + "_" + it->second);
+		if (dataToUpdate != this->index.end()) {
+			std::pair<std::string, bool*> pairToAdd = { packName,&(avaiablePacks[packName])};
+			dataToUpdate->second.push_back(pairToAdd);
+		}
+		else {
+			std::vector<std::pair<std::string, bool *>> pairToAdd;
+			pairToAdd.push_back({ packName,&avaiablePacks[packName] });
+			index[dataName]=pairToAdd;
 		}
 	}
 }

@@ -5,26 +5,15 @@ using namespace zmq;
 Node::Node(std::string identity)
 {
 	this->identity = identity;
-	tinyxml2::XMLDocument configDoc;
-	if (tinyxml2::XML_SUCCESS != configDoc.LoadFile("C:/Users/pagliani/source/repos/ComuFrame/Config.xml")) {
-		std::cout << "can't load configration file, using default options";
-		this->url = "tcp://127.0.0.1:5555";
+	try {
+		YAML::Node config = YAML::LoadFile("C:/Users/pagliani/source/repos/ComuFrame/Config/" + identity+".yaml");
+		this->url = config["url"].as<std::string>() + config["servicePort"].as<std::string>();
+		this->sendingPackets = config["sendingPackets"];
+		this->requestedData = config["requestedData"];
 	}
-	else {
-		tinyxml2::XMLElement* urlElement = configDoc.RootElement()->FirstChildElement("url");
-		this->url = urlElement->FirstAttribute()->Value();
-		this->url += urlElement->FirstChildElement("servicePort")->FirstAttribute()->Value();
-		try {
-			tinyxml2::XMLElement* nodeElement = configDoc.RootElement()->FirstChildElement("nodes")->FirstChildElement(this->identity.c_str());
-			nodeElement = nodeElement->FirstChildElement("data");
-			//TODO sistema le eccezzioni es: se non c'è l'array, se non ci sono i nomi dei pack ecc
-			this->sendingData = jsoncons::json::parse(nodeElement->FirstChildElement("sendingData")->GetText());
-			this->requestedData = jsoncons::json::parse(nodeElement->FirstChildElement("requestedData")->GetText());
-		}
-		catch (std::exception e) {
-			std::cout << "cannot find the configuration of " << this->identity << " inside the configuration file. exception: " << e.what()<<"\n";
-		}
-		//pubPort = urlElement->FirstChildElement("pubPort")->FirstAttribute()->Value();
+	catch (std::exception e) {
+		std::cout << "can't load configration file, using default options. Error : " << e.what() << "\n";
+		this->url = "tcp://127.0.0.1:5555";
 	}
 }
 
@@ -55,7 +44,9 @@ void Node::initServiceThread() {
 	}
 	serviceSocket.connect(url);
 	std::cout << identity << ", serviceThread: Initialized and connected to " << Node::url <<"\n";
-	sendStrMSG(&serviceSocket, this->sendingData.as_string()); //TODO : scegli numero di tries che non sia a caso come ora e estrai da config
+	YAML::Emitter yEmitter;
+	yEmitter << this->sendingPackets;
+	sendStrMSG(&serviceSocket, yEmitter.c_str()); //TODO : scegli numero di tries che non sia a caso come ora e estrai da config
 
 
 	socket_t toMainSocket = initInprocSocket(&(Node::ctx), "inproc://serviceChannel", true);
@@ -67,7 +58,9 @@ void Node::initServiceThread() {
 	//TODO wrappa il while dentro al sendstrmsg
 	multipart_t msgRecv;
 	recv_multipart(serviceSocket, std::back_inserter(msgRecv));
-	sendStrMSG(&serviceSocket, this->requestedData.as_string());//TODO : scegli numero di tries che non sia a caso come ora e estrai da config
+	YAML::Emitter yEmitterrequested;
+	yEmitterrequested << this->requestedData;
+	sendStrMSG(&serviceSocket, yEmitterrequested.c_str());//TODO : scegli numero di tries che non sia a caso come ora e estrai da config
 }
 
 //fucntion used to receive a string with a timeout, if the msg is received within the timeout indicated will return true, and go ahead,it will keep trying TODO: inserisci limite di tries.
@@ -85,7 +78,9 @@ bool Node::receiveStrMsgTimeout(socket_t* sock, int timeout) {
 		}
 		else {
 			std::cout << "timeout elapsed without the ack, sending registration again\n";
-			sendStrMSG(sock, this->sendingData.as_string()); //TODO : scegli numero di tries che non sia a caso come ora e estrai da config
+			YAML::Emitter yEmitter;
+			yEmitter << this->sendingPackets;
+			sendStrMSG(sock, yEmitter.c_str()); //TODO : scegli numero di tries che non sia a caso come ora e estrai da config
 		}
 	}
 }
@@ -116,10 +111,10 @@ std::string Node::getidentity() {
 	return Node::identity;
 }
 
-jsoncons::json Node::getrequestedDataa() {
+YAML::Node Node::getrequestedDataa() {
 	return this->requestedData;
 }
 
-jsoncons::json Node::getSendingData() {
-	return this->sendingData;
+YAML::Node Node::getSendingPackets() {
+	return this->sendingPackets;
 }

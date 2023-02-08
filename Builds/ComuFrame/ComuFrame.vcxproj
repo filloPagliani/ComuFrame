@@ -86,7 +86,7 @@
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\tinyxml2;C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\jsoncons\include;C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\cppzmq\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\yaml-cpp\include;C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\tinyxml2;C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\jsoncons\include;C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\cppzmq\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
@@ -98,15 +98,15 @@
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
       <RuntimeTypeInfo>true</RuntimeTypeInfo>
       <UseFullPaths>false</UseFullPaths>
-      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;TINYXML2_DEBUG;TINYXML2_IMPORT;CMAKE_INTDIR="Debug"</PreprocessorDefinitions>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;YAML_CPP_STATIC_DEFINE;TINYXML2_DEBUG;TINYXML2_IMPORT;CMAKE_INTDIR="Debug"</PreprocessorDefinitions>
       <ObjectFileName>$(IntDir)</ObjectFileName>
     </ClCompile>
     <ResourceCompile>
-      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_DEBUG;_WINDOWS;TINYXML2_DEBUG;TINYXML2_IMPORT;CMAKE_INTDIR=\"Debug\"</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\tinyxml2;C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\jsoncons\include;C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\cppzmq\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_DEBUG;_WINDOWS;YAML_CPP_STATIC_DEFINE;TINYXML2_DEBUG;TINYXML2_IMPORT;CMAKE_INTDIR=\"Debug\"</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\yaml-cpp\include;C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\tinyxml2;C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\jsoncons\include;C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\cppzmq\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\tinyxml2;C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\jsoncons\include;C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\cppzmq\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\yaml-cpp\include;C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\tinyxml2;C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\jsoncons\include;C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\cppzmq\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -114,7 +114,7 @@
       <ProxyFileName>%(Filename)_p.c</ProxyFileName>
     </Midl>
     <Link>
-      <AdditionalDependencies>..\lib\Debug\tinyxml2.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalDependencies>..\lib\Debug\yaml-cppd.lib;..\lib\Debug\tinyxml2.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
       <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
       <GenerateDebugInformation>true</GenerateDebugInformation>
@@ -129,7 +129,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\tinyxml2;C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\jsoncons\include;C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\cppzmq\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\yaml-cpp\include;C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\tinyxml2;C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\jsoncons\include;C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\cppzmq\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
       <ExceptionHandling>Sync</ExceptionHandling>
       <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
@@ -139,17 +139,17 @@
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
       <RuntimeTypeInfo>true</RuntimeTypeInfo>
       <UseFullPaths>false</UseFullPaths>
-      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;TINYXML2_IMPORT;CMAKE_INTDIR="Release"</PreprocessorDefinitions>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;YAML_CPP_STATIC_DEFINE;TINYXML2_IMPORT;CMAKE_INTDIR="Release"</PreprocessorDefinitions>
       <ObjectFileName>$(IntDir)</ObjectFileName>
       <DebugInformationFormat>
       </DebugInformationFormat>
     </ClCompile>
     <ResourceCompile>
-      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;TINYXML2_IMPORT;CMAKE_INTDIR=\"Release\"</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\tinyxml2;C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\jsoncons\include;C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\cppzmq\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;YAML_CPP_STATIC_DEFINE;TINYXML2_IMPORT;CMAKE_INTDIR=\"Release\"</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\yaml-cpp\include;C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\tinyxml2;C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\jsoncons\include;C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\cppzmq\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\tinyxml2;C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\jsoncons\include;C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\cppzmq\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\yaml-cpp\include;C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\tinyxml2;C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\jsoncons\include;C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\cppzmq\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -157,7 +157,7 @@
       <ProxyFileName>%(Filename)_p.c</ProxyFileName>
     </Midl>
     <Link>
-      <AdditionalDependencies>..\lib\Release\tinyxml2.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalDependencies>..\lib\Release\yaml-cpp.lib;..\lib\Release\tinyxml2.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
       <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
       <GenerateDebugInformation>false</GenerateDebugInformation>
@@ -172,7 +172,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\tinyxml2;C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\jsoncons\include;C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\cppzmq\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\yaml-cpp\include;C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\tinyxml2;C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\jsoncons\include;C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\cppzmq\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
       <ExceptionHandling>Sync</ExceptionHandling>
       <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
@@ -182,17 +182,17 @@
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
       <RuntimeTypeInfo>true</RuntimeTypeInfo>
       <UseFullPaths>false</UseFullPaths>
-      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;TINYXML2_IMPORT;CMAKE_INTDIR="MinSizeRel"</PreprocessorDefinitions>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;YAML_CPP_STATIC_DEFINE;TINYXML2_IMPORT;CMAKE_INTDIR="MinSizeRel"</PreprocessorDefinitions>
       <ObjectFileName>$(IntDir)</ObjectFileName>
       <DebugInformationFormat>
       </DebugInformationFormat>
     </ClCompile>
     <ResourceCompile>
-      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;TINYXML2_IMPORT;CMAKE_INTDIR=\"MinSizeRel\"</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\tinyxml2;C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\jsoncons\include;C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\cppzmq\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;YAML_CPP_STATIC_DEFINE;TINYXML2_IMPORT;CMAKE_INTDIR=\"MinSizeRel\"</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\yaml-cpp\include;C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\tinyxml2;C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\jsoncons\include;C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\cppzmq\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\tinyxml2;C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\jsoncons\include;C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\cppzmq\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\yaml-cpp\include;C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\tinyxml2;C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\jsoncons\include;C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\cppzmq\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -200,7 +200,7 @@
       <ProxyFileName>%(Filename)_p.c</ProxyFileName>
     </Midl>
     <Link>
-      <AdditionalDependencies>..\lib\MinSizeRel\tinyxml2.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalDependencies>..\lib\MinSizeRel\yaml-cpp.lib;..\lib\MinSizeRel\tinyxml2.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
       <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
       <GenerateDebugInformation>false</GenerateDebugInformation>
@@ -215,7 +215,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\tinyxml2;C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\jsoncons\include;C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\cppzmq\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\yaml-cpp\include;C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\tinyxml2;C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\jsoncons\include;C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\cppzmq\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
       <ExceptionHandling>Sync</ExceptionHandling>
@@ -226,15 +226,15 @@
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
       <RuntimeTypeInfo>true</RuntimeTypeInfo>
       <UseFullPaths>false</UseFullPaths>
-      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;TINYXML2_IMPORT;CMAKE_INTDIR="RelWithDebInfo"</PreprocessorDefinitions>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;YAML_CPP_STATIC_DEFINE;TINYXML2_IMPORT;CMAKE_INTDIR="RelWithDebInfo"</PreprocessorDefinitions>
       <ObjectFileName>$(IntDir)</ObjectFileName>
     </ClCompile>
     <ResourceCompile>
-      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;TINYXML2_IMPORT;CMAKE_INTDIR=\"RelWithDebInfo\"</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\tinyxml2;C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\jsoncons\include;C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\cppzmq\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;YAML_CPP_STATIC_DEFINE;TINYXML2_IMPORT;CMAKE_INTDIR=\"RelWithDebInfo\"</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\yaml-cpp\include;C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\tinyxml2;C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\jsoncons\include;C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\cppzmq\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\tinyxml2;C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\jsoncons\include;C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\cppzmq\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\yaml-cpp\include;C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\tinyxml2;C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\jsoncons\include;C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\cppzmq\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -242,7 +242,7 @@
       <ProxyFileName>%(Filename)_p.c</ProxyFileName>
     </Midl>
     <Link>
-      <AdditionalDependencies>..\lib\RelWithDebInfo\tinyxml2.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalDependencies>..\lib\RelWithDebInfo\yaml-cpp.lib;..\lib\RelWithDebInfo\tinyxml2.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
       <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
       <GenerateDebugInformation>true</GenerateDebugInformation>
@@ -268,7 +268,7 @@ endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
 exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">%(AdditionalInputs)</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Users\pagliani\source\repos\ComuFrame\Builds\CMakeFiles\cmake.verify_globs;%(AdditionalInputs)</AdditionalInputs>
       <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Users\pagliani\source\repos\ComuFrame\Builds\ComuFrame\CMakeFiles\generate.stamp</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
       <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Building Custom Rule C:/Users/pagliani/source/repos/ComuFrame/ComuFrame/CMakeLists.txt</Message>
@@ -281,7 +281,7 @@ endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
 exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">%(AdditionalInputs)</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Users\pagliani\source\repos\ComuFrame\Builds\CMakeFiles\cmake.verify_globs;%(AdditionalInputs)</AdditionalInputs>
       <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Users\pagliani\source\repos\ComuFrame\Builds\ComuFrame\CMakeFiles\generate.stamp</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
       <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">Building Custom Rule C:/Users/pagliani/source/repos/ComuFrame/ComuFrame/CMakeLists.txt</Message>
@@ -294,7 +294,7 @@ endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
 exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">%(AdditionalInputs)</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\Users\pagliani\source\repos\ComuFrame\Builds\CMakeFiles\cmake.verify_globs;%(AdditionalInputs)</AdditionalInputs>
       <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\Users\pagliani\source\repos\ComuFrame\Builds\ComuFrame\CMakeFiles\generate.stamp</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkObjects>
       <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">Building Custom Rule C:/Users/pagliani/source/repos/ComuFrame/ComuFrame/CMakeLists.txt</Message>
@@ -307,7 +307,7 @@ endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
 exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">%(AdditionalInputs)</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\Users\pagliani\source\repos\ComuFrame\Builds\CMakeFiles\cmake.verify_globs;%(AdditionalInputs)</AdditionalInputs>
       <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\Users\pagliani\source\repos\ComuFrame\Builds\ComuFrame\CMakeFiles\generate.stamp</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</LinkObjects>
     </CustomBuild>
@@ -323,6 +323,7 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     <ClInclude Include="C:\Users\pagliani\source\repos\ComuFrame\ComuFrame\utils.h" />
     <ClInclude Include="C:\Users\pagliani\source\repos\ComuFrame\ComuFrame\DataNode.h" />
     <ClCompile Include="C:\Users\pagliani\source\repos\ComuFrame\ComuFrame\DataNode.cpp" />
+    <ClCompile Include="C:\Users\pagliani\source\repos\ComuFrame\ComuFrame\Fsm.cpp" />
     <ClInclude Include="C:\Users\pagliani\source\repos\ComuFrame\ComuFrame\Fsm.h" />
     <ClInclude Include="C:\Users\pagliani\source\repos\ComuFrame\ComuFrame\DataBase.h" />
     <ClCompile Include="C:\Users\pagliani\source\repos\ComuFrame\ComuFrame\DataBase.cpp" />
@@ -337,6 +338,10 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     <ProjectReference Include="C:\Users\pagliani\source\repos\ComuFrame\Builds\ExternalLib\tinyxml2\tinyxml2.vcxproj">
       <Project>{4B962C81-BD52-3E8D-86C9-8E0606AE942F}</Project>
       <Name>tinyxml2</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\pagliani\source\repos\ComuFrame\Builds\ExternalLib\yaml-cpp\yaml-cpp.vcxproj">
+      <Project>{A6B6F4AC-0F77-3B03-A97D-4A5F6CA89656}</Project>
+      <Name>yaml-cpp</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

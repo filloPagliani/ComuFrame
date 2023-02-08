@@ -1,3 +1,6 @@
+#-----------yaml----------
+add_subdirectory(yaml-cpp)
+target_link_libraries(ComuFrame yaml-cpp)
 #-----------tinyXML2-------
 option(tinyxml2_BUILD_TESTING "" OFF) 
 option(tinyxml2_SHARED_LIBS "" ON)

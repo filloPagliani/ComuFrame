@@ -44,6 +44,6 @@ add_executable(Tests
 
 )
 
-target_link_libraries(Tests PRIVATE Catch2::Catch2WithMain tinyxml2 libzmq jsoncons)
-target_link_libraries(LaunchNode tinyxml2 jsoncons)
-target_link_libraries(LaunchCentral tinyxml2 jsoncons)
+target_link_libraries(Tests PRIVATE Catch2::Catch2WithMain tinyxml2 libzmq jsoncons yaml-cpp)
+target_link_libraries(LaunchNode yaml-cpp)
+target_link_libraries(LaunchCentral yaml-cpp)

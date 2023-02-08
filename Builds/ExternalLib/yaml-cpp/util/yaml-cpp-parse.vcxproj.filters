@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\yaml-cpp\util\parse.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\yaml-cpp\util\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{B7E49075-54B4-30AE-91D5-6D677B910CA0}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

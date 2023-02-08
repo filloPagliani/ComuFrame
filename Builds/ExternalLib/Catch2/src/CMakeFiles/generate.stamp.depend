@@ -1,5 +1,6 @@
 # CMake generation dependency list for this directory.
 C:/Program Files/Microsoft Visual Studio/2022/Professional/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.23/Modules/CheckCXXCompilerFlag.cmake
+C:/Users/pagliani/source/repos/ComuFrame/Builds/CMakeFiles/cmake.verify_globs
 C:/Users/pagliani/source/repos/ComuFrame/ExternalLib/Catch2/CMake/CatchMiscFunctions.cmake
 C:/Users/pagliani/source/repos/ComuFrame/ExternalLib/Catch2/src/CMakeLists.txt
 C:/Users/pagliani/source/repos/ComuFrame/ExternalLib/Catch2/src/catch2/catch_user_config.hpp.in

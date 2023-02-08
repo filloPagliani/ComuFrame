@@ -577,6 +577,36 @@ WITH_PERF_TOOL:BOOL=OFF
 //Build with support for VMware VMCI socket
 WITH_VMCI:BOOL=OFF
 
+//Build yaml-cpp shared library
+YAML_BUILD_SHARED_LIBS:BOOL=OFF
+
+//Value Computed by CMake
+YAML_CPP_BINARY_DIR:STATIC=C:/Users/pagliani/source/repos/ComuFrame/Builds/ExternalLib/yaml-cpp
+
+//Enable yaml-cpp contrib in library
+YAML_CPP_BUILD_CONTRIB:BOOL=ON
+
+//Enable parse tools
+YAML_CPP_BUILD_TOOLS:BOOL=ON
+
+//Path to a program.
+YAML_CPP_CLANG_FORMAT_EXE:FILEPATH=YAML_CPP_CLANG_FORMAT_EXE-NOTFOUND
+
+//Format source
+YAML_CPP_FORMAT_SOURCE:BOOL=ON
+
+//Enable generation of yaml-cpp install targets
+YAML_CPP_INSTALL:BOOL=OFF
+
+//Value Computed by CMake
+YAML_CPP_IS_TOP_LEVEL:STATIC=OFF
+
+//Value Computed by CMake
+YAML_CPP_SOURCE_DIR:STATIC=C:/Users/pagliani/source/repos/ComuFrame/ExternalLib/yaml-cpp
+
+//MSVC: Build yaml-cpp with shared runtime libs (/MD)
+YAML_MSVC_SHARED_RT:BOOL=ON
+
 //install path for ZeroMQConfig.cmake
 ZEROMQ_CMAKECONFIG_INSTALL_DIR:STRING=CMake
 
@@ -759,7 +789,7 @@ CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_MT
 CMAKE_MT-ADVANCED:INTERNAL=1
 //number of local generators
-CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=8
+CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=10
 //Platform information initialized
 CMAKE_PLATFORM_INFO_INITIALIZED:INTERNAL=1
 //noop for ranlib

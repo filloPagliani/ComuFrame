@@ -8,6 +8,7 @@ class DataBase {
 public:
 	typedef std::pair<std::string, bool> packet;
 	typedef std::unordered_map < std::string, std::vector<std::pair<std::string, bool*>>> dbMap;
+	//methods
 	void addPacket(YAML::Node YPack, std::string sender, std::string name);
 	std::vector<std::string> providePackets(std::vector<std::string> requestedData);
 

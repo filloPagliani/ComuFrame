@@ -4,10 +4,16 @@
     <ClCompile Include="C:\Users\pagliani\source\repos\ComuFrame\tests\DataNodeTest.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\pagliani\source\repos\ComuFrame\tests\NodeRegistrationTest.cpp">
+    <ClCompile Include="C:\Users\pagliani\source\repos\ComuFrame\tests\FsmTest.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\pagliani\source\repos\ComuFrame\tests\FsmTest.cpp">
+    <ClCompile Include="C:\Users\pagliani\source\repos\ComuFrame\tests\DataBaseTest.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\pagliani\source\repos\ComuFrame\tests\CentralTest.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\pagliani\source\repos\ComuFrame\tests\NodeTest.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="C:\Users\pagliani\source\repos\ComuFrame\ComuFrame\DataNode.cpp">

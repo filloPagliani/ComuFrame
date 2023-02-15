@@ -16,6 +16,7 @@ public:
 	//constructor
 	Central();
 	~Central();
+	//methods
 	void initCentral();
 
 	//Getter

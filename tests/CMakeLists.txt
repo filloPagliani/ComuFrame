@@ -27,8 +27,10 @@ add_executable(LaunchNode
 )
 add_executable(Tests
 	"DataNodeTest.cpp"
-	"NodeRegistrationTest.cpp"
 	"FsmTest.cpp"
+	"DataBaseTest.cpp"
+	"CentralTest.cpp"
+	"NodeTest.cpp"
 	"../ComuFrame/DataNode.cpp"
 	"../ComuFrame/DataNode.h"
 	"../ComuFrame/Node.h" 
@@ -42,7 +44,7 @@ add_executable(Tests
 	"../ComuFrame/Database.h"
 	"../ComuFrame/Database.cpp"
 
-)
+ )
 
 target_link_libraries(Tests PRIVATE Catch2::Catch2WithMain tinyxml2 libzmq jsoncons yaml-cpp)
 target_link_libraries(LaunchNode yaml-cpp)

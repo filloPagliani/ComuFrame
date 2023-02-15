@@ -2,3 +2,4 @@
     url: "tcp://127.0.0.1"
     servicePort: ":5555"
     pubPort: "5556"
+    expectedClient: 2

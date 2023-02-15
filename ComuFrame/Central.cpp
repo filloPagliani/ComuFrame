@@ -7,6 +7,7 @@ using namespace zmq;
 		try {
 			YAML::Node config = YAML::LoadFile("C:/Users/pagliani/source/repos/ComuFrame/Config/Central.yaml");
 			this->url = config["url"].as<std::string>() + config["servicePort"].as<std::string>();
+			this->expectedClient = config["expectedClient"].as<int>();
 		}
 		catch (std::exception e) {
 			std::cout << "can't load configration file, using default options. Error : " << e.what();
@@ -22,15 +23,6 @@ using namespace zmq;
 	void Central::initCentral() {
 
 		//init service thread
-		std::cout << "How many node are you expecting? \n";
-		std::cin >> Central::expectedClient;
-		while(!std::cin.good())
-		{
-			std::cin.clear();
-			std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-			std::cout << "insert a number greater than 0 please \n";
-			std::cin >> Central::expectedClient;
-		}
 		std::thread serviceThread(&Central::initServiceThread, this);
 
 		//init all inproc comunication sockets

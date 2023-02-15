@@ -111,7 +111,7 @@ std::string Node::getidentity() {
 	return Node::identity;
 }
 
-YAML::Node Node::getrequestedDataa() {
+YAML::Node Node::getrequestedData() {
 	return this->requestedData;
 }
 

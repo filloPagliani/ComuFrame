@@ -310,8 +310,10 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="C:\Users\pagliani\source\repos\ComuFrame\tests\DataNodeTest.cpp" />
-    <ClCompile Include="C:\Users\pagliani\source\repos\ComuFrame\tests\NodeRegistrationTest.cpp" />
     <ClCompile Include="C:\Users\pagliani\source\repos\ComuFrame\tests\FsmTest.cpp" />
+    <ClCompile Include="C:\Users\pagliani\source\repos\ComuFrame\tests\DataBaseTest.cpp" />
+    <ClCompile Include="C:\Users\pagliani\source\repos\ComuFrame\tests\CentralTest.cpp" />
+    <ClCompile Include="C:\Users\pagliani\source\repos\ComuFrame\tests\NodeTest.cpp" />
     <ClCompile Include="C:\Users\pagliani\source\repos\ComuFrame\ComuFrame\DataNode.cpp" />
     <ClInclude Include="C:\Users\pagliani\source\repos\ComuFrame\ComuFrame\DataNode.h" />
     <ClInclude Include="C:\Users\pagliani\source\repos\ComuFrame\ComuFrame\Node.h" />

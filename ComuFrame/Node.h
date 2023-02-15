@@ -22,7 +22,7 @@ public:
 	std::string getUrl();
 	std::string getidentity();
 	YAML::Node getSendingPackets();
-	YAML::Node getrequestedDataa();
+	YAML::Node getrequestedData();
 private:
 	//properties
 	Fsm state;

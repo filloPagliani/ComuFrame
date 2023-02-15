@@ -1,5 +1,5 @@
 #include "DataBase.h"
-//take in imput a json version extracted from DataNode and insert the packet in the db
+//take in imput a YAML containing one packet and its info and add it to the db
 void DataBase::addPacket(YAML::Node YPack,std::string sender,std::string name) {
 	std::unordered_map<std::string, std::string> packToAdd = YPack.as< std::unordered_map<std::string, std::string>>();
 	std::string packName = name + "_" + sender;
@@ -26,7 +26,7 @@ void DataBase::resetPackets() {
 	}
 }
 
-//given a set of data requested from a node provide the packet in wichhe can find them.
+//given a set of data requested from a node provide the packets in wich they can be found. if they are not in the DB return "can't your data in the DB"
 std::vector<std::string> DataBase::providePackets(std::vector<std::string> requestedData) {
 	std::vector<std::vector<bool*>> andClause;
 	int maxSize = 0;

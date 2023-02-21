@@ -20,6 +20,7 @@ using namespace zmq;
 		Central::ctx.close();
 	}
 
+	//inizialize the central node with all his thread
 	void Central::initCentral() {
 
 		//init service thread
@@ -29,13 +30,38 @@ using namespace zmq;
 		socket_t InternalServiceSocket = initInprocSocket(&(Central::ctx), "inproc://serviceChannel", false);
 		socket_t InternalTimerSocket = initInprocSocket(&(Central::ctx), "inproc://timerCannel", false);
 
+		message_t msg;
+		InternalServiceSocket.recv(msg);
+		while (strcmp(msg.to_string().c_str(), "Registration Completed")) {
+			InternalServiceSocket.recv(msg);
+		}
+		std::thread timerThread(&Central::initTimerThread, this);
+		auto time = std::chrono::high_resolution_clock::now();
+		while (true) {
+			pollitem_t pollFromThreads[]{
+					{InternalServiceSocket, 0, ZMQ_POLLIN, 0},
+					{InternalTimerSocket, 0, ZMQ_POLLIN, 0}
+			};
+			poll(pollFromThreads, 2, -1);
+			if (pollFromThreads[0].revents & ZMQ_POLLIN) {
+				//da fare
+			}
+			if (pollFromThreads[1].revents & ZMQ_POLLIN) {
+				InternalTimerSocket.recv(msg);
+				auto lap = std::chrono::high_resolution_clock::now();
+				std::cout << "time with one cicle and the dispatch of the msg to the main thread " << (std::chrono::duration_cast<std::chrono::microseconds> (lap - time)).count() << "\n";
+				time = lap;
+			}
+		}
 		//wait for all the secondary threads to join
 		serviceThread.join();
+		timerThread.join();
 		std::cout << "Central, Main: all threads joined\n";
 		InternalServiceSocket.close();
 		InternalTimerSocket.close();
 	}
 
+	//initialize the service thread
 	 void Central::initServiceThread() {
 		
 		socket_t serviceSocket(Central::ctx, ZMQ_ROUTER);
@@ -62,7 +88,6 @@ using namespace zmq;
 				{
 					std::vector<std::string> dataRequested;
 					YAML::Node YDataRequested = YAML::Load(request.popstr());
-					std::cout << "messaggo arrivato cosi " << YDataRequested << "\n";
 					for(auto it = YDataRequested.begin(); it != YDataRequested.end();it++){
 						dataRequested.push_back(it->first.as<std::string>() + "_" + it->second.as<std::string>());
 					}
@@ -90,15 +115,35 @@ using namespace zmq;
 			std::cout << "\n";
 		}
 
-		socket_t toMainSocket = initInprocSocket(&(Central::ctx), "inproc://serviceChannel", true);
+socket_t toMainSocket = initInprocSocket(&(Central::ctx), "inproc://serviceChannel", true);
+toMainSocket.send(message_t("Registration Completed"));
 	 }
 
-	 std::vector<std::string> Central::registerClient(socket_t * sock) {
+	 //inizialize the timer thread
+	 void Central::initTimerThread() {
+		 socket_t toMain = initInprocSocket(&(Central::ctx), "inproc://timerCannel", true);
+		 timeBeginPeriod(1);
+		 for (int i = 0; i < 10; i++) {
+			 auto start = std::chrono::high_resolution_clock::now();
+			 toMain.send(message_t("message"));
+			 std::this_thread::sleep_for(std::chrono::milliseconds(8) - std::chrono::milliseconds(2) - (start- std::chrono::high_resolution_clock::now()));
+			 while ((std::chrono::high_resolution_clock::now() - start) < std::chrono::milliseconds(8)) {
+				 continue;
+			 }
+			 auto end = std::chrono::high_resolution_clock::now();
+			 std::cout << "duration with the call to func is: " << (std::chrono::duration_cast<std::chrono::microseconds> (end - start)).count() << "\n";
+
+
+		 }
+		 timeEndPeriod(1);
+	 }
+
+	 std::vector<std::string> Central::registerClient(socket_t* sock) {
 		 std::vector<std::string> clients;
 		 multipart_t registrationMSG;
 		 while (clients.size() < expectedClient) {    //prima di inizare la fase dovra esere trovato un modo per definire quanti node ci si aspetta il due è provvisiorio e per testing
 
-			 if(registrationMSG.recv(*sock))
+			 if (registrationMSG.recv(*sock))
 			 {
 				 clients.push_back(registrationMSG.popstr());
 				 if (std::count(clients.begin(), clients.end(), clients.back()) > 1) {
@@ -111,7 +156,7 @@ using namespace zmq;
 				 else if (registrationMSG.popstr() == state.toString()) {
 					 YAML::Node YData = YAML::Load(registrationMSG.popstr());
 					 for (YAML::const_iterator i = YData.begin(); i != YData.end(); i++) {
-						 db.addPacket(i->second,clients.back(),i->first.as<std::string>());
+						 db.addPacket(i->second, clients.back(), i->first.as<std::string>());
 					 }
 					 registrationMSG.clear();
 					 registrationMSG.pushstr("connected");
@@ -176,6 +221,17 @@ using namespace zmq;
 
 	 int Central::getExpectedClient() {
 		 return this->expectedClient;
+	 }
+
+	 void Central::preciseSleep(std::chrono::milliseconds millisecond, std::chrono::milliseconds higResTime) {
+		 auto start = std::chrono::high_resolution_clock::now();
+		 std::this_thread::sleep_for(millisecond - higResTime);
+		 auto mid = std::chrono::high_resolution_clock::now();
+		 while ((std::chrono::high_resolution_clock::now() - start) < millisecond) {
+		 continue;
+		}
+		 auto end = std::chrono::high_resolution_clock::now();
+		 std::cout << "sleep duration " << (std::chrono::duration_cast<std::chrono::microseconds>(mid - start)).count() << " total duration " << (std::chrono::duration_cast<std::chrono::microseconds>(end - start)).count() << "\n";
 	 }
 
 	

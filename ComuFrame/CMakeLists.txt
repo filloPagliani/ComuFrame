@@ -12,8 +12,6 @@ add_executable (ComuFrame
 "Node.h" 
 "utils.cpp" 
 "utils.h" 
-"DataNode.h" 
-"DataNode.cpp" 
 "Fsm.cpp" 
 "Fsm.h" 
 "DataBase.h"
@@ -22,5 +20,6 @@ add_executable (ComuFrame
 if (CMAKE_VERSION VERSION_GREATER 3.12)
   set_property(TARGET ComuFrame PROPERTY CXX_STANDARD 20)
 endif()
-
+find_package(eCAL REQUIRED)
+target_link_libraries(ComuFrame eCAL::core)
 # TODO: Add tests and install targets if needed.

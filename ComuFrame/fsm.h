@@ -2,16 +2,18 @@
 #include <stdio.h>
 #include <string>
 
+
+
 class Fsm
 {
 public:
 	Fsm();
-	enum State { Registration, Syncronization, SyncroComplete, Trimming, TrimmingComplete, Running, Freeze, Crash };
+	enum State { Registration , Syncronization, SyncroComplete, Trimming, TrimmingComplete, Running, Freeze, Crash };
 	State getCurrState();
 	bool nextState();
 	bool crash();
 	std::string toString();
-
+	std::string strState(State state);
 
 private:
 	State currState;

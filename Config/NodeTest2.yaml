@@ -1,7 +1,7 @@
 ---
     url: "tcp://127.0.0.1"
     servicePort: ":5555"
-    pubPort: "5556"
+    pubPort: ":5556"
     sendingPackets: 
         PackC:
             fuel: int

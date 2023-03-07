@@ -2,6 +2,7 @@
 
 using namespace zmq;
 	
+	//constructor of Central, create the node and take the config from the file
 	Central::Central()
 	{
 		try {
@@ -32,7 +33,7 @@ using namespace zmq;
 
 		message_t msg;
 		InternalServiceSocket.recv(msg);
-		while (strcmp(msg.to_string().c_str(), "Registration Completed")) {
+		while (strcmp(msg.to_string().c_str(), "syncronization Completed")) {
 			InternalServiceSocket.recv(msg);
 		}
 		std::thread timerThread(&Central::initTimerThread, this);
@@ -48,9 +49,6 @@ using namespace zmq;
 			}
 			if (pollFromThreads[1].revents & ZMQ_POLLIN) {
 				InternalTimerSocket.recv(msg);
-				auto lap = std::chrono::high_resolution_clock::now();
-				std::cout << "time with one cicle and the dispatch of the msg to the main thread " << (std::chrono::duration_cast<std::chrono::microseconds> (lap - time)).count() << "\n";
-				time = lap;
 			}
 		}
 		//wait for all the secondary threads to join
@@ -67,6 +65,7 @@ using namespace zmq;
 		socket_t serviceSocket(Central::ctx, ZMQ_ROUTER);
 		serviceSocket.set(sockopt::routing_id, "Central");
 		serviceSocket.bind(url);
+		socket_t toMainSocket = initInprocSocket(&(Central::ctx), "inproc://serviceChannel", true);
 		Central::connectedClients = Central::registerClient(&serviceSocket);
 		Central::state.nextState();
 		std::cout << "Central, ServiceThread: Registration completed, registered " << connectedClients.size() << " nodes\n";
@@ -107,16 +106,63 @@ using namespace zmq;
 		}
 		
 		for (auto& request : requestMap) {
-			std::cout << request.first << " : ";
-			std::vector<std::string> strings = db.providePackets(request.second);
-			for (auto& str : strings) {
+			multipart_t msg(request.first);
+			std::cout << request.first << " needs : ";
+			std::vector<std::string> packetNeeded = db.providePackets(request.second);
+			for (auto& str : packetNeeded) {
+				msg.append(str);
 				std::cout << str << " ";
 			}
 			std::cout << "\n";
+			msg.send(serviceSocket);
 		}
 
-socket_t toMainSocket = initInprocSocket(&(Central::ctx), "inproc://serviceChannel", true);
-toMainSocket.send(message_t("Registration Completed"));
+		toMainSocket.send(message_t("syncronization Completed"));
+		std::vector<std::string> toCheckSubscriptions = this->connectedClients;
+		while (true) {
+			pollitem_t msgreceived[]{
+				{toMainSocket, 0, ZMQ_POLLIN,0},
+				{serviceSocket,0 , ZMQ_POLLIN,0}
+			};
+			poll(msgreceived, 2, -1);
+			if (msgreceived[0].revents & ZMQ_POLLIN) {
+				//handle messages from Main Socket
+
+			}
+			else if (msgreceived[1].revents & ZMQ_POLLIN) {
+				//handle messages from Service socket
+				multipart_t msg;
+				recv_multipart(serviceSocket, std::back_inserter(msg));
+				std::string sender = msg.popstr();
+				std::string state = msg.popstr();
+				std::string data = msg.popstr();
+				std::cout << "Central serviceThread : message received from : " << sender << " during " << state << " with data : " << data << "\n";
+				if (strcmp(state.c_str(), "syncronization")==0) {
+					bool nodeFound = false;
+					for (auto it = toCheckSubscriptions.begin(); it != toCheckSubscriptions.end(); it++) {
+						if (strcmp(sender.c_str(), (*it).c_str())==0) {
+							nodeFound = true;
+							toCheckSubscriptions.erase(it);
+							if (toCheckSubscriptions.size() == 0) {
+								for (int i = 0; i < this->connectedClients.size(); i++) {
+									if (!sendStrMSG(&serviceSocket, "AllSubscribed", this->connectedClients[i])) {
+										std::cout << "Central, ServiceThread: error occoured trying to send a message to " << this->connectedClients[i]<<"\n";
+									}
+								}
+								break;
+							}
+							else
+							{
+								break;
+							}
+						}
+					}
+					if (!nodeFound) {
+						std::cout << sender << " has already been signed as subscribed or has never connected\n"; //altro errore da hanlde
+					}
+				}
+			}
+		}
 	 }
 
 	 //inizialize the timer thread
@@ -131,13 +177,13 @@ toMainSocket.send(message_t("Registration Completed"));
 				 continue;
 			 }
 			 auto end = std::chrono::high_resolution_clock::now();
-			 std::cout << "duration with the call to func is: " << (std::chrono::duration_cast<std::chrono::microseconds> (end - start)).count() << "\n";
 
 
 		 }
 		 timeEndPeriod(1);
 	 }
 
+	 //when its called register the nodes that have done a request at the given socket
 	 std::vector<std::string> Central::registerClient(socket_t* sock) {
 		 std::vector<std::string> clients;
 		 multipart_t registrationMSG;

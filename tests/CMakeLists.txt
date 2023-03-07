@@ -1,38 +1,38 @@
 cmake_minimum_required (VERSION 3.18)
 
-add_executable(LaunchCentral 
+set(source_file_launchcentral
 	"LaunchCentral.cpp"
 	"../ComuFrame/Central.cpp"
 	"../ComuFrame/Central.h" 
 	"../ComuFrame/utils.cpp" 
 	"../ComuFrame/utils.h" 
-	"../ComuFrame/DataNode.cpp" 
-	"../ComuFrame/DataNode.h"
 	"../Comuframe/Fsm.h"
 	"../ComuFrame/Fsm.cpp"
 	"../ComuFrame/Database.h"
 	"../ComuFrame/Database.cpp"
-
-
 )
-add_executable(LaunchNode 
+
+set(source_file_launchnode
 	"LaunchNode.cpp" 
-	"../ComuFrame/Node.cpp" 
-	"../ComuFrame/Node.h" 
+	"../Comuframe/Node.h"
+	"../Comuframe/Node.cpp"
 	"../ComuFrame/utils.cpp" 
 	"../ComuFrame/utils.h"
 	"../Comuframe/Fsm.h"
 	"../ComuFrame/Fsm.cpp"
+)
 
+add_executable(LaunchCentral 
+	${source_file_launchcentral}
+)
+add_executable(LaunchNode 
+	${source_file_launchnode}
 )
 add_executable(Tests
-	"DataNodeTest.cpp"
 	"FsmTest.cpp"
 	"DataBaseTest.cpp"
 	"CentralTest.cpp"
 	"NodeTest.cpp"
-	"../ComuFrame/DataNode.cpp"
-	"../ComuFrame/DataNode.h"
 	"../ComuFrame/Node.h" 
 	"../ComuFrame/Node.cpp"
 	"../ComuFrame/utils.cpp" 
@@ -43,9 +43,10 @@ add_executable(Tests
 	"../ComuFrame/Fsm.cpp"
 	"../ComuFrame/Database.h"
 	"../ComuFrame/Database.cpp"
-
  )
 
+find_package(eCAL REQUIRED)
+
 target_link_libraries(Tests PRIVATE Catch2::Catch2WithMain tinyxml2 libzmq jsoncons yaml-cpp)
-target_link_libraries(LaunchNode yaml-cpp)
-target_link_libraries(LaunchCentral yaml-cpp)
+target_link_libraries(LaunchNode yaml-cpp eCAL::core protobuf::libprotobuf)
+target_link_libraries(LaunchCentral yaml-cpp eCAL::core protobuf::libprotobuf)

@@ -8,7 +8,7 @@
 #include "Fsm.h"
 #include "yaml-cpp/yaml.h"
 #include <Windows.h>
-#include <mmsystem.h> 
+#include <mmsystem.h>
 
 #pragma comment(lib, "winmm.lib")
 

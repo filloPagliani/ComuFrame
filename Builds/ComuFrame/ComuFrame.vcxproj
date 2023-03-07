@@ -86,7 +86,7 @@
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\yaml-cpp\include;C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\tinyxml2;C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\jsoncons\include;C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\cppzmq\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\yaml-cpp\include;C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\tinyxml2;C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\jsoncons\include;C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\cppzmq\include;C:\eCAL\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
@@ -98,15 +98,15 @@
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
       <RuntimeTypeInfo>true</RuntimeTypeInfo>
       <UseFullPaths>false</UseFullPaths>
-      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;YAML_CPP_STATIC_DEFINE;TINYXML2_DEBUG;TINYXML2_IMPORT;CMAKE_INTDIR="Debug"</PreprocessorDefinitions>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;ASIO_STANDALONE;ASIO_DISABLE_VISIBILITY;PROTOBUF_USE_DLLS;YAML_CPP_STATIC_DEFINE;TINYXML2_DEBUG;TINYXML2_IMPORT;CMAKE_INTDIR="Debug"</PreprocessorDefinitions>
       <ObjectFileName>$(IntDir)</ObjectFileName>
     </ClCompile>
     <ResourceCompile>
-      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_DEBUG;_WINDOWS;YAML_CPP_STATIC_DEFINE;TINYXML2_DEBUG;TINYXML2_IMPORT;CMAKE_INTDIR=\"Debug\"</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\yaml-cpp\include;C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\tinyxml2;C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\jsoncons\include;C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\cppzmq\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_DEBUG;_WINDOWS;ASIO_STANDALONE;ASIO_DISABLE_VISIBILITY;PROTOBUF_USE_DLLS;YAML_CPP_STATIC_DEFINE;TINYXML2_DEBUG;TINYXML2_IMPORT;CMAKE_INTDIR=\"Debug\"</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\yaml-cpp\include;C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\tinyxml2;C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\jsoncons\include;C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\cppzmq\include;C:\eCAL\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\yaml-cpp\include;C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\tinyxml2;C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\jsoncons\include;C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\cppzmq\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\yaml-cpp\include;C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\tinyxml2;C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\jsoncons\include;C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\cppzmq\include;C:\eCAL\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -114,7 +114,7 @@
       <ProxyFileName>%(Filename)_p.c</ProxyFileName>
     </Midl>
     <Link>
-      <AdditionalDependencies>..\lib\Debug\yaml-cppd.lib;..\lib\Debug\tinyxml2.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalDependencies>C:\eCAL\lib\ecal_cored.lib;..\lib\Debug\yaml-cppd.lib;..\lib\Debug\tinyxml2.lib;C:\eCAL\lib\ecal_protod.lib;C:\eCAL\lib\libprotobufd.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
       <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
       <GenerateDebugInformation>true</GenerateDebugInformation>
@@ -129,7 +129,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\yaml-cpp\include;C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\tinyxml2;C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\jsoncons\include;C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\cppzmq\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\yaml-cpp\include;C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\tinyxml2;C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\jsoncons\include;C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\cppzmq\include;C:\eCAL\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
       <ExceptionHandling>Sync</ExceptionHandling>
       <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
@@ -139,17 +139,17 @@
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
       <RuntimeTypeInfo>true</RuntimeTypeInfo>
       <UseFullPaths>false</UseFullPaths>
-      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;YAML_CPP_STATIC_DEFINE;TINYXML2_IMPORT;CMAKE_INTDIR="Release"</PreprocessorDefinitions>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;ASIO_STANDALONE;ASIO_DISABLE_VISIBILITY;PROTOBUF_USE_DLLS;YAML_CPP_STATIC_DEFINE;TINYXML2_IMPORT;CMAKE_INTDIR="Release"</PreprocessorDefinitions>
       <ObjectFileName>$(IntDir)</ObjectFileName>
       <DebugInformationFormat>
       </DebugInformationFormat>
     </ClCompile>
     <ResourceCompile>
-      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;YAML_CPP_STATIC_DEFINE;TINYXML2_IMPORT;CMAKE_INTDIR=\"Release\"</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\yaml-cpp\include;C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\tinyxml2;C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\jsoncons\include;C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\cppzmq\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;ASIO_STANDALONE;ASIO_DISABLE_VISIBILITY;PROTOBUF_USE_DLLS;YAML_CPP_STATIC_DEFINE;TINYXML2_IMPORT;CMAKE_INTDIR=\"Release\"</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\yaml-cpp\include;C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\tinyxml2;C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\jsoncons\include;C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\cppzmq\include;C:\eCAL\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\yaml-cpp\include;C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\tinyxml2;C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\jsoncons\include;C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\cppzmq\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\yaml-cpp\include;C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\tinyxml2;C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\jsoncons\include;C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\cppzmq\include;C:\eCAL\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -157,7 +157,7 @@
       <ProxyFileName>%(Filename)_p.c</ProxyFileName>
     </Midl>
     <Link>
-      <AdditionalDependencies>..\lib\Release\yaml-cpp.lib;..\lib\Release\tinyxml2.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalDependencies>C:\eCAL\lib\ecal_core.lib;..\lib\Release\yaml-cpp.lib;..\lib\Release\tinyxml2.lib;C:\eCAL\lib\ecal_proto.lib;C:\eCAL\lib\libprotobuf.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
       <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
       <GenerateDebugInformation>false</GenerateDebugInformation>
@@ -172,7 +172,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\yaml-cpp\include;C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\tinyxml2;C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\jsoncons\include;C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\cppzmq\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\yaml-cpp\include;C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\tinyxml2;C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\jsoncons\include;C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\cppzmq\include;C:\eCAL\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
       <ExceptionHandling>Sync</ExceptionHandling>
       <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
@@ -182,17 +182,17 @@
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
       <RuntimeTypeInfo>true</RuntimeTypeInfo>
       <UseFullPaths>false</UseFullPaths>
-      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;YAML_CPP_STATIC_DEFINE;TINYXML2_IMPORT;CMAKE_INTDIR="MinSizeRel"</PreprocessorDefinitions>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;ASIO_STANDALONE;ASIO_DISABLE_VISIBILITY;PROTOBUF_USE_DLLS;YAML_CPP_STATIC_DEFINE;TINYXML2_IMPORT;CMAKE_INTDIR="MinSizeRel"</PreprocessorDefinitions>
       <ObjectFileName>$(IntDir)</ObjectFileName>
       <DebugInformationFormat>
       </DebugInformationFormat>
     </ClCompile>
     <ResourceCompile>
-      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;YAML_CPP_STATIC_DEFINE;TINYXML2_IMPORT;CMAKE_INTDIR=\"MinSizeRel\"</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\yaml-cpp\include;C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\tinyxml2;C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\jsoncons\include;C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\cppzmq\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;ASIO_STANDALONE;ASIO_DISABLE_VISIBILITY;PROTOBUF_USE_DLLS;YAML_CPP_STATIC_DEFINE;TINYXML2_IMPORT;CMAKE_INTDIR=\"MinSizeRel\"</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\yaml-cpp\include;C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\tinyxml2;C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\jsoncons\include;C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\cppzmq\include;C:\eCAL\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\yaml-cpp\include;C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\tinyxml2;C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\jsoncons\include;C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\cppzmq\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\yaml-cpp\include;C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\tinyxml2;C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\jsoncons\include;C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\cppzmq\include;C:\eCAL\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -200,7 +200,7 @@
       <ProxyFileName>%(Filename)_p.c</ProxyFileName>
     </Midl>
     <Link>
-      <AdditionalDependencies>..\lib\MinSizeRel\yaml-cpp.lib;..\lib\MinSizeRel\tinyxml2.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalDependencies>C:\eCAL\lib\ecal_core.lib;..\lib\MinSizeRel\yaml-cpp.lib;..\lib\MinSizeRel\tinyxml2.lib;C:\eCAL\lib\ecal_proto.lib;C:\eCAL\lib\libprotobuf.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
       <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
       <GenerateDebugInformation>false</GenerateDebugInformation>
@@ -215,7 +215,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\yaml-cpp\include;C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\tinyxml2;C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\jsoncons\include;C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\cppzmq\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\yaml-cpp\include;C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\tinyxml2;C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\jsoncons\include;C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\cppzmq\include;C:\eCAL\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
       <ExceptionHandling>Sync</ExceptionHandling>
@@ -226,15 +226,15 @@
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
       <RuntimeTypeInfo>true</RuntimeTypeInfo>
       <UseFullPaths>false</UseFullPaths>
-      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;YAML_CPP_STATIC_DEFINE;TINYXML2_IMPORT;CMAKE_INTDIR="RelWithDebInfo"</PreprocessorDefinitions>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;ASIO_STANDALONE;ASIO_DISABLE_VISIBILITY;PROTOBUF_USE_DLLS;YAML_CPP_STATIC_DEFINE;TINYXML2_IMPORT;CMAKE_INTDIR="RelWithDebInfo"</PreprocessorDefinitions>
       <ObjectFileName>$(IntDir)</ObjectFileName>
     </ClCompile>
     <ResourceCompile>
-      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;YAML_CPP_STATIC_DEFINE;TINYXML2_IMPORT;CMAKE_INTDIR=\"RelWithDebInfo\"</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\yaml-cpp\include;C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\tinyxml2;C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\jsoncons\include;C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\cppzmq\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;ASIO_STANDALONE;ASIO_DISABLE_VISIBILITY;PROTOBUF_USE_DLLS;YAML_CPP_STATIC_DEFINE;TINYXML2_IMPORT;CMAKE_INTDIR=\"RelWithDebInfo\"</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\yaml-cpp\include;C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\tinyxml2;C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\jsoncons\include;C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\cppzmq\include;C:\eCAL\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\yaml-cpp\include;C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\tinyxml2;C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\jsoncons\include;C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\cppzmq\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\yaml-cpp\include;C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\tinyxml2;C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\jsoncons\include;C:\Users\pagliani\source\repos\ComuFrame\ExternalLib\cppzmq\include;C:\eCAL\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -242,7 +242,7 @@
       <ProxyFileName>%(Filename)_p.c</ProxyFileName>
     </Midl>
     <Link>
-      <AdditionalDependencies>..\lib\RelWithDebInfo\yaml-cpp.lib;..\lib\RelWithDebInfo\tinyxml2.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalDependencies>C:\eCAL\lib\ecal_core.lib;..\lib\RelWithDebInfo\yaml-cpp.lib;..\lib\RelWithDebInfo\tinyxml2.lib;C:\eCAL\lib\ecal_proto.lib;C:\eCAL\lib\libprotobuf.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
       <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
       <GenerateDebugInformation>true</GenerateDebugInformation>
@@ -268,7 +268,7 @@ endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
 exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Users\pagliani\source\repos\ComuFrame\Builds\CMakeFiles\cmake.verify_globs;%(AdditionalInputs)</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Program Files\Microsoft Visual Studio\2022\Professional\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.23\Modules\CheckCSourceCompiles.cmake;C:\Program Files\Microsoft Visual Studio\2022\Professional\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.23\Modules\CheckIncludeFile.cmake;C:\Program Files\Microsoft Visual Studio\2022\Professional\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.23\Modules\CheckLibraryExists.cmake;C:\Program Files\Microsoft Visual Studio\2022\Professional\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.23\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files\Microsoft Visual Studio\2022\Professional\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.23\Modules\FindPackageMessage.cmake;C:\Program Files\Microsoft Visual Studio\2022\Professional\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.23\Modules\FindProtobuf.cmake;C:\Program Files\Microsoft Visual Studio\2022\Professional\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.23\Modules\FindThreads.cmake;C:\Program Files\Microsoft Visual Studio\2022\Professional\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.23\Modules\Internal\CheckSourceCompiles.cmake;C:\Program Files\Microsoft Visual Studio\2022\Professional\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.23\Modules\SelectLibraryConfigurations.cmake;C:\Users\pagliani\source\repos\ComuFrame\Builds\CMakeFiles\cmake.verify_globs;C:\eCAL\cmake\CMakeFunctionsConfig.cmake;C:\eCAL\cmake\CMakeFunctionsConfigVersion.cmake;C:\eCAL\cmake\cmake_functions.cmake;C:\eCAL\cmake\git\git_revision_information.cmake;C:\eCAL\cmake\msvc_helper\msvc_macros.cmake;C:\eCAL\cmake\protoc_functions\protoc_generate_cpp.cmake;C:\eCAL\cmake\protoc_functions\protoc_generate_files.cmake;C:\eCAL\cmake\protoc_functions\protoc_generate_python.cmake;C:\eCAL\cmake\qt\qt_msvc_path.cmake;C:\eCAL\cmake\qt\qt_windeployqt.cmake;C:\eCAL\cmake\target_definitions\targets_protobuf.cmake;C:\eCAL\lib\cmake\eCAL\eCALConfig.cmake;C:\eCAL\lib\cmake\eCAL\eCALConfigVersion.cmake;C:\eCAL\lib\cmake\eCAL\eCALTargets-debug.cmake;C:\eCAL\lib\cmake\eCAL\eCALTargets-release.cmake;C:\eCAL\lib\cmake\eCAL\eCALTargets.cmake;C:\eCAL\lib\cmake\eCAL\helper_functions\ecal_add_functions.cmake;C:\eCAL\lib\cmake\eCAL\helper_functions\ecal_helper_functions.cmake;C:\eCAL\lib\cmake\eCAL\helper_functions\ecal_install_functions.cmake;%(AdditionalInputs)</AdditionalInputs>
       <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Users\pagliani\source\repos\ComuFrame\Builds\ComuFrame\CMakeFiles\generate.stamp</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
       <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Building Custom Rule C:/Users/pagliani/source/repos/ComuFrame/ComuFrame/CMakeLists.txt</Message>
@@ -281,7 +281,7 @@ endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
 exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Users\pagliani\source\repos\ComuFrame\Builds\CMakeFiles\cmake.verify_globs;%(AdditionalInputs)</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Program Files\Microsoft Visual Studio\2022\Professional\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.23\Modules\CheckCSourceCompiles.cmake;C:\Program Files\Microsoft Visual Studio\2022\Professional\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.23\Modules\CheckIncludeFile.cmake;C:\Program Files\Microsoft Visual Studio\2022\Professional\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.23\Modules\CheckLibraryExists.cmake;C:\Program Files\Microsoft Visual Studio\2022\Professional\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.23\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files\Microsoft Visual Studio\2022\Professional\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.23\Modules\FindPackageMessage.cmake;C:\Program Files\Microsoft Visual Studio\2022\Professional\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.23\Modules\FindProtobuf.cmake;C:\Program Files\Microsoft Visual Studio\2022\Professional\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.23\Modules\FindThreads.cmake;C:\Program Files\Microsoft Visual Studio\2022\Professional\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.23\Modules\Internal\CheckSourceCompiles.cmake;C:\Program Files\Microsoft Visual Studio\2022\Professional\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.23\Modules\SelectLibraryConfigurations.cmake;C:\Users\pagliani\source\repos\ComuFrame\Builds\CMakeFiles\cmake.verify_globs;C:\eCAL\cmake\CMakeFunctionsConfig.cmake;C:\eCAL\cmake\CMakeFunctionsConfigVersion.cmake;C:\eCAL\cmake\cmake_functions.cmake;C:\eCAL\cmake\git\git_revision_information.cmake;C:\eCAL\cmake\msvc_helper\msvc_macros.cmake;C:\eCAL\cmake\protoc_functions\protoc_generate_cpp.cmake;C:\eCAL\cmake\protoc_functions\protoc_generate_files.cmake;C:\eCAL\cmake\protoc_functions\protoc_generate_python.cmake;C:\eCAL\cmake\qt\qt_msvc_path.cmake;C:\eCAL\cmake\qt\qt_windeployqt.cmake;C:\eCAL\cmake\target_definitions\targets_protobuf.cmake;C:\eCAL\lib\cmake\eCAL\eCALConfig.cmake;C:\eCAL\lib\cmake\eCAL\eCALConfigVersion.cmake;C:\eCAL\lib\cmake\eCAL\eCALTargets-debug.cmake;C:\eCAL\lib\cmake\eCAL\eCALTargets-release.cmake;C:\eCAL\lib\cmake\eCAL\eCALTargets.cmake;C:\eCAL\lib\cmake\eCAL\helper_functions\ecal_add_functions.cmake;C:\eCAL\lib\cmake\eCAL\helper_functions\ecal_helper_functions.cmake;C:\eCAL\lib\cmake\eCAL\helper_functions\ecal_install_functions.cmake;%(AdditionalInputs)</AdditionalInputs>
       <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Users\pagliani\source\repos\ComuFrame\Builds\ComuFrame\CMakeFiles\generate.stamp</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
       <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">Building Custom Rule C:/Users/pagliani/source/repos/ComuFrame/ComuFrame/CMakeLists.txt</Message>
@@ -294,7 +294,7 @@ endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
 exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\Users\pagliani\source\repos\ComuFrame\Builds\CMakeFiles\cmake.verify_globs;%(AdditionalInputs)</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\Program Files\Microsoft Visual Studio\2022\Professional\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.23\Modules\CheckCSourceCompiles.cmake;C:\Program Files\Microsoft Visual Studio\2022\Professional\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.23\Modules\CheckIncludeFile.cmake;C:\Program Files\Microsoft Visual Studio\2022\Professional\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.23\Modules\CheckLibraryExists.cmake;C:\Program Files\Microsoft Visual Studio\2022\Professional\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.23\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files\Microsoft Visual Studio\2022\Professional\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.23\Modules\FindPackageMessage.cmake;C:\Program Files\Microsoft Visual Studio\2022\Professional\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.23\Modules\FindProtobuf.cmake;C:\Program Files\Microsoft Visual Studio\2022\Professional\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.23\Modules\FindThreads.cmake;C:\Program Files\Microsoft Visual Studio\2022\Professional\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.23\Modules\Internal\CheckSourceCompiles.cmake;C:\Program Files\Microsoft Visual Studio\2022\Professional\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.23\Modules\SelectLibraryConfigurations.cmake;C:\Users\pagliani\source\repos\ComuFrame\Builds\CMakeFiles\cmake.verify_globs;C:\eCAL\cmake\CMakeFunctionsConfig.cmake;C:\eCAL\cmake\CMakeFunctionsConfigVersion.cmake;C:\eCAL\cmake\cmake_functions.cmake;C:\eCAL\cmake\git\git_revision_information.cmake;C:\eCAL\cmake\msvc_helper\msvc_macros.cmake;C:\eCAL\cmake\protoc_functions\protoc_generate_cpp.cmake;C:\eCAL\cmake\protoc_functions\protoc_generate_files.cmake;C:\eCAL\cmake\protoc_functions\protoc_generate_python.cmake;C:\eCAL\cmake\qt\qt_msvc_path.cmake;C:\eCAL\cmake\qt\qt_windeployqt.cmake;C:\eCAL\cmake\target_definitions\targets_protobuf.cmake;C:\eCAL\lib\cmake\eCAL\eCALConfig.cmake;C:\eCAL\lib\cmake\eCAL\eCALConfigVersion.cmake;C:\eCAL\lib\cmake\eCAL\eCALTargets-debug.cmake;C:\eCAL\lib\cmake\eCAL\eCALTargets-release.cmake;C:\eCAL\lib\cmake\eCAL\eCALTargets.cmake;C:\eCAL\lib\cmake\eCAL\helper_functions\ecal_add_functions.cmake;C:\eCAL\lib\cmake\eCAL\helper_functions\ecal_helper_functions.cmake;C:\eCAL\lib\cmake\eCAL\helper_functions\ecal_install_functions.cmake;%(AdditionalInputs)</AdditionalInputs>
       <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\Users\pagliani\source\repos\ComuFrame\Builds\ComuFrame\CMakeFiles\generate.stamp</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkObjects>
       <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">Building Custom Rule C:/Users/pagliani/source/repos/ComuFrame/ComuFrame/CMakeLists.txt</Message>
@@ -307,7 +307,7 @@ endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
 exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\Users\pagliani\source\repos\ComuFrame\Builds\CMakeFiles\cmake.verify_globs;%(AdditionalInputs)</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\Program Files\Microsoft Visual Studio\2022\Professional\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.23\Modules\CheckCSourceCompiles.cmake;C:\Program Files\Microsoft Visual Studio\2022\Professional\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.23\Modules\CheckIncludeFile.cmake;C:\Program Files\Microsoft Visual Studio\2022\Professional\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.23\Modules\CheckLibraryExists.cmake;C:\Program Files\Microsoft Visual Studio\2022\Professional\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.23\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files\Microsoft Visual Studio\2022\Professional\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.23\Modules\FindPackageMessage.cmake;C:\Program Files\Microsoft Visual Studio\2022\Professional\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.23\Modules\FindProtobuf.cmake;C:\Program Files\Microsoft Visual Studio\2022\Professional\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.23\Modules\FindThreads.cmake;C:\Program Files\Microsoft Visual Studio\2022\Professional\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.23\Modules\Internal\CheckSourceCompiles.cmake;C:\Program Files\Microsoft Visual Studio\2022\Professional\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.23\Modules\SelectLibraryConfigurations.cmake;C:\Users\pagliani\source\repos\ComuFrame\Builds\CMakeFiles\cmake.verify_globs;C:\eCAL\cmake\CMakeFunctionsConfig.cmake;C:\eCAL\cmake\CMakeFunctionsConfigVersion.cmake;C:\eCAL\cmake\cmake_functions.cmake;C:\eCAL\cmake\git\git_revision_information.cmake;C:\eCAL\cmake\msvc_helper\msvc_macros.cmake;C:\eCAL\cmake\protoc_functions\protoc_generate_cpp.cmake;C:\eCAL\cmake\protoc_functions\protoc_generate_files.cmake;C:\eCAL\cmake\protoc_functions\protoc_generate_python.cmake;C:\eCAL\cmake\qt\qt_msvc_path.cmake;C:\eCAL\cmake\qt\qt_windeployqt.cmake;C:\eCAL\cmake\target_definitions\targets_protobuf.cmake;C:\eCAL\lib\cmake\eCAL\eCALConfig.cmake;C:\eCAL\lib\cmake\eCAL\eCALConfigVersion.cmake;C:\eCAL\lib\cmake\eCAL\eCALTargets-debug.cmake;C:\eCAL\lib\cmake\eCAL\eCALTargets-release.cmake;C:\eCAL\lib\cmake\eCAL\eCALTargets.cmake;C:\eCAL\lib\cmake\eCAL\helper_functions\ecal_add_functions.cmake;C:\eCAL\lib\cmake\eCAL\helper_functions\ecal_helper_functions.cmake;C:\eCAL\lib\cmake\eCAL\helper_functions\ecal_install_functions.cmake;%(AdditionalInputs)</AdditionalInputs>
       <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\Users\pagliani\source\repos\ComuFrame\Builds\ComuFrame\CMakeFiles\generate.stamp</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</LinkObjects>
     </CustomBuild>
@@ -321,8 +321,6 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     <ClInclude Include="C:\Users\pagliani\source\repos\ComuFrame\ComuFrame\Node.h" />
     <ClCompile Include="C:\Users\pagliani\source\repos\ComuFrame\ComuFrame\utils.cpp" />
     <ClInclude Include="C:\Users\pagliani\source\repos\ComuFrame\ComuFrame\utils.h" />
-    <ClInclude Include="C:\Users\pagliani\source\repos\ComuFrame\ComuFrame\DataNode.h" />
-    <ClCompile Include="C:\Users\pagliani\source\repos\ComuFrame\ComuFrame\DataNode.cpp" />
     <ClCompile Include="C:\Users\pagliani\source\repos\ComuFrame\ComuFrame\Fsm.cpp" />
     <ClInclude Include="C:\Users\pagliani\source\repos\ComuFrame\ComuFrame\Fsm.h" />
     <ClInclude Include="C:\Users\pagliani\source\repos\ComuFrame\ComuFrame\DataBase.h" />

@@ -7,7 +7,9 @@
 #include <thread>
 #include "Fsm.h"
 #include <chrono>
-
+#include <ecal/ecal.h>
+#include <ecal/msg/publisher.h>
+#include <ecal/msg/subscriber.h>
 
 using namespace zmq;
 
@@ -27,15 +29,17 @@ private:
 	//properties
 	Fsm state;
 	std::string url;
+	std::string pubPort;
+	std::string servicePort;
 	std::string identity;
 	YAML::Node sendingPackets;
 	YAML::Node requestedData;
+	std::vector<std::string> subscriptions;
 	//methods
 	bool receiveStrMsgTimeout(socket_t* sock, int timeout);
-	bool sendStrMSG(socket_t* sock, std::string msg);
+	bool sendStrMSG(socket_t* sock, std::string msg, std::string sendingThread, std::string addressee);
 	context_t ctx;
 	void initServiceThread();
-	bool waitForAck(std::string ackName,socket_t* sock);
-
-
+	void initPubThread();
+	void initSubThread();
 };

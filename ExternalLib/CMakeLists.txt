@@ -1,3 +1,7 @@
+#-----------ecal----------
+find_package(eCAL REQUIRED)
+find_package(Protobuf REQUIRED)
+ 
 #-----------yaml----------
 add_subdirectory(yaml-cpp)
 target_link_libraries(ComuFrame yaml-cpp)

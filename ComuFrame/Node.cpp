@@ -61,9 +61,9 @@ void Node::initNode() {
 					std::cout << this->identity << " MainThread : received subscriptions\n";
 					sendStrMSG(&InternalSubSocket, "received subscriptions","MainThread","subThread");
 				}
-				if (strcmp(data.c_str(), "AllSubscribed") == 0) {
-					//scrivi a pub che puo partire
-				}
+//				if (strcmp(data.c_str(), "AllSubscribed") == 0) {
+//					sendStrMSG(&InternalPubSocket, "AllSubscribed", "MainThread", "pubThread");
+//				}
 				else {
 					std::cout << this->identity << " MainThread, received message from serviceThread in syncrophase but dont know how to handle it\n";
 				}
@@ -205,15 +205,21 @@ bool Node::sendStrMSG(socket_t* sock, std::string msg, std::string sendingThread
 
 void Node::initPubThread() {
 	socket_t pubSocket(this->ctx, ZMQ_PUB);
+	std::cout << this->pubPort;
+	pubSocket.bind(this->url + this->pubPort);
 	socket_t toMainSocket = initInprocSocket(&(Node::ctx), "inproc://pubChannel", true);
-
+	multipart_t msg;
+	recv_multipart(toMainSocket, std::back_inserter(msg));
+	pubSocket.send(message_t("ciao a tutti"));
 }
 
 void Node::initSubThread() {
 	socket_t subSocket(this->ctx, ZMQ_SUB);
+	subSocket.connect(this->url + this->pubPort);
 	socket_t toMainSocket = initInprocSocket(&(Node::ctx), "inproc://subChannel", true);
 	multipart_t msg;
 	recv_multipart(toMainSocket, std::back_inserter(msg));
+	subSocket.setsockopt(ZMQ_SUBSCRIBE, "");
 	for (std::string topic : this->subscriptions) {
 		subSocket.setsockopt(ZMQ_SUBSCRIBE, &topic, sizeof(topic));
 		std::cout << this->identity << ", SubThread : subscribed to " << topic << "\n";
@@ -221,6 +227,9 @@ void Node::initSubThread() {
 	if (!sendStrMSG(&toMainSocket, "subscribed","subThread","MainThread")) {
 		std::cout << this->identity << " subThread : ERROR occoured while sending message to mainSocket\n";
 	}
+	message_t simplemsg;
+	subSocket.recv(simplemsg);
+	std::cout << "messaggio ricevuto " << simplemsg.to_string();
 }
 
 
